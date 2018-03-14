@@ -44,11 +44,11 @@
     </div>
 
     <div class="row">
-        <div class="col-sm-2 mainmenu">Spel:<br><br>
+        <div class="col-sm-2 mainmenu">Spellen<br><br>
           <div class="row">
-            <div class="col-sm-12 menu">Schrijven</div>
-            <div class="col-sm-12 menu">Spel 2</div>
-            <div class="col-sm-12 menu">Spel 3</div>
+            <button class="col-sm-12 menu">Schrijven</button>
+            <button class="col-sm-12 menu">Spel 2</button>
+            <button class="col-sm-12 menu">Spel 3</button>
           </div>
         </div>
       <div class="col-sm-5 theme2">Huisdieren
