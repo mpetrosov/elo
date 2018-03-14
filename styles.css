@@ -1,0 +1,95 @@
+/* background-color:  #669999; */
+
+* {
+    box-sizing: border-box;
+}
+
+
+button {
+  background-color:	blue;
+  border: none;
+  color: white;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 6px;
+  margin-left: 2px;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+  margin-bottom: 0px;
+  text-align: left;
+  border-radius: 2px;
+}
+
+.topfront {
+  height: 25em;
+  background-color:  #66d066  ;
+
+}
+
+.middlefront {
+  height: 30em;
+   background-image: url("img/landscape2.png");
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-color: white;
+}
+
+.bottomfront {
+  background-color:  #ffc400;
+  height: 20em;
+}
+
+.toptext {
+  color: white;
+  text-align: center;
+  font-size: 40px;
+  margin-top: 2em;
+  font-family: chicle;
+}
+
+.topimage {
+  background-image: url("img/owl.png");
+  background-size: contain;
+  width: 40%;
+  height: 90%;
+  border-radius: 20px;
+  margin-top: 2em;
+  margin-left: 4em;
+  background-repeat: no-repeat;
+}
+
+.centertext
+{
+  margin-top: 3em;
+  font-size: 40px;
+  text-align: center;
+  color: #416f4f;
+  font-family: chicle;
+}
+
+.bottomtext {
+  color: white;
+  font-size: 30px;
+  font-family: chicle;
+  margin-left: 3em;
+  margin-top: 2em;
+}
+
+.login {
+  float: right;
+}
+
+.title {
+  font-size: 25px;
+  font-family: chicle;
+  color: blue;
+  padding: 10px;
+  vertical-align: bottom;
+}
+
+@media (max-width: 576px) {
+
+
+ }
