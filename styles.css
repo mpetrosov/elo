@@ -4,6 +4,9 @@
     box-sizing: border-box;
 }
 
+body {
+  font-family: chicle;
+}
 
 button {
   background-color:	blue;
@@ -24,8 +27,8 @@ button {
 
 .topfront {
   height: 25em;
-  background-color:  #66d066  ;
-
+  background-color: #66d066;
+  padding: 6px;
 }
 
 .middlefront {
@@ -45,8 +48,6 @@ button {
   color: white;
   text-align: center;
   font-size: 40px;
-  margin-top: 2em;
-  font-family: chicle;
 }
 
 .topimage {
@@ -66,13 +67,11 @@ button {
   font-size: 40px;
   text-align: center;
   color: #416f4f;
-  font-family: chicle;
 }
 
 .bottomtext {
   color: white;
   font-size: 30px;
-  font-family: chicle;
   margin-left: 3em;
   margin-top: 2em;
 }
@@ -83,13 +82,63 @@ button {
 
 .title {
   font-size: 25px;
-  font-family: chicle;
   color: blue;
   padding: 10px;
   vertical-align: bottom;
 }
 
-@media (max-width: 576px) {
+/* ************************************************************************* */
 
 
- }
+.usertop {
+  height: 20em;
+  background-color: #66d066;
+  border: 5px solid white;
+  border-radius: 16px;
+}
+
+.welcome {
+  color: white;
+  font-size: 70px;
+  padding: 30px;
+}
+
+.profile {
+  color: white;
+  padding: 6px;
+  font-size: 25px;
+}
+
+.points {
+  background-color: #ffc400;
+  font-size: 30px;
+  text-align: center;
+  border-radius: 16px;
+  color: #416f4f;
+}
+
+img {
+  width: 100%
+}
+
+.avatar {
+  padding: 16px;
+}
+
+.head {
+    color: #800000;
+}
+
+.theme {
+  background-color: #ffc400;
+  border: 5px solid white;
+  border-radius: 16px;
+  height: 10em;
+}
+
+.themetext {
+    color: #416f4f;
+    font-size: 24px;
+    text-align: center;
+    padding-top: 12px;
+}
