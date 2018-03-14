@@ -9,7 +9,7 @@ body {
 }
 
 button {
-  background-color:	blue;
+  background-color:	#800000;
   border: none;
   color: white;
   padding: 5px;
@@ -31,6 +31,13 @@ button {
   padding: 6px;
 }
 
+.topfrontleft {
+  height: 25em;
+  background-color: #66d066;
+  padding-left: 16px;
+  padding-top: 8px;
+}
+
 .middlefront {
   height: 30em;
    background-image: url("img/landscape2.png");
@@ -48,17 +55,6 @@ button {
   color: white;
   text-align: center;
   font-size: 40px;
-}
-
-.topimage {
-  background-image: url("img/owl.png");
-  background-size: contain;
-  width: 40%;
-  height: 90%;
-  border-radius: 20px;
-  margin-top: 2em;
-  margin-left: 4em;
-  background-repeat: no-repeat;
 }
 
 .centertext
@@ -82,10 +78,24 @@ button {
 
 .title {
   font-size: 25px;
-  color: blue;
+  color: #800000;
   padding: 10px;
   vertical-align: bottom;
 }
+
+#imagefront {
+  width: 300px;
+}
+
+@media (max-width: 767.98px) {
+  .topfront {
+    height: 25em;
+    background-color:  #800000;
+    padding: 6px;
+  }
+
+ }
+
 
 /* ************************************************************************* */
 
@@ -93,7 +103,7 @@ button {
 .usertop {
   height: 20em;
   background-color: #66d066;
-  border: 5px solid white;
+  border: 5px solid #dde1ef;
   border-radius: 16px;
 }
 
@@ -111,6 +121,7 @@ button {
 
 .points {
   background-color: #ffc400;
+  background-size: cover;
   font-size: 30px;
   text-align: center;
   border-radius: 16px;
@@ -118,7 +129,11 @@ button {
 }
 
 img {
-  width: 100%
+  width: 90%
+}
+
+body {
+  background-color:#dde1ef;
 }
 
 .avatar {
@@ -129,16 +144,76 @@ img {
     color: #800000;
 }
 
-.theme {
-  background-color: #ffc400;
-  border: 5px solid white;
-  border-radius: 16px;
-  height: 10em;
+.menu {
+  font-size: 24px;
+  padding-bottom: 10px;
 }
 
-.themetext {
-    color: #416f4f;
+.mainmenu {
+  height: 16em;
+  background-color:  #ffc400;
+  border-radius: 16px;
+  color: #416f4f;
+  font-size: 24px;
+  border: 5px solid #dde1ef;
+  padding-left: 16px;
+  padding-top: 12px;
+}
+
+.theme1 {
+    background-image: url("img/cheetah.jpg");
+    background-size: cover;
+    color: white;
     font-size: 24px;
-    text-align: center;
-    padding-top: 12px;
+    padding: 12px;
+    border-radius: 16px;
+    height: 8em;
+    border: 5px solid #dde1ef;
+    border-radius: 16px;
+}
+.theme2 {
+    background-image: url("img/poes.jpg");
+    background-size: cover;
+    color: white;
+    font-size: 24px;
+    padding: 12px;
+    border-radius: 16px;
+    height: 8em;
+    border: 5px solid #dde1ef;
+    border-radius: 16px;
+}
+
+.theme3{
+    background-image: url("img/flower.jpg");
+    background-size: cover;
+    color: white;
+    font-size: 24px;
+    padding: 12px;
+    border-radius: 16px;
+    height: 8em;
+    border: 5px solid #dde1ef;
+    border-radius: 16px;
+}
+
+.theme4{
+    background-image: url("img/uil.jpg");
+    background-size: cover;
+    color: white;
+    font-size: 24px;
+    padding: 12px;
+    border-radius: 16px;
+    height: 8em;
+    border: 5px solid #dde1ef;
+    border-radius: 16px;
+}
+
+.theme {
+  background-color:  #ffc400;
+  color: white;
+  font-size: 24px;
+  padding: 12px;
+  border-radius: 16px;
+  height: 8em;
+  border: 5px solid #dde1ef;
+  border-radius: 16px;
 }

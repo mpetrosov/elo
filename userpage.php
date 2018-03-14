@@ -44,21 +44,22 @@
     </div>
 
     <div class="row">
-      <div class="col-sm-4 theme"><div class="themetext">Thema 1</div>
+        <div class="col-sm-2 mainmenu">Spel:<br><br>
+          <div class="row">
+            <div class="col-sm-12 menu">Schrijven</div>
+            <div class="col-sm-12 menu">Spel 2</div>
+            <div class="col-sm-12 menu">Spel 3</div>
+          </div>
+        </div>
+      <div class="col-sm-5 theme2">Huisdieren
       </div>
-      <div class="col-sm-4 theme"><div class="themetext">Thema 2</div>
+      <div class="col-sm-5 theme1">Wilde dieren
       </div>
-      <div class="col-sm-4 theme"><div class="themetext">Thema 3</div>
+      <div class="col-sm-5 theme3">Bloemen
       </div>
-    </div>
+      <div class="col-sm-5 theme4">Vogels
+      </div>
 
-    <div class="row">
-      <div class="col-sm-4 theme"><div class="themetext">Thema 4</div>
-      </div>
-      <div class="col-sm-4 theme"><div class="themetext">Thema 5</div>
-      </div>
-      <div class="col-sm-4 theme"><div class="themetext">Thema 6</div>
-      </div>
     </div>
 
     <div class="row">
@@ -68,7 +69,7 @@
     </div>
 
   </div>
-
+<br><br>
   </body>
 
 </html>
