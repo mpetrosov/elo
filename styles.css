@@ -28,7 +28,7 @@ button {
 .topfront {
   height: 25em;
   background-color: #66d066;
-  padding: 6px;
+  padding-left: 40px;
 }
 
 .topfrontleft {
@@ -43,7 +43,7 @@ button {
    background-image: url("img/landscape2.png");
    background-size: cover;
    background-repeat: no-repeat;
-   background-color: white;
+   background-color: #d06666;
 }
 
 .bottomfront {
@@ -61,7 +61,7 @@ button {
   margin-top: 3em;
   font-size: 40px;
   text-align: center;
-  color: #416f4f;
+  color: white;
 }
 
 .bottomtext {
