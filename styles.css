@@ -40,7 +40,7 @@ button {
 
 .middlefront {
   height: 30em;
-   background-image: url("img/landscape2.png");
+   background-image: url("img/book.jpg");
    background-size: cover;
    background-repeat: no-repeat;
    background-color: #d06666;
@@ -48,7 +48,7 @@ button {
 
 .bottomfront {
   background-color:  #ffc400;
-  height: 20em;
+  height: 3em;
 }
 
 .toptext {
@@ -60,7 +60,7 @@ button {
 {
   margin-top: 3em;
   font-size: 40px;
-  text-align: center;
+  text-align: left;
   color: white;
 }
 
@@ -85,7 +85,7 @@ button {
 #imagefront {
   width: 300px;
   margin-left: 60px;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 @media (max-width: 767.98px) {
@@ -139,10 +139,6 @@ button {
   text-align: center;
   border-radius: 16px;
   color: #416f4f;
-}
-
-img {
-  width: 90%
 }
 
 body {
@@ -231,4 +227,9 @@ body {
   height: 8em;
   border: 5px solid #dde1ef;
   border-radius: 16px;
+}
+
+.avatar {
+  margin-top: 20px;
+  width: 100%;
 }

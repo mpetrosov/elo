@@ -31,7 +31,7 @@
       <div class="col-sm-8 usertop">
         <div class="row">
         <div class="col-xs-8 welcome">Hallo Alia</div>
-        <div class="col-xs-4 avatar"><img src="img/owl.png"></div>
+        <div class="col-xs-4"><img class="avatar" src="img/owl.png"></div>
         </div>
       </div>
 
