@@ -10,6 +10,8 @@ for (var i = 0; i < 14; i++) {
   AnimalPics[i] = new Array(3); //picurl, picname, picinfo
 }
 
+
+
 //**********************************************************************************************
 function NextPicture() {
   var divPicture = document.getElementById("divPicture" + actPicslide);
@@ -17,7 +19,6 @@ function NextPicture() {
   if (actPicslide == 1) {actPicslide = 2; }
   else {actPicslide = 1;}
   divPicture = document.getElementById("divPicture" + actPicslide);
-
   divPicture.style.display = "block";
 
   if (actPicnr < AnimalPics.length - 1) {
@@ -29,7 +30,7 @@ function NextPicture() {
 
   imgPicture = document.getElementById("image" + actPicslide);
   imgPicture.src = picpad + AnimalPics[actPicnr][0];
-  
+
   imgName = document.getElementById("picName");
   imgName.innerHTML = AnimalPics[actPicnr][1];
   document.getElementById("divTask").style.visibility = "visible";
