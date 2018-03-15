@@ -19,6 +19,7 @@ function NextPicture() {
   if (actPicslide == 1) {actPicslide = 2; }
   else {actPicslide = 1;}
   divPicture = document.getElementById("divPicture" + actPicslide);
+  
   divPicture.style.display = "block";
 
   if (actPicnr < AnimalPics.length - 1) {
