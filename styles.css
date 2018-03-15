@@ -1,0 +1,235 @@
+/* background-color:  #669999; */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+  font-family: chicle;
+}
+
+button {
+  background-color:	#800000;
+  border: none;
+  color: white;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 6px;
+  margin-left: 2px;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+  margin-bottom: 0px;
+  text-align: left;
+  border-radius: 2px;
+}
+
+.topfront {
+  height: 25em;
+  background-color: #66d066;
+  padding-left: 40px;
+}
+
+.topfrontleft {
+  height: 25em;
+  background-color: #66d066;
+  padding-left: 16px;
+  padding-top: 8px;
+}
+
+.middlefront {
+  height: 30em;
+   background-image: url("img/book.jpg");
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-color: #d06666;
+}
+
+.bottomfront {
+  background-color:  #ffc400;
+  height: 3em;
+}
+
+.toptext {
+  color: white;
+  font-size: 40px;
+}
+
+.centertext
+{
+  margin-top: 3em;
+  font-size: 40px;
+  text-align: left;
+  color: white;
+}
+
+.bottomtext {
+  color: white;
+  font-size: 30px;
+  margin-left: 3em;
+  margin-top: 2em;
+}
+
+.login {
+  float: right;
+}
+
+.title {
+  font-size: 25px;
+  color: #800000;
+  padding: 10px;
+  vertical-align: bottom;
+}
+
+#imagefront {
+  width: 300px;
+  margin-left: 60px;
+  margin-top: 20px;
+}
+
+@media (max-width: 767.98px) {
+  .topfront {
+    height: 25em;
+    background-color:  #800000;
+    padding: 6px;
+  }
+
+  #imagefront {
+    width: 280px;
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+  .bottomtext {
+    color: white;
+    font-size: 30px;
+    margin-left: 1em;
+    margin-top: 2em;
+  }
+
+ }
+
+
+/* ************************************************************************* */
+
+
+.usertop {
+  height: 20em;
+  background-color: #66d066;
+  border: 5px solid #dde1ef;
+  border-radius: 16px;
+}
+
+.welcome {
+  color: white;
+  font-size: 70px;
+  padding: 30px;
+}
+
+.profile {
+  color: white;
+  padding: 6px;
+  font-size: 25px;
+}
+
+.points {
+  background-color: #ffc400;
+  background-size: cover;
+  font-size: 30px;
+  text-align: center;
+  border-radius: 16px;
+  color: #416f4f;
+}
+
+body {
+  background-color:#dde1ef;
+}
+
+.avatar {
+  padding: 16px;
+}
+
+.head {
+    color: #800000;
+}
+
+.menu {
+  font-size: 24px;
+  width: 95%;
+  background-color: #ffc400;
+  color: #416f4f;
+}
+
+.mainmenu {
+  height: 16em;
+  background-color:  #66d066;
+  border-radius: 16px;
+  color: white;
+  font-size: 24px;
+  border: 5px solid #dde1ef;
+  padding-left: 16px;
+  padding-top: 12px;
+}
+
+.theme1 {
+    background-image: url("img/cheetah.jpg");
+    background-size: cover;
+    color: white;
+    font-size: 24px;
+    padding: 12px;
+    border-radius: 16px;
+    height: 8em;
+    border: 5px solid #dde1ef;
+    border-radius: 16px;
+}
+.theme2 {
+    background-image: url("img/poes.jpg");
+    background-size: cover;
+    color: white;
+    font-size: 24px;
+    padding: 12px;
+    border-radius: 16px;
+    height: 8em;
+    border: 5px solid #dde1ef;
+    border-radius: 16px;
+}
+
+.theme3{
+    background-image: url("img/flower.jpg");
+    background-size: cover;
+    color: white;
+    font-size: 24px;
+    padding: 12px;
+    border-radius: 16px;
+    height: 8em;
+    border: 5px solid #dde1ef;
+    border-radius: 16px;
+}
+
+.theme4{
+    background-image: url("img/uil.jpg");
+    background-size: cover;
+    color: white;
+    font-size: 24px;
+    padding: 12px;
+    border-radius: 16px;
+    height: 8em;
+    border: 5px solid #dde1ef;
+    border-radius: 16px;
+}
+
+.theme {
+  background-color:  #ffc400;
+  color: white;
+  font-size: 24px;
+  padding: 12px;
+  border-radius: 16px;
+  height: 8em;
+  border: 5px solid #dde1ef;
+  border-radius: 16px;
+}
+
+.avatar {
+  margin-top: 20px;
+  width: 100%;
+}
