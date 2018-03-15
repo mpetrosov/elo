@@ -218,7 +218,17 @@ body {
     border-radius: 16px;
 }
 
-.theme {
+.menu:hover {
+   background-color: #416f4f;
+   color:  #ffc400;
+}
+
+.theme1:hover, .theme2:hover, .theme3:hover, .theme4:hover {
+   cursor: pointer;
+   transform: scale(1.01);
+}
+
+/* .theme {
   background-color:  #ffc400;
   color: white;
   font-size: 24px;
@@ -227,7 +237,7 @@ body {
   height: 8em;
   border: 5px solid #dde1ef;
   border-radius: 16px;
-}
+} */
 
 .avatar {
   margin-top: 20px;
