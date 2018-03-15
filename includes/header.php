@@ -22,9 +22,9 @@ session_start();
                     </ul>
                     <div class="nav-login">
                         <?php
-                        
+
                             if (isset($_SESSION['u_id'])){
-                                
+
                                 echo '<form action="includes/logout.inc.php" method="POST">
                                 <button type="submit" name="submit">logout</button>
 
@@ -37,9 +37,9 @@ session_start();
                                 </form>
                                 <a href="signup.php">sign up</a>';
                             }
-                        
+
                         ?>
-                        
+
                     </div>
 
                 </div>

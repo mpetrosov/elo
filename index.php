@@ -3,6 +3,9 @@
   <head>
 
     <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8 ;">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self'
+    http://onlineerp.solution.quebec 'unsafe-inline' 'unsafe-eval'; style-src 'self' maxcdn.bootstrapcdn.com">
     <title>ELO kids</title>
     <link href="https://fonts.googleapis.com/css?family=Chicle" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
