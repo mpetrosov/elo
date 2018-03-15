@@ -1,3 +1,13 @@
+<?php
+include_once 'includes/header.php';
+  
+    if (isset($_SESSION['u_id'])){
+
+          echo "WELCOME STUDENT";
+    }
+          
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -8,7 +18,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
     integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
     crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 
 
   </head>
