@@ -1,16 +1,23 @@
 <!DOCTYPE = html>
 <html>
 <head>
+  <link href="https://fonts.googleapis.com/css?family=Chicle" rel="stylesheet">
   <link rel="stylesheet" href="game.css">
+  <link rel="stylesheet" href="fadeeffect.css">
   <script src= "game.js"></script>
-
 </head>
 <body Onload = "InitializePics()">
-   <center>
-     <h1>Spelgoed</h1>
-   </center>
+   <div id = "divheader">
+
+     <center>
+       <h1>Spelgoed</h1>
+     </center>
+   </div>
+
    <center>
    <div id = "divGame">
+     <div id = "TumbnailsContainer">
+     </div>
      <div id = "divScore">
        <div id = "divPoints">
          <b><span id = "txtScore">0</span></b>
@@ -31,9 +38,16 @@
      <div id="divTask">
        Wat is de naam van dit dier?
      </div><br>
-     <input id= "inputAnswer" name = "inputnmAnswer" placeholder="Typ hier je antwoord" type="text" ></input>
-     <button name="btnConfirmAnswer" id = "btnConfirmAnswer" Onclick = "ControlAnswer()" >Ok</button>
-     <button  name="btnNextPic" id = "btnidNextPic" Onclick ="NextPicture()" >Volgende</button>
+     <div id = "divAnswerinput">
+       <input id= "inputAnswer" name = "inputnmAnswer" placeholder="Typ hier je antwoord" type="text" ></input>
+       <button name="btnConfirmAnswer" id = "btnConfirmAnswer" Onclick = "ControlAnswer()" >Ok</button>
+     </div>
+     <div id = "divExtraInfo">
+       <font size="3"><span id = "spanInfo">Olifant</span></font>
+       <div id = "divNext">
+         <button  name="btnNextPic" id = "btnidNextPic" Onclick ="NextPicture()" >Volgende</button>
+       </div>
+     </div>
    </div>
  </center>
 </body>
