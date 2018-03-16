@@ -13,8 +13,11 @@
 
   </head>
   <body>
+
+
+
     <div class="container">
-    <div class="row">
+    <!-- <div class="row">
       <div class= "col-xs-12">
         <div class="row">
           <div class= "col-xs-8">
@@ -24,6 +27,15 @@
           <button class='login'>Logout</button>
           </div>
         </div>
+      </div>
+    </div> -->
+    <div class="row">
+      <div class= "col-xs-12">
+        <?php
+
+        include_once 'includes/header.php'
+
+        ?>
       </div>
     </div>
 

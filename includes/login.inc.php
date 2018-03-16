@@ -26,14 +26,14 @@ session_start();
                         header("Location: ../index.php?login=error");
                         exit();
                     } elseif ($hashedPwdCheck == true) {
-                        //Log in the user here 
+                        //Log in the user here
                         $_SESSION['u_id'] = $row['user_id'];
                         $_SESSION['u_first'] = $row['user_first'];
                         $_SESSION['u_lastt'] = $row['user_last'];
                         $_SESSION['u_email'] = $row['user_email'];
                         $_SESSION['u_uid'] = $row['user_uid'];
                         // $_SESSION['u_is_admin'] = $row['is_admin'];
-                        header("Location: ../index.php?login=success");
+                        header("Location: ../userpage.php?login=success");
                         exit();
                     }
                 }
