@@ -10,35 +10,6 @@ for (var i = 0; i < 14; i++) {
   AnimalPics[i] = new Array(3); //picurl, picname, picinfo
 }
 
-
-
-//**********************************************************************************************
-function NextPicture() {
-  var divPicture = document.getElementById("divPicture" + actPicslide);
-  divPicture.style.display = "none";
-  if (actPicslide == 1) {actPicslide = 2; }
-  else {actPicslide = 1;}
-  divPicture = document.getElementById("divPicture" + actPicslide);
-  
-  divPicture.style.display = "block";
-
-  if (actPicnr < AnimalPics.length - 1) {
-    actPicnr++;
-  }
-  else {
-    actPicnr = 0;
-  }
-
-  imgPicture = document.getElementById("image" + actPicslide);
-  imgPicture.src = picpad + AnimalPics[actPicnr][0];
-
-  imgName = document.getElementById("picName");
-  imgName.innerHTML = AnimalPics[actPicnr][1];
-  document.getElementById("divTask").style.visibility = "visible";
-  document.getElementById("btnidNextPic").style.visibility = "hidden";
-  btnGameStarted = true;
-}
-
 //**********************************************************************************************
 function InitializePics() {
   MiliSecTeller = 0;
@@ -83,7 +54,67 @@ function InitializePics() {
   document.getElementById("btnConfirmAnswer").style.visibility = "hidden";
   //TekenInterval = setInterval(function(){TekenKolom();},0); //wow, dit werkt!
   setInterval(function(){ fadePicName();}, 10);
+
+  MakeTumbnails(AnimalPics.length);
+  //MakeRatings(AnimalPics.length);
 }
+
+//**********************************************************************************************
+function MakeTumbnails(PicNumber) {
+  for (var i = 0; i<PicNumber; i++) {
+    var TNdiv = document.createElement("div");
+    TNdiv.id = "divTN" + i+1;
+    TNdiv.setAttribute('class','TNcontainers');
+    var TNcontainer = document.getElementById("TumbnailsContainer");
+    TNcontainer.appendChild(TNdiv);
+
+    var TN = document.createElement("img");
+    TN.id = "TN" + i+1;
+    TN.setAttribute('class','TNimgs');
+    TN.src = picpad + AnimalPics[i][0];
+    //rating
+    var RT = document.createElement("h2");
+    RT.id = "RT" + i+1;
+    RT.innerHTML = "";
+    RT.setAttribute('class','RTh2');
+    //alert("test");
+    var TNdiv = document.getElementById("divTN" + i+1);
+    TNdiv.appendChild(TN);
+    TNdiv.appendChild(RT);
+  }
+}
+
+
+
+//**********************************************************************************************
+function NextPicture() {
+  var divPicture = document.getElementById("divPicture" + actPicslide);
+  divPicture.style.display = "none";
+  if (actPicslide == 1) {actPicslide = 2; }
+  else {actPicslide = 1;}
+  divPicture = document.getElementById("divPicture" + actPicslide);
+
+  divPicture.style.display = "block";
+
+  if (actPicnr < AnimalPics.length - 1) {
+    actPicnr++;
+  }
+  else {
+    actPicnr = 0;
+  }
+
+  imgPicture = document.getElementById("image" + actPicslide);
+  imgPicture.src = picpad + AnimalPics[actPicnr][0];
+
+  imgName = document.getElementById("picName");
+  imgName.innerHTML = AnimalPics[actPicnr][1];
+  document.getElementById("divTask").style.visibility = "visible";
+  document.getElementById("divExtraInfo").style.display = "none";
+  document.getElementById("btnidNextPic").style.visibility = "hidden";
+  btnGameStarted = true;
+}
+
+
 
 //***********************************************************************************************
 function fadePicName() {
@@ -105,6 +136,7 @@ function fadePicName() {
  }
 }
 
+
 //***********************************************************************************************
 function ControlAnswer() {
   Answer = document.getElementById("inputAnswer");
@@ -112,6 +144,10 @@ function ControlAnswer() {
     intScore++;
     imgName = document.getElementById("txtScore");
     imgName.innerHTML = intScore;
+
+    var RT = document.getElementById("RT" + actPicnr +1);
+    RT.style.color = "#FFFF00";
+    RT.innerHTML = "V";
     var audio = new Audio('scorenoise.wav');
     audio.play();
     alert("Hoera, je hebt het woord goed gespeld!");
@@ -119,15 +155,28 @@ function ControlAnswer() {
   else {
     var audio = new Audio('oops.wav');
     audio.play();
+    var RT = document.getElementById("RT" + actPicnr +1);
+    RT.style.color = "#FF0000";
+    RT.innerHTML = "X";
   }
+
+  EditTumbnail(actPicnr);
+
+  document.getElementById("spanInfo").innerHTML = AnimalPics[actPicnr][2];
   document.getElementById("divTask").style.visibility = "hidden";
   document.getElementById("inputAnswer").style.visibility = "hidden";
   document.getElementById("btnConfirmAnswer").style.visibility = "hidden";
+  document.getElementById("divExtraInfo").style.display = "block";
   if (actPicnr < AnimalPics.length - 1) {
-
     document.getElementById("btnidNextPic").style.visibility = "visible";
   }
   else {
     alert("Je bent klaar met het spel. Je score was: " + intScore);
   }
+}
+
+//***********************************************************************************************
+function EditTumbnail(PicNumber) {
+   var TN = document.getElementById("TN" + PicNumber + 1);
+   TN.style.opacity = "1.0";
 }
