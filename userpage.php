@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-
     <meta charset="utf-8">
     <title>ELO kids</title>
     <link href="https://fonts.googleapis.com/css?family=Chicle" rel="stylesheet">
@@ -9,33 +8,12 @@
     integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
     crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="styles.css">
-
-
   </head>
+
   <body>
-
-
-
     <div class="container">
-    <!-- <div class="row">
-      <div class= "col-xs-12">
-        <div class="row">
-          <div class= "col-xs-8">
-          <div class="title">Spelgoed</div>
-          </div>
-          <div class= "col-xs-4">
-          <button class='login'>Logout</button>
-          </div>
-        </div>
-      </div>
-    </div> -->
     <div class="row">
       <div class= "col-xs-12">
-        <?php
-
-        include_once 'includes/header.php'
-
-        ?>
       </div>
     </div>
 
@@ -63,7 +41,6 @@
           ?>
 
         </div>
-
         <div class="col-xs-4"><img class="avatar" src="img/owl.png"></div>
         </div>
       </div>
@@ -88,7 +65,6 @@
                 $age = (date("md", date("U", mktime(0, 0, 0, $birthDate[0], $birthDate[1], $birthDate[2]))) > date("md")
                 ? ((date("Y") - $birthDate[2]) - 1)
                 : (date("Y") - $birthDate[2]));
-
                 echo "Naam: ";
                 echo $row['firstname'];
                 echo " ";

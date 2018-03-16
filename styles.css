@@ -4,6 +4,14 @@
     box-sizing: border-box;
 }
 
+#logo {
+  width:100px;
+}
+
+a {
+  color: #800000;
+}
+
 h2 {
   margin-left: 8px;
 }
@@ -16,7 +24,7 @@ button {
   font-family: arial;
   background-color:	#ffc400;
   border: none;
-  color: white;
+  color: #416f4f;
   padding: 6px;
   text-align: center;
   text-decoration: none;
@@ -44,13 +52,14 @@ button {
 }
 
 .headerrow {
-  background-color: white;
+  background-color: #66d066;
+  padding: 4px;
 }
 
 .register {
   padding-top: 2px;
   font-size: 20px;
-  
+
 }
 
 .middlefront {
@@ -61,6 +70,7 @@ button {
 }
 .signup, .signout {
   float: right;
+
 }
 
 .bottomfront {
