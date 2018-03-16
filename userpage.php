@@ -14,6 +14,11 @@
     <div class="container">
     <div class="row">
       <div class= "col-xs-12">
+        <?php
+
+        include_once 'includes/header.php'
+
+        ?>
       </div>
     </div>
 
@@ -24,7 +29,7 @@
 
           <?php
           try {
-              $conn = new PDO("mysql:host=127.0.0.1; dbname=spelgoed", "root", "");
+              $conn = new PDO("mysql:host=localhost; dbname=spelgoed", "root", "");
 
               $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
               $sql = "SELECT students.firstname FROM students WHERE st_id=8";
@@ -97,19 +102,13 @@
           </div>
         </div>
 
-      <div class="col-sm-5 theme1">Wilde dieren
+      <div class="col-sm-5 theme1" onclick="window.location.href = 'game.php';">Wilde dieren
       </div>
-      <div class="col-sm-5 theme2">Huisdieren
+      <div class="col-sm-5 theme2" >Huisdieren
       </div>
       <div class="col-sm-5 theme3">Bloemen
       </div>
       <div class="col-sm-5 theme4">Vogels
-      </div>
-
-    </div>
-
-    <div class="row">
-      <div class="col-xs-12">
       </div>
 
     </div>
