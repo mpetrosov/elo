@@ -15,8 +15,7 @@ a {
 }
 
 h2 {
-  margin-left: 8px;
-}
+text-align: center;}
 
 body {
   font-family: chicle;
@@ -102,6 +101,14 @@ button {
 
 .login {
   float: right;
+}
+
+#loginbutton, #logoutbutton {
+  padding-left: 14px;
+  padding-right: 14px;
+  background-color: #66d066;
+  color: white;
+
 }
 
 .title {

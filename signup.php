@@ -1,11 +1,30 @@
 
-<?php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Elo Kids</title>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
-include 'includes/header.php'
+</head>
 
-?>
+<div class="row">
+<body>
+  <div class="col-xs-2"></div>
+  <div class="main-wrapper col-xs-8">
+      <img id="logo" src="img/klaver5.png"></div>
+  <div class="col-xs-2">    <button id="submit" name="submit" class="btn btn-success">Home</button></div>
 
-<h2>Registreer</h2>
+  </div>
+</div>
+<h2>Registreer</h2><hr>
 
     <form class="form-horizontal" action="includes/signup.inc.php" method="POST">
     <fieldset>
@@ -13,14 +32,14 @@ include 'includes/header.php'
     <div class="form-group">
       <label class="col-md-4 control-label" for="firstname">Voornaam</label>
       <div class="col-md-4">
-      <input id="name" type="text" name="first" placeholder="voornaam" class="form-control input-md" required="">
+      <input id="firstname" type="text" name="first" placeholder="voornaam" class="form-control input-md" required="">
       </div>
     </div>
 
     <div class="form-group">
       <label class="col-md-4 control-label" for="lastname" >Achternaam</label>
       <div class="col-md-4">
-      <input id="name" type="text" name="last" placeholder="achternaam" class="form-control input-md" required="">
+      <input id="lastname" type="text" name="last" placeholder="achternaam" class="form-control input-md" required="">
       </div>
     </div>
 
