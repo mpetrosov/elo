@@ -33,7 +33,7 @@ session_start();
                         $_SESSION['u_email'] = $row['user_email'];
                         $_SESSION['u_uid'] = $row['user_uid'];
                         // $_SESSION['u_is_admin'] = $row['is_admin'];
-                        header("Location: ../userpage.php?login=success");
+                        header("Location: ../index.php?login=success");
                         exit();
                     }
                 }
