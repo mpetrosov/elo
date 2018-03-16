@@ -4,7 +4,7 @@ session_start();
     if (isset($_POST['submit']) || true) {
         include_once 'dbh.php';
 
-        $uid = mysqli_real_escape_string($conn, $_POST['uid']);
+        $uid = mysqli_real_escape_string($conn, $_POST['email']);
         $pwd = mysqli_real_escape_string($conn, $_POST['pwd']);
         //Error handlers
         //Check for empty fields
@@ -12,28 +12,29 @@ session_start();
             header("Location: ../index.php?login=empty");
             exit();
         } else {
-            $sql = "SELECT * FROM users WHERE user_uid ='$uid'"; //OR email = '$uid'
+            $sql = "SELECT * FROM students WHERE email ='$uid'"; //OR email = '$uid'
             $result = mysqli_query($conn, $sql);
             $resultCheck = mysqli_num_rows($result);
             if ($resultCheck < 1){
-                header("Location: ../index.php?login=error");
+                header("Location: ../index.php?login=error1");
                 exit();
             } else {
                 if ($row = mysqli_fetch_assoc($result)){
                     //De-hashing the password
-                    $hashedPwdCheck = password_verify($pwd, $row['user_pwd']);
+                    $hashedPwdCheck = password_verify($pwd, $row['pwd']);
                     if ($hashedPwdCheck == false){
-                        header("Location: ../index.php?login=error");
+                        header("Location: ../index.php?login=error2");
                         exit();
                     } elseif ($hashedPwdCheck == true) {
                         //Log in the user here
-                        $_SESSION['u_id'] = $row['user_id'];
-                        $_SESSION['u_first'] = $row['user_first'];
-                        $_SESSION['u_lastt'] = $row['user_last'];
-                        $_SESSION['u_email'] = $row['user_email'];
-                        $_SESSION['u_uid'] = $row['user_uid'];
+                        $_SESSION['u_id'] = $row['st_id'];
+                        $_SESSION['u_first'] = $row['firstname'];
+                        $_SESSION['u_lastt'] = $row['lastname'];
+                        $_SESSION['u_email'] = $row['email'];
+                        $_SESSION['u_uid'] = $row['class_uid'];
                         // $_SESSION['u_is_admin'] = $row['is_admin'];
-                        header("Location: ../index.php?login=success");
+                        header("Location: ../userpage.php?login=success");
+
                         exit();
                     }
                 }

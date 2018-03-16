@@ -27,7 +27,7 @@
               $conn = new PDO("mysql:host=127.0.0.1; dbname=spelgoed", "root", "");
 
               $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-              $sql = "SELECT students.firstname FROM students WHERE st_id=1";
+              $sql = "SELECT students.firstname FROM students WHERE st_id=8";
 
               $result = $conn->query($sql);
               foreach ($result as $row) {
@@ -55,7 +55,7 @@
 
               $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
               $sql = "SELECT students.firstname, students.lastname, students.class_id,
-              students.score, students.birthday FROM students WHERE st_id=1";
+              students.score, students.birthday FROM students WHERE st_id=8";
 
               $result = $conn->query($sql);
               foreach ($result as $row) {

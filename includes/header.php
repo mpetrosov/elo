@@ -26,7 +26,7 @@ session_start();
                 <div class="main-wrapper col-xs-6">
                     <img id="logo" src="img/klaver1.png">
                   <?php
-                      if (isset($_SESSION['u_id'])){
+                      if (isset($_SESSION['st_id'])){
                       } else{
                          echo '
                           <a class="register" href="signup.php">Registreren</a>';
@@ -36,14 +36,14 @@ session_start();
                 </div>
                     <div class="col-xs-6 nav-login">
                         <?php
-                            if (isset($_SESSION['u_id'])){
+                            if (isset($_SESSION['st_id'])){
                                 echo '<form class="signout" action="includes/logout.inc.php" method="POST">
                                 <button type="submit" name="submit">logout</button>
                                 </form>';
 
                             }else{
                                echo '<form class="signup" action="includes/login.inc.php" method="POST">
-                                    <input type="text" name="uid" placeholder="Username/email">
+                                    <input type="text" name="email" placeholder="Username/email">
                                     <input type="password" name="pwd" placeholder="password">
                                     <button type="submit" name="submit">login</button>
                                 </form>
