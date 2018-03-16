@@ -9,9 +9,10 @@
         $email = mysqli_real_escape_string($conn, $_POST['email']);
         $uid = mysqli_real_escape_string($conn, $_POST['uid']);
         $pwd = mysqli_real_escape_string($conn, $_POST['pwd']);
+        $birthday = mysqli_real_escape_string($conn, $_POST['birthday']);
         //Error handlers
         //Check for empty fields
-        if(empty($first) || empty($last) || empty($email) || empty($uid) || empty($pwd)){
+        if(empty($first) || empty($last) || empty($email) || empty($uid) || empty($pwd) || empty($birthday)){
 
             header("Location: ../signup.php?signup=empty");
             exit();
@@ -27,7 +28,7 @@
                     header("Location: ../signup.php?signup=email");
                     exit();
                 }else{
-                    $sql = "SELECT * FROM users WHERE user_uid='$uid'";
+                    $sql = "SELECT * FROM students WHERE user_uid='$uid'";
                     $result = mysqli_query($conn, $sql);
                     $resultCheck = mysqli_num_rows($result);
 
@@ -37,7 +38,7 @@
                     }else{
                         // Hashing the password
                         $hashedPwd = password_hash($pwd, PASSWORD_BCRYPT);
-                        $sql = "INSERT INTO users (user_first, user_last, user_email, user_uid, user_pwd) VALUES ('$first', '$last','$email', '$uid','$hashedPwd');";
+                        $sql = "INSERT INTO students (firstname, lastname, email, class_id, pwd, birthday) VALUES ('$first', '$last','$email', '$uid','$hashedPwd', '$birthday');";
                         mysqli_query($conn, $sql);
                         header("Location: ../index.php?register=succes");
                         exit();

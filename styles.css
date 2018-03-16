@@ -4,15 +4,28 @@
     box-sizing: border-box;
 }
 
+#logo {
+  width:100px;
+}
+
+a {
+  color: #800000;
+}
+
+h2 {
+  margin-left: 8px;
+}
+
 body {
   font-family: chicle;
 }
 
 button {
-  background-color:	#800000;
+  font-family: arial;
+  background-color:	#ffc400;
   border: none;
-  color: white;
-  padding: 5px;
+  color: #416f4f;
+  padding: 6px;
   text-align: center;
   text-decoration: none;
   margin-top: 6px;
@@ -38,12 +51,26 @@ button {
   padding-top: 8px;
 }
 
+.headerrow {
+  background-color: #66d066;
+  padding: 4px;
+}
+
+.register {
+  padding-top: 2px;
+  font-size: 20px;
+
+}
+
 .middlefront {
   height: 30em;
    background-image: url("img/book.jpg");
    background-size: cover;
-   background-repeat: no-repeat;
-   background-color: #d06666;
+   background-repeat: no-repeat
+}
+.signup, .signout {
+  float: right;
+
 }
 
 .bottomfront {
@@ -88,6 +115,8 @@ button {
   margin-top: 20px;
 }
 
+
+
 @media (max-width: 767.98px) {
   .topfront {
     height: 25em;
@@ -110,7 +139,7 @@ button {
  }
 
 
-/* ************************************************************************* */
+/* Userpage ************************************************************************* */
 
 
 .usertop {
@@ -218,7 +247,17 @@ body {
     border-radius: 16px;
 }
 
-.theme {
+.menu:hover {
+   background-color: #416f4f;
+   color:  #ffc400;
+}
+
+.theme1:hover, .theme2:hover, .theme3:hover, .theme4:hover {
+   cursor: pointer;
+   transform: scale(1.01);
+}
+
+/* .theme {
   background-color:  #ffc400;
   color: white;
   font-size: 24px;
@@ -227,9 +266,20 @@ body {
   height: 8em;
   border: 5px solid #dde1ef;
   border-radius: 16px;
-}
+} */
 
 .avatar {
   margin-top: 20px;
   width: 100%;
 }
+/*Header styles
+ *********************************************************************** */
+
+ .nav-login {
+   float: right;
+   font-family: arial;
+ }
+
+ .main-wrapper {
+   font-family: arial;
+ }
