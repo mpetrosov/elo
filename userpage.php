@@ -1,7 +1,6 @@
 <?php
 include 'includes/dbh.php';
 include 'includes/functions.php';
-include 'includes/logout.inc.php';
 include 'includes/header.php';
 ?>
 
