@@ -5,17 +5,6 @@ include 'includes/logout.inc.php';
 include 'includes/header.php';
 ?>
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>ELO kids</title>
-    <link href="https://fonts.googleapis.com/css?family=Chicle" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-    crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="styles.css">
-  </head>
 
   <body>
     <div class="container">
@@ -39,7 +28,7 @@ include 'includes/header.php';
         <div class="col-xs-8 welcome">Hallo <?=$student['firstname']?>
 
         </div>
-        <div class="col-xs-4"><img class="avatar" src="img/owl.png"></div>
+        <div class="col-xs-4"><img class="avatar" src=<?=$student['avatar']?>> <a href="">change avatar</a></div>
         </div>
       </div>
 
