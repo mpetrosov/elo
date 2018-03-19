@@ -1,4 +1,11 @@
-<!-- <!DOCTYPE html>
+<?php
+include 'includes/dbh.php';
+include 'includes/functions.php';
+include 'includes/logout.inc.php';
+include 'includes/header.php';
+?>
+
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -8,13 +15,8 @@
     integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
     crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="styles.css">
-  </head> -->
+  </head>
 
-  <?php
-
-  include_once 'includes/header.php'
-
-  ?>
   <body>
     <div class="container">
   <?php
@@ -25,7 +27,9 @@
 
     <div class="row">
       <div class= "col-xs-12">
-
+        <?php
+        include_once 'includes/header.php'
+        ?>
       </div>
     </div>
 
