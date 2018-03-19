@@ -1,7 +1,8 @@
 <?php
 include 'includes/dbh.php';
 include 'includes/functions.php';
-
+include 'includes/logout.inc.php';
+include 'includes/header.php';
 ?>
 
 <!DOCTYPE html>
@@ -55,20 +56,6 @@ include 'includes/functions.php';
         <div class='points'>
         <?=$student['score']?>
         punten</div>
-        
-
-              <!-- echo " ";
-              echo $student['lastname'];
-              echo "<br>Leeftijd: ";
-              echo $student['birthday'];
-              echo "<br>groep: ";
-              echo $student['class_id'];
-              echo "</div><hr>";
-              echo "<div class='points'>";
-              echo $student['score'];
-              echo " punten</div>"; -->
-        
-       
 
       </div>
 
