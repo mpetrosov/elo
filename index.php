@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
   <head>
 
@@ -11,18 +11,18 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
 
 
-  </head>
+  </head> -->
+  <?php
 
+  include_once 'includes/header.php'
+
+  ?>
 
 <body>
   <div class="container-fluid">
   <div class="row">
     <div class= "col-xs-12">
-      <?php
 
-      include_once 'includes/header.php'
-
-      ?>
     </div>
   </div>
 

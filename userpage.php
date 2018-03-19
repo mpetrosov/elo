@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -8,17 +8,18 @@
     integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
     crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="styles.css">
-  </head>
+  </head> -->
 
+  <?php
+
+  include_once 'includes/header.php'
+
+  ?>
   <body>
     <div class="container">
     <div class="row">
       <div class= "col-xs-12">
-        <?php
 
-        include_once 'includes/header.php'
-
-        ?>
       </div>
     </div>
 
