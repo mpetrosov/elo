@@ -21,6 +21,10 @@ body {
   font-family: chicle;
 }
 
+hr {
+ border-top: 1px solid #e9e9e9;
+}
+
 button {
   font-family: arial;
   background-color:	#ffc400;
@@ -215,7 +219,6 @@ body {
     color: white;
     font-size: 24px;
     padding: 12px;
-    border-radius: 16px;
     height: 8em;
     border: 5px solid #e9e9e9;
     border-radius: 16px;
@@ -226,19 +229,17 @@ body {
     color: white;
     font-size: 24px;
     padding: 12px;
-    border-radius: 16px;
     height: 8em;
     border: 5px solid #e9e9e9;
     border-radius: 16px;
 }
 
-.theme3{
+.theme3 {
     background-image: url("img/flower.jpg");
     background-size: cover;
     color: white;
     font-size: 24px;
     padding: 12px;
-    border-radius: 16px;
     height: 8em;
     border: 5px solid #e9e9e9;
     border-radius: 16px;
@@ -250,7 +251,6 @@ body {
     color: white;
     font-size: 24px;
     padding: 12px;
-    border-radius: 16px;
     height: 8em;
     border: 5px solid #e9e9e9;
     border-radius: 16px;
@@ -295,3 +295,19 @@ body {
  .main-wrapper {
    font-family: arial;
  }
+
+ /*avatars
+ ******************************************************************* */
+   .avatarselect{
+    width:120px;
+    height: 120px;
+     border-radius: 16px;
+   }
+
+   .avatar2 {
+       background-image: url("avatars/a_owl.png");
+       background-size: cover;
+       height: 10em;
+       border: 5px solid #e9e9e9;
+       border-radius: 16px;
+     }
