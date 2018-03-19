@@ -1,3 +1,10 @@
+<?php
+include 'includes/dbh.php';
+include 'includes/functions.php';
+include 'includes/logout.inc.php';
+include 'includes/header.php';
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -12,6 +19,12 @@
 
   <body>
     <div class="container">
+  <?php
+    $students = get_Students();
+  ?>
+  
+  <?php foreach ($students as $student):?>
+  
     <div class="row">
       <div class= "col-xs-12">
         <?php
@@ -25,25 +38,7 @@
     <div class="row">
       <div class="col-sm-8 usertop">
         <div class="row">
-        <div class="col-xs-8 welcome">Hallo
-
-          <?php
-          try {
-              $conn = new PDO("mysql:host=localhost; dbname=spelgoed", "root", "");
-
-              $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-              $sql = "SELECT students.firstname FROM students WHERE st_id=8";
-
-              $result = $conn->query($sql);
-              foreach ($result as $row) {
-                echo $row['firstname'];
-                }
-              }
-            catch(PDOException $e)
-              {
-              echo "Connection failed: " . $e->getMessage();
-              }
-          ?>
+        <div class="col-xs-8 welcome">Hallo <?=$student['firstname']?>
 
         </div>
         <div class="col-xs-4"><img class="avatar" src="img/owl.png"></div>
@@ -52,47 +47,25 @@
 
       <div class="col-sm-4 usertop">
         <div class="profile"> <div class="head">Profiel:</div>
-
-
-          <?php
-          try {
-              $conn = new PDO("mysql:host=127.0.0.1; dbname=spelgoed", "root", "");
-
-              $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-              $sql = "SELECT students.firstname, students.lastname, students.class_id,
-              students.score, students.birthday FROM students WHERE st_id=8";
-
-              $result = $conn->query($sql);
-              foreach ($result as $row) {
-
-                $birthDate = $row['birthday'];;
-                $birthDate = explode("-", $birthDate);
-                $age = (date("md", date("U", mktime(0, 0, 0, $birthDate[0], $birthDate[1], $birthDate[2]))) > date("md")
-                ? ((date("Y") - $birthDate[2]) - 1)
-                : (date("Y") - $birthDate[2]));
-                echo "Naam: ";
-                echo $row['firstname'];
-                echo " ";
-                echo $row['lastname'];
-                echo "<br>Leeftijd: ";
-                echo $age;
-                echo "<br>groep: ";
-                echo $row['class_id'];
-                echo "</div><hr>";
-                echo "<div class='points'>";
-                echo $row['score'];
-                echo " punten</div>";
-                }
-              }
-          catch(PDOException $e)
-              {
-              echo "Connection failed: " . $e->getMessage();
-              }
-          ?>
+        <?php
+        $dateOfBirth =  $student['birthday'];
+        $today = date("Y-m-d");
+        $diff = date_diff(date_create($dateOfBirth), date_create($today));
+        $student['birthday']= $diff->format('%y');
+        ?>
+        <p><?=$student['firstname']?> <?=$student['lastname']?></p>
+        Leeftijd: <?=$student['birthday']?>
+        <br>
+        groep: <?=$student['class_id']?>
+        </div><hr>
+        <div class='points'>
+        <?=$student['score']?>
+        punten</div>
 
       </div>
-    </div>
 
+    </div>
+    <?php endforeach;?>
     <div class="row">
         <div class="col-sm-2 mainmenu">Spellen<br><br>
           <div class="row">

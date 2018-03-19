@@ -1,7 +1,5 @@
 <?php
-
 session_start();
-
 ?>
 
 <!DOCTYPE html>
@@ -33,7 +31,6 @@ session_start();
                                 echo '<form class="signout" action="includes/logout.inc.php" method="POST">
                                 <button type="submit" name="submit" id="logoutbutton">logout</button>
                                 </form>';
-
                             }else{
                                echo '<form class="signup" action="includes/login.inc.php" method="POST">
                                     <input type="text" name="email" placeholder="Username/email">
@@ -42,7 +39,6 @@ session_start();
                                     </form><hr>
                                     <a class="register" href="signup.php">Registreren</a>  ';
                             }
-
                         ?>
 
                     </div>
