@@ -10,7 +10,7 @@ for (var i = 0; i < 14; i++) {
 }
 var TaskScores = new Array(14);
 var lessonid = 1;
-var studentid = 2; //tijdelijk, id moet uituindelijk uit sessievariabelen komen.
+var studentid = 3; //tijdelijk, id moet uituindelijk uit sessievariabelen komen.
 var StudentName;
 
 
