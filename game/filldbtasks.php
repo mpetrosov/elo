@@ -6,7 +6,33 @@
   <link rel="stylesheet" href="fadeeffect.css">
   <script src= "game.js"></script>
 </head>
+<!--Copy van game.php. Tijdelijk bestand om gegevens naar db te schrijven. met Ajax-request
+-->
 <body Onload = "InitializePics()">
+    <!--*********************filldbtemp*********************************************************-->
+    <button  name="schrijfnaardb" Onclick ="postpictures()" >Zet plaatjes in de database</button>
+    <script type="text/javascript">
+       function postpictures() {
+         var id, Animalname, path, taskinfo;
+         var xhttp = new XMLHttpRequest();
+         //1: stuur array AnimalPics naar API
+         for (var i = 0; i <AnimalPics.length; i++) {
+           id = i;
+           Animalname = AnimalPics[i][1];
+           path = picpad + AnimalPics[i][0];
+           taskinfo = AnimalPics[i][2];
+           var myURL = "gamedbmanipulation/filldbtemp.php?";
+           myURL += "id=" + id + "&name=" + Animalname + "&path=" + path + "&info=" + taskinfo;//xhttp.open("POST", myURL, false);
+           alert(myURL);
+           xhttp.open("POST", myURL, false);
+           xhttp.send();
+           alert(xhttp.responseText);
+         }
+       }
+    </script>
+    <!--*********************filldbtemp*********************************************************-->
+
+
    <div id = "divheader">
 
      <center>
