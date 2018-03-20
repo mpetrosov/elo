@@ -27,7 +27,7 @@ include 'includes/header.php';
         <div class="col-xs-8 welcome">Hallo <?=$student['firstname']?>
 
         </div>
-        <div class="col-xs-4"><img class="avatar" src=<?=$student['avatar']?>> <a href="">change avatar</a></div>
+        <div class="col-xs-4"><img class="avatar" src=<?=$student['avatar']?>> <a id="avatarlink" href="avatar.php">wijzig avatar</a></div>
         </div>
       </div>
 
