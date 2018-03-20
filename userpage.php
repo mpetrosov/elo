@@ -43,11 +43,11 @@ include 'includes/header.php';
         Leeftijd: <?=$student['birthday']?>
         <br>
         groep: <?=$student['class_id']?>
-        </div><hr>
+        </div> <a href="edit.php?id=<?php echo $student['st_id']?>">Profile wijzigen</a><br><hr>
         <div class='points'>
         <?=$student['score']?>
         punten</div>
-
+       
       </div>
 
     </div>

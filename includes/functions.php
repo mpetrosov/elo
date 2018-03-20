@@ -11,11 +11,6 @@
         $result = mysqli_query($conn, $sql); //$conn->query($sql);
         $students = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
-
-
-        
-        
-        
         return $students;
              
     }
