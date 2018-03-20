@@ -10,24 +10,28 @@ for (var i = 0; i < 14; i++) {
 }
 var TaskScores = new Array(14);
 var lessonid = 1;
-var studentid = 2; //tijdelijk, id moet uituindelijk uit sessievariabelen komen.
+var studentid = 3; //tijdelijk, id moet uiteindelijk uit sessievariabelen komen.
 var StudentName;
 
 
 //**********************************************************************************************
 function InitializePics() {
   MiliSecTeller = 0;
+
   getGameTasks();
   getStudentName(studentid);
 
   for (var i = 0; i <AnimalPics.length; i++) {
     TaskScores[i] = -1;
   }
+
   var NewLessonStudent = MakeLessonMade(studentid, lessonid);
+
   if (NewLessonStudent == false ) {
      GetStudentTaskScores(studentid, lessonid);
   }
-
+  //alert(actPicnr);
+  //actPicnr = 0;
   imgPicture = document.getElementById("image" + actPicslide);
   imgPicture.src = AnimalPics[actPicnr][1];
   imgName = document.getElementById("picName");
@@ -164,6 +168,7 @@ function ControlAnswer() {
   }
 
   CreateTaskMade(actPicnr,lessonid ,studentid, TaskScores[actPicnr]);
+  UpdateLessonsMade(lessonid, studentid);
   EditTumbnail(actPicnr);
 
   document.getElementById("spanInfo").innerHTML = AnimalPics[actPicnr][2];

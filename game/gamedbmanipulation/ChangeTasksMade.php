@@ -15,6 +15,9 @@
       else {
         $sql = "INSERT INTO madetasks (taskid,lessonid, studentid, score) VALUES ($taskid,$lessonid,$studentid, $score)";
         $result = $conn->query($sql);
+        //werk de Lessonsmade tabel bij.
+        $sql = "UPDATE MadeLessons (taskid,lessonid, studentid, score) VALUES ($taskid,$lessonid,$studentid, $score)";
+        $result = $conn->query($sql);
       }
     }
   }

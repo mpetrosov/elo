@@ -1,3 +1,10 @@
+function UpdateLessonsMade(lessonid, studentid){
+  var xhttp = new XMLHttpRequest();
+  var myURL = "gamedbmanipulation/ChangeLessonsMade.php?lessonid=" + lessonid + "&studentid=" + studentid;
+  xhttp.open("UPDATE", myURL, false);
+  xhttp.send();
+}
+
 //****************************************************************************************************************
 function getGameTasks() {
   //tested!
@@ -39,7 +46,7 @@ function CreateTaskMade(taskid,lessonid, studentid, score) {
   var xhttp = new XMLHttpRequest();
   var myURL;
 
-  myURL = "gamedbmanipulation/CreateTasksMade.php?taskid=";
+  myURL = "gamedbmanipulation/ChangeTasksMade.php?taskid=";
   myURL += taskid + "&lessonid=" + lessonid + "&studentid=" + studentid + "&score=" + score;
 
   xhttp.open("POST", myURL, false);
@@ -50,12 +57,12 @@ function CreateTaskMade(taskid,lessonid, studentid, score) {
 function MakeLessonMade(studentid, lessonid) {
   //tested!!
   var xhttp = new XMLHttpRequest();
-  var myURL = "gamedbmanipulation/LessonsMadeExists.php?studentid=" + studentid + "&lessonid=" + lessonid ;
+  var myURL = "gamedbmanipulation/ChangeLessonsMade.php?studentid=" + studentid + "&lessonid=" + lessonid ;
   xhttp.open("GET", myURL, false);
   xhttp.send();
   UserLessonExists = xhttp.responseText; //true or false
   if (UserLessonExists == "false") {
-    var myURL = "gamedbmanipulation/CreateLessonsMade.php?studentid=" + studentid + "&lessonid=" + lessonid ;
+    var myURL = "gamedbmanipulation/ChangeLessonsMade.php?studentid=" + studentid + "&lessonid=" + lessonid ;
     xhttp.open("POST", myURL, false);
     xhttp.send();
     return true; //new lesson
@@ -75,10 +82,14 @@ function GetStudentTaskScores(studentid, lessonid) {
 
   for (var i = 0; i <AnimalPics.length; i++) {
     var taskid = i;
-    var myURL = "gamedbmanipulation/CreateTasksMade.php?taskid=" + taskid + "&lessonid=" + lessonid + "&studentid=" + studentid;
+    var myURL = "gamedbmanipulation/ChangeTasksMade.php?taskid=" + taskid + "&lessonid=" + lessonid + "&studentid=" + studentid;
     xhttp.open("GET", myURL, false);
     xhttp.send();
     TaskScores[i] = parseInt(xhttp.responseText);
-    if (TaskScores[i] >= 0) {actPicnr = i +1};
+    if (TaskScores[i] >= 0) {actPicnr = i + 1};
+  }
+  
+  if (actPicnr == AnimalPics.length) {
+    actPicnr = 0;
   }
 }
