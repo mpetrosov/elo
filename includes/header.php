@@ -22,27 +22,50 @@ session_start();
     <header>
             <nav>
               <div class="row headerrow">
-                <div class="main-wrapper col-xs-6">
+                <div class="main-wrapper col-xs-2">
                 <a href="index.php"><img id="logo" src="img/klaver5.png"></a>
 
                 </div>
-                    <div class="col-xs-6 nav-login">
+                    <div class="col-xs-10 nav-login">
                         <?php
                             if (isset($_SESSION['u_id'])){
                                 echo '<form class="signout" action="includes/logout.inc.php" method="POST">
                                 <button type="submit" name="submit" id="logoutbutton">logout</button>
                                 </form>';
                             }else{
-                               echo '<a class="forgetpwd" href="forgot_password.php">Wachtwoord vergeten?</a><br><form class="signup" action="includes/login.inc.php" method="POST">
-                                    <input type="text" name="email" placeholder="Username/email">
-                                    <input type="password" name="pwd" placeholder="password">
-                                    <button type="submit" id="loginbutton" name="submit">login</button><br>
-                                    </form><hr>
-                                    <a class="register" href="signup.php">Registreren</a>';
+                               echo '<form class="signup" action="includes/login.inc.php" method="POST">
+                                    <div class="row">
+                                      <div class="col-md-4">
+                                        <input class="inputfront" type="text" name="email" placeholder="Username/email"></div>
+                                      <div class="col-md-4">
+                                        <input class="inputfront" type="password" name="pwd" placeholder="password"></div>
+                                      <div class="col-md-2">
+                                        <button type="submit" class="btn btn-secondary loginbutton" name="submit">login</button></div>
+                                        </form>
+
+
+                                      <div class="col-md-2"><div class="btn-group">
+                              <button type="button" class="btn btn-secondary dropdown-toggle loginbutton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                menu
+                              </button>
+                              <div class="dropdown-menu dropdown-menu-right">
+                              <a  href="forgot_password.php">Wachtwoord vergeten?</a><br>
+                              <a  href="signup.php">Registreren</a>
+
+
+                              </div>
+                            </div>
+
+                                  </div>
+
+                                  </div>
+
+
+                            ';
                             }
                         ?>
 
                     </div>
-                </div>
+
             </nav>
     </header>

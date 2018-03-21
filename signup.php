@@ -15,17 +15,18 @@
 
 </head>
 
+<body id="regbody">
+<div class="container" >
 <div class="row">
-<body>
-  <div class="col-xs-2"></div>
+
+  <div class="col-xs-12"></div>
   <div class="main-wrapper col-xs-8">
   <a href="index.php"><img id="logo" src="img/klaver5.png"></a></div>
-  <div class="col-xs-2">    </div>
 
   </div>
 </div>
+<div class="container" id="regcontainer">
 <h2>Registreer</h2><hr>
-
     <form class="form-horizontal" action="includes/signup.inc.php" method="POST">
     <fieldset>
 
@@ -74,12 +75,15 @@
     <div class="form-group">
       <label class="col-md-4 control-label" for="signup"></label>
       <div class="col-md-4">
-        <button id="submit" name="submit" class="btn btn-success">Registreren</button>
+        <button id="submit" name="submit" class="btn btn-basic">Registreren</button>
       </div>
     </div>
 
     </fieldset>
     </form>
 
+    <div><img class="imagereg" src="img/owl.png"></div>
+
+</div>
 </body>
 </html>

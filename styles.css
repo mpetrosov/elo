@@ -1,4 +1,4 @@
-/* background-color:  #669999; */
+
 
 * {
     box-sizing: border-box;
@@ -101,16 +101,23 @@ button {
   margin-top: 2em;
 }
 
-.login {
-  float: right;
-}
 
-#loginbutton, #logoutbutton {
+.loginbutton, #logoutbutton {
   padding-left: 14px;
   padding-right: 14px;
+  padding-top: 2px;
+  padding-bottom: 2px;
   background-color: #66d066;
   color: white;
+  font-size: 16px;
+  width: 95px;
 
+
+}
+
+.inputfront {
+  margin-top: 4px;
+  width: 112%;
 }
 
 .title {
@@ -269,7 +276,7 @@ body {
   float: right;
 }
 
-/* userpagedropdownbutton*************************************************** */
+
 
 
 /*Header styles
@@ -319,6 +326,39 @@ body {
      text-align: center;
    }
 
+/* registration ************************************************************************* */
+
+#regbody {
+  background-color: #e9e9e9;
+  padding-top: 5px;
+}
+
+#regcontainer {
+  background-color: #66d066;
+  border-radius: 30px;
+  margin-top: 20px;
+}
+
+#forgottext {
+  font-size: 25px;
+  color: #F5F5F5;
+}
+
+.imagereg {
+  width: 12%;
+  float:right;
+  padding-right: 10px;
+  margin-bottom: 10px;
+}
+
+#forgotcontainer {
+  background-color: #66d066;
+  border-radius: 30px;
+  padding-top: 20px;
+  margin-top: 20px;
+
+}
+
 /*@media ******************************************************************* */
 
  @media (max-width: 767.98px) {
@@ -350,6 +390,23 @@ body {
          font-size: 50px;
          padding: 20px;
        }
+
+       .loginbutton, #logoutbutton {
+         padding-left: 14px;
+         padding-right: 14px;
+         padding-top: 2px;
+         padding-bottom: 2px;
+         background-color: #66d066;
+         color: white;
+         font-size: 16px;
+         width: 75px;
+              }
+
+       .inputfront {
+         margin-top: 4px;
+         width: 80%;
+       }
+
 
 
   }

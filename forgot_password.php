@@ -6,19 +6,19 @@ date_default_timezone_set('Europe/Amsterdam');
 ?>
 
 <body>
-             
+            <div class='container' id='forgotcontainer'>
                 <?php
                      $get_code = '';
                     if (isset($_GET['code'])){
                         $get_email = $_GET['email'];
                         $get_code = $_GET['code'];
-            
+
                         $query = mysqli_query($conn, "SELECT * FROM students WHERE email='".$get_email."'");
                         while($row = mysqli_fetch_assoc($query)){
                             $db_code = $row['passreset'];
                             $db_email = $row['email'];
                         }
-                 
+
                         if ( $get_email == $db_email &&  $get_code == $db_code){
 
                             echo "
@@ -34,36 +34,42 @@ date_default_timezone_set('Europe/Amsterdam');
                             </div>
                                 <input type='hidden' name='email' value='$db_email'>
                             <div class='form-group'>
-                                <label class='col-md-4 control-label' for='pass-forget'></label>                       
-                                <div class='col-md-4'><button id='submit' class='btn btn-success' name='submit' type='submit'>Update</button></div>
+                                <label class='col-md-4 control-label' for='pass-forget'></label>
+                                <div class='col-md-4'><button id='submit' class='btn btn-basic' name='submit' type='submit'>Update</button></div>
                             </div>
                             </fieldset>
                             </form>
-                          
-                              
+
+
                             ";
                         }
                     }
 
 
                 if (empty($_GET['code'])){
-                   
+
                     echo "<form class='form-horizontal' action ='forgot_password.php' method='POST'>
                             <fieldset>
                             <div class='form-group'>
-                                <label class='col-md-4 control-label' for='pass-forget'>Je email</label>
+                            <label class='col-md-4 control-label' for='pass-forget'></label>
+                                <div class='col-md-4' id='forgottext'>Vul je email adres in, je krijgt een link toegestuurd waarmee je je wachtwoord
+                                kunt wijzigen.</div>
+                            </div>
+
+                            <div class='form-group'>
+                                <label class='col-md-4 control-label' for='pass-forget'></label>
                                 <div class='col-md-4'><input id='pass-forget' type='text' name='email' placeholder='email' class='form-control input-md'></div>
                             </div>
                             <div class='form-group'>
-                                <label class='col-md-4 control-label' for='pass-forget'></label>                       
-                                <div class='col-md-4'><button id='submit' class='btn btn-success' name='submit' type='submit'>Verstuur</button></div>
+                                <label class='col-md-4 control-label' for='pass-forget'></label>
+                                <div class='col-md-4'><button id='submit' class='btn btn-basic' name='submit' type='submit'>Verstuur</button></div>
                             </div>
                             </fieldset>
                         </form>
-                        "; 
+                        ";
                     if(isset($_POST['email'])) {
                         $email = $_POST['email'];
-                        
+
                         //check if email exists
                         $query = mysqli_query($conn, "SELECT * FROM students WHERE email = '".$email."'");
                         $numrow = mysqli_num_rows($query);
@@ -84,12 +90,12 @@ date_default_timezone_set('Europe/Amsterdam');
                                 $body = "Klik op deze link om wachtwoord te wijzigen
                                     http://localhost/elo/forgot_password.php?code=$code&email=$email" ;
                                 $headers = "From: $email";
-                                
+
                                 //update the database
                                 mysqli_query($conn, "UPDATE students SET passreset='$code' WHERE email='$email'");
 
                                 mail($to, $subject, $body, $headers);
-                                
+
                                 echo "Check je email";
 
                             } else {
@@ -98,8 +104,11 @@ date_default_timezone_set('Europe/Amsterdam');
                         }
                     }
                 }
-                
-                ?>       
-        <div style="clear:both;"></div> 
+
+                ?>
+        <div style="clear:both;"></div>
+      <div><img class="imagereg" src="img/owl.png"></div>
+    </div>
+
 </body>
 </html>
