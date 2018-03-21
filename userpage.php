@@ -71,19 +71,19 @@ include 'includes/header.php';
     <div class="row">
         <div class="col-sm-2 mainmenu">Spellen<br><br>
           <div class="row">
-            <button class="col-sm-12 menu">Schrijven</button>
-            <button class="col-sm-12 menu">Spel 2</button>
-            <button class="col-sm-12 menu">Spel 3</button>
+            <button class="col-sm-12 menu" id="game1">Schrijven</button>
+            <button class="col-sm-12 menu" id="game2">Spel 2</button>
+            <button class="col-sm-12 menu" id="game3">Spel 3</button>
           </div>
         </div>
 
-      <div class="col-sm-5 theme1" onclick="window.location.href = 'game/game2.php';">Wilde dieren
+      <div class="col-sm-5 theme1" id="gametheme1" onclick="window.location.href ='game/game2.php';">Wilde dieren
       </div>
-      <div class="col-sm-5 theme2" >Huisdieren
+      <div class="col-sm-5 theme2" id="gametheme2"> Huisdieren
       </div>
-      <div class="col-sm-5 theme3">Bloemen
+      <div class="col-sm-5 theme3" id="gametheme3">Bloemen
       </div>
-      <div class="col-sm-5 theme4">Vogels
+      <div class="col-sm-5 theme4" id="gametheme4">Vogels
       </div>
 
     </div>
@@ -91,5 +91,57 @@ include 'includes/header.php';
   </div>
   <br><br>
   </body>
+  <script>
+
+  $('#game1').click(function() {
+    $('#gametheme1').html('Wilde dieren');
+    $('#gametheme1').removeClass();
+    $('#gametheme1').addClass('col-sm-5 theme1');
+    $('#gametheme1').attr("onclick","window.location.href='game/game2.php'");
+    $('#gametheme2').html('Huisdieren');
+    $('#gametheme2').removeClass();
+    $('#gametheme2').addClass('col-sm-5 theme2');
+    $('#gametheme3').html('Bloemen');
+    $('#gametheme3').removeClass();
+    $('#gametheme3').addClass('col-sm-5 theme3');
+    $('#gametheme4').html('Vogels');
+    $('#gametheme4').removeClass();
+    $('#gametheme4').addClass('col-sm-5 theme4');
+  });
+
+  $('#game2').click(function() {
+    $('#gametheme1').html('Thema 1');
+    $('#gametheme1').removeClass();
+    $('#gametheme1').addClass('col-sm-5 theme');
+    $('#gametheme1').attr("onclick","");
+    $('#gametheme2').html('Thema 2');
+    $('#gametheme2').removeClass();
+    $('#gametheme2').addClass('col-sm-5 theme');
+    $('#gametheme3').html('Thema 3');
+    $('#gametheme3').removeClass();
+    $('#gametheme3').addClass('col-sm-5 theme');
+    $('#gametheme4').html('Thema 4');
+    $('#gametheme4').removeClass();
+    $('#gametheme4').addClass('col-sm-5 theme');
+  });
+
+  $('#game3').click(function() {
+    $('#gametheme1').html('Thema 1');
+    $('#gametheme1').removeClass();
+    $('#gametheme1').addClass('col-sm-5 theme');
+    $('#gametheme1').attr("onclick","");
+    $('#gametheme2').html('Thema 2');
+    $('#gametheme2').removeClass();
+    $('#gametheme2').addClass('col-sm-5 theme');
+    $('#gametheme3').html('Thema 3');
+    $('#gametheme3').removeClass();
+    $('#gametheme3').addClass('col-sm-5 theme');
+    $('#gametheme4').html('Thema 4');
+    $('#gametheme4').removeClass();
+    $('#gametheme4').addClass('col-sm-5 theme');
+  });
+
+
+</script>
 
 </html>
