@@ -19,8 +19,8 @@
 <body>
   <div class="col-xs-2"></div>
   <div class="main-wrapper col-xs-8">
-      <img id="logo" src="img/klaver5.png"></div>
-  <div class="col-xs-2">    <button id="submit" name="submit" class="btn btn-success">Home</button></div>
+  <a href="index.php"><img id="logo" src="img/klaver5.png"></a></div>
+  <div class="col-xs-2">    </div>
 
   </div>
 </div>
@@ -74,7 +74,7 @@
     <div class="form-group">
       <label class="col-md-4 control-label" for="signup"></label>
       <div class="col-md-4">
-        <button id="submit" name="submit" class="btn btn-success">Sign Up</button>
+        <button id="submit" name="submit" class="btn btn-success">Registreren</button>
       </div>
     </div>
 

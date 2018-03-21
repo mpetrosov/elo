@@ -23,7 +23,7 @@ session_start();
             <nav>
               <div class="row headerrow">
                 <div class="main-wrapper col-xs-6">
-                    <img id="logo" src="img/klaver5.png">
+                <a href="index.php"><img id="logo" src="img/klaver5.png"></a>
 
                 </div>
                     <div class="col-xs-6 nav-login">
@@ -33,12 +33,12 @@ session_start();
                                 <button type="submit" name="submit" id="logoutbutton">logout</button>
                                 </form>';
                             }else{
-                               echo '<form class="signup" action="includes/login.inc.php" method="POST">
+                               echo '<a class="forgetpwd" href="forgot_password.php">Wachtwoord vergeten?</a><br><form class="signup" action="includes/login.inc.php" method="POST">
                                     <input type="text" name="email" placeholder="Username/email">
                                     <input type="password" name="pwd" placeholder="password">
                                     <button type="submit" id="loginbutton" name="submit">login</button><br>
                                     </form><hr>
-                                    <a class="register" href="signup.php">Registreren</a>  ';
+                                    <a class="register" href="signup.php">Registreren</a>';
                             }
                         ?>
 

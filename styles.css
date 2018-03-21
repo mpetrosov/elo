@@ -253,6 +253,11 @@ body {
  *************************************************************************** */
 .register{
   float:right;
+  font-size: 10px;
+}
+.forgetpwd{
+  float: right;
+  font-size: 10px;
 }
 
 .nav-login {
