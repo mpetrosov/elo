@@ -61,7 +61,7 @@ include 'includes/header.php';
           </div>
         </div>
 
-      <div class="col-sm-5 theme1" onclick="window.location.href = 'game/game.php';">Wilde dieren
+      <div class="col-sm-5 theme1" onclick="window.location.href = 'game/game2.php';">Wilde dieren
       </div>
       <div class="col-sm-5 theme2" >Huisdieren
       </div>

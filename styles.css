@@ -31,16 +31,15 @@ button {
   padding: 4px;
   text-align: center;
   text-decoration: none;
-  margin-top: 6px;
+  margin-top: 4px;
   margin-left: 2px;
   display: inline-block;
-  font-size: 14px;
+  font-size: 18px;
   cursor: pointer;
   margin-bottom: 0px;
   text-align: left;
   border-radius: 2px;
 }
-
 .topfront {
   height: 25em;
   background-color: #66d066;
@@ -175,9 +174,10 @@ body {
 
 .menu {
   font-size: 22px;
-  width: 95%;
+  width: 100%;
   background-color: #ffc400;
   color: #416f4f;
+  margin-left: 0px;
 }
 
 .mainmenu {
