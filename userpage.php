@@ -27,12 +27,27 @@ include 'includes/header.php';
         <div class="col-xs-8 welcome">Hallo <?=$student['firstname']?>
 
         </div>
-        <div class="col-xs-4"><img class="avatar" src=<?=$student['avatar']?>> <a id="avatarlink" href="avatar.php">wijzig avatar</a></div>
+        <div class="col-xs-4"><img class="avatar" src=<?=$student['avatar']?>></div>
         </div>
       </div>
 
-      <div class="col-sm-4 usertop">
-        <div class="profile"> <div class="head">Profiel:</div>
+      <div class="col-sm-4 usertop"><div class="profile">
+        <div class="row">
+          <div class="col-xs-8"><div class="head">Profiel:</div></div>
+          <div class="col-xs-4"><div class="btn-group">
+  <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    menu
+  </button>
+  <div class="dropdown-menu dropdown-menu-right">
+    <button class="dropdown-item menudrop" type="button" onclick="location.href ='edit.php?id=<?php echo $student['st_id']?>';">Profiel wijzigen</button>
+    <button class="dropdown-item menudrop" type="button" onclick="location.href = 'avatar.php'">Avatar wijzigen</button>
+
+  </div>
+</div>
+      </div>
+
+</div>
+
         <?php
         $dateOfBirth =  $student['birthday'];
         $today = date("Y-m-d");
@@ -43,15 +58,16 @@ include 'includes/header.php';
         Leeftijd: <?=$student['birthday']?>
         <br>
         groep: <?=$student['class_id']?>
-        </div> <a href="edit.php?id=<?php echo $student['st_id']?>">Profile wijzigen</a><br><hr>
+        <br><hr>
         <div class='points'>
         <?=$student['score']?>
         punten</div>
-       
+
       </div>
 
     </div>
     <?php endforeach;?>
+    </div>
     <div class="row">
         <div class="col-sm-2 mainmenu">Spellen<br><br>
           <div class="row">
