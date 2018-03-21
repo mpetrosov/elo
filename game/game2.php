@@ -13,7 +13,7 @@
   integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
   crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Chicle" rel="stylesheet">
-  <link rel="stylesheet" href="game.css">
+  <link rel="stylesheet" href="game2.css">
   <link rel="stylesheet" href="fadeeffect.css">
   <script src= "game.js"></script>
   <script src= "ajaxgame.js"></script>
@@ -22,20 +22,13 @@
 
     <div class="container gamewrapper">
       <div class="row">
-        <div class="col-xs-10"id = "divheader">
-           <h1>Spelgoed</h1>
+        <div class="col-xs-12" id ="divheader">
            <div id = "divStudent"></div>
-        </div>
-      </div>
 
-      <!-- <div class="row">
-        <div class="col-xs-10">
-          <div id="TumbnailsContainer"></div>
       </div>
-    </div> -->
 
       <div class="row">
-        <div class="col-xs-6 maingame">
+        <div class="col-xs-7 maingame">
           <div id = "divPicture1">
             <img src="../thema/dierenafrika/gorilla.jpg" id = "image1" alt="gorilla"><br><br>
           </div>
@@ -43,32 +36,25 @@
             <img src="../thema/dierenafrika/gorilla.jpg" id = "image2" alt="gorilla"><br><br>
           </div>
         </div>
-        <div class="col-xs-6">
+        <div class="col-xs-5">
           <div class="row">
-            <div class=col-xs-3>
+            <div class=col-xs-4>
               <div id = "divScore">
                  <div id = "divPoints">
                    <b><span id = "txtScore">0</span></b>
                  </div>
-                 <div id = "divCoin">
-                   <img src="kudo.png" width = "50px" id = "picCoin" alt="munt">
-                 </div>
                </div>
              </div>
-             <div class=col-xs-7>
+             <div class=col-xs-8>
                 <div id="TumbnailsContainer"></div>
                 </div>
         </div>
       </div>
+    </div>
 
       <div class="row">
-        <div class="col-xs-6">
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-xs-6">
-          <font size="5"><span id = "picName">Olifant</span></font></div>
+        <div class="col-xs-1">
+          <div id="picName">Olifant</div></div>
       </div>
 
       <div class="row">
@@ -90,10 +76,14 @@
       <div class="row">
         <div class="col-xs-6">
           <div id = "divExtraInfo">
-            <font size="3"><span id = "spanInfo">Olifant</span></font>
+            <span id = "spanInfo">Olifant</span>
             <div id = "divNext">
               <button  name="btnNextPic" id = "btnidNextPic" Onclick ="NextPicture()" >Volgende</button>
             </div>
+          </div>
+        </div>
+        <div class="col-xs-6">
+          <button id="homebutton" onclick="location.href ='../userpage.php';">Home</button>
           </div>
         </div>
       </div>
