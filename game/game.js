@@ -48,7 +48,7 @@ function InitializePics() {
 
 //**********************************************************************************************
 function ShowMadeTasks() {
-  for (var i = 0; i <AnimalPics.length; i++) {
+  for (var i = 0; i < AnimalPics.length; i++) {
     if (TaskScores[i]>=0) {
       EditTumbnail(i);
       var RT = document.getElementById("RT" + i +1);
