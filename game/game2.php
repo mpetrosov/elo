@@ -30,10 +30,10 @@
       <div class="row">
         <div class="col-xs-7 maingame">
           <div id = "divPicture1">
-            <img src="../thema/dierenafrika/gorilla.jpg" id = "image1" alt="gorilla"><br><br>
+            <img src="../game/thema/dierenafrika/gorilla.jpg" id = "image1" alt="gorilla"><br><br>
           </div>
           <div id = "divPicture2">
-            <img src="../thema/dierenafrika/gorilla.jpg" id = "image2" alt="gorilla"><br><br>
+            <img src="../game/thema/dierenafrika/gorilla.jpg" id = "image2" alt="gorilla"><br><br>
           </div>
         </div>
         <div class="col-xs-5">
