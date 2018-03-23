@@ -54,7 +54,7 @@
     <div class="form-group">
       <label class="col-md-4 control-label" for="class" >Groep</label>
       <div class="col-md-4">
-      <input id="city" type="text" name="uid" placeholder="groep" class="form-control input-md" required="">
+      <input id="city" type="text" name="group" placeholder="groep" class="form-control input-md" required="">
       </div>
     </div>
 

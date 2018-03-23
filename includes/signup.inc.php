@@ -1,18 +1,18 @@
 <?php
 
-    if(isset($_POST['submit']) || true){
+    if(isset($_POST['submit'])){
 
         include_once 'dbh.php';
 
         $first = mysqli_real_escape_string($conn, $_POST['first']);
         $last = mysqli_real_escape_string($conn, $_POST['last']);
         $email = mysqli_real_escape_string($conn, $_POST['email']);
-        $uid = mysqli_real_escape_string($conn, $_POST['uid']);
+        $group = mysqli_real_escape_string($conn, $_POST['group']);
         $pwd = mysqli_real_escape_string($conn, $_POST['pwd']);
         $birthday = mysqli_real_escape_string($conn, $_POST['birthday']);
         //Error handlers
         //Check for empty fields
-        if(empty($first) || empty($last) || empty($email) || empty($uid) || empty($pwd) || empty($birthday)){
+        if(empty($first) || empty($last) || empty($email) || empty($pwd) || empty($birthday)){
 
             header("Location: ../signup.php?signup=empty");
             exit();
@@ -28,7 +28,7 @@
                     header("Location: ../signup.php?signup=email");
                     exit();
                 }else{
-                    $sql = "SELECT * FROM students WHERE user_uid='$uid'";
+                    $sql = "SELECT * FROM students WHERE email='$email'";
                     $result = mysqli_query($conn, $sql);
                     $resultCheck = mysqli_num_rows($result);
 
@@ -38,7 +38,8 @@
                     }else{
                         // Hashing the password
                         $hashedPwd = password_hash($pwd, PASSWORD_BCRYPT);
-                        $sql = "INSERT INTO students (firstname, lastname, email, class_id, pwd, birthday) VALUES ('$first', '$last','$email', '$uid','$hashedPwd', '$birthday');";
+                        $sql = "INSERT INTO students (firstname, lastname, email, class_id, pwd, birthday) VALUES ('$first', '$last','$email', '$group', '$hashedPwd', '$birthday');";
+                       
                         mysqli_query($conn, $sql);
                         header("Location: ../index.php?register=succes");
                         exit();
