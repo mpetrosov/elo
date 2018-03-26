@@ -14,14 +14,6 @@ include 'includes/header.php';
   <?php foreach ($students as $student):?>
 
     <div class="row">
-      <div class= "col-xs-12">
-        <?php
-        include_once 'includes/header.php'
-        ?>
-      </div>
-    </div>
-
-    <div class="row">
       <div class="col-sm-8 usertop">
         <div class="row">
         <div class="col-xs-8 welcome">Hallo <?=$student['firstname']?>
@@ -41,6 +33,7 @@ include 'includes/header.php';
   <div class="dropdown-menu dropdown-menu-right">
     <button class="dropdown-item menudrop" type="button" onclick="location.href ='edit.php?id=<?php echo $student['st_id']?>';">Profiel wijzigen</button>
     <button class="dropdown-item menudrop" type="button" onclick="location.href = 'avatar.php'">Avatar wijzigen</button>
+    <button class="dropdown-item menudrop" type="button" onclick="location.href = 'stylechange.php'">Style wijzigen</button>
 
   </div>
 </div>
@@ -68,6 +61,9 @@ include 'includes/header.php';
     </div>
     <?php endforeach;?>
     </div>
+    <div>
+    </div>
+
     <div class="row">
         <div class="col-sm-2 mainmenu">Spellen<br><br>
           <div class="row">
@@ -79,7 +75,7 @@ include 'includes/header.php';
 
       <div class="col-sm-5 theme1" id="gametheme1" onclick="window.location.href ='game/game2.php';">Wilde dieren
       </div>
-      <div class="col-sm-5 theme2" id="gametheme2"> Huisdieren
+      <div class="col-sm-5 theme2" id="gametheme2" onclick="window.location.href ='game/game.php';"> Huisdieren
       </div>
       <div class="col-sm-5 theme3" id="gametheme3">Bloemen
       </div>
@@ -101,6 +97,7 @@ include 'includes/header.php';
     $('#gametheme2').html('Huisdieren');
     $('#gametheme2').removeClass();
     $('#gametheme2').addClass('col-sm-5 theme2');
+    $('#gametheme2').attr("onclick","window.location.href='game/game.php'");
     $('#gametheme3').html('Bloemen');
     $('#gametheme3').removeClass();
     $('#gametheme3').addClass('col-sm-5 theme3');
@@ -140,6 +137,23 @@ include 'includes/header.php';
     $('#gametheme4').removeClass();
     $('#gametheme4').addClass('col-sm-5 theme');
   });
+
+  $().ready(function() {
+      $('.welcome, .usertop, .mainmenu').css({
+          'background-color': '#' + '<?=$student['color']?>',
+      })
+
+      $('.menu, .points').css({
+          'background-color': '#' + '<?=$student['colorsec']?>',
+      })
+
+      $('.menu, .points, .head').css({
+          'color': '#' + '<?=$student['fontcolor']?>',
+      })
+
+      ;
+  });
+
 
 
 </script>

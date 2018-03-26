@@ -1,31 +1,17 @@
-
 <?php
-session_start();
+include 'includes/dbh.php';
+include 'includes/functions.php';
+include 'includes/header.php';
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Elo Kids</title>
-    <link href="https://fonts.googleapis.com/css?family=Chicle" rel="stylesheet">
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-    crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
 </head>
 
-  <body class="avatarcontainer">
-    <div class="container-fluid ">
+  <body>
+    <div class="container-fluid avatarcontainer ">
     <div class="row">
-      <div class="col-xs-1"><button onclick="window.location.href='userpage.php';">Home</button></div>
+      <div class="col-xs-1 back"></div>
       <div class="col-xs-10 avatarhead"> Kies je avatar<hr> </div>
-      <div class="col-xs-1"></div>
+      <div class="col-xs-1"><a href="userpage.php">Terug</a></div>
     </div>
 
       <div class="row">

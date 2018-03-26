@@ -1,7 +1,8 @@
 
-
 * {
-    box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 #logo {
@@ -152,6 +153,7 @@ button {
   color: white;
   font-size: 70px;
   padding: 30px;
+  border-radius: 16px;
 }
 
 .profile {
@@ -325,6 +327,11 @@ body {
      padding: 12px;
      text-align: center;
    }
+   .stylehead {
+        font-size: 30px;
+        padding: 12px;
+      }
+
 
 /* registration ************************************************************************* */
 
