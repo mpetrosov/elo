@@ -1,4 +1,3 @@
 <?php
 
-CONST BASE_URL = "http://localhost/elo/";
-
+CONST BASE_URL = "http://jjohanj.nl/";

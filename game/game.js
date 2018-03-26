@@ -9,8 +9,8 @@ for (var i = 0; i < 14; i++) {
   AnimalPics[i] = new Array(3); //picurl, picname, picinfo
 }
 var TaskScores = new Array(14);
-var lessonid = 2;
-var studentid = 4 //tijdelijk, id moet uiteindelijk uit sessievariabelen komen.
+var lessonid = 1;
+var studentid = 1; //tijdelijk, id moet uiteindelijk uit sessievariabelen komen.
 var StudentName;
 
 
