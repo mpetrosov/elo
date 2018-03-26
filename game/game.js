@@ -9,8 +9,8 @@ for (var i = 0; i < 14; i++) {
   AnimalPics[i] = new Array(3); //picurl, picname, picinfo
 }
 var TaskScores = new Array(14);
-var lessonid = 1;
-var studentid = 3; //tijdelijk, id moet uiteindelijk uit sessievariabelen komen.
+var lessonid = 2;
+var studentid = 4 //tijdelijk, id moet uiteindelijk uit sessievariabelen komen.
 var StudentName;
 
 
@@ -19,6 +19,7 @@ function InitializePics() {
   MiliSecTeller = 0;
 
   getGameTasks();
+
   getStudentName(studentid);
 
   for (var i = 0; i <AnimalPics.length; i++) {
@@ -30,8 +31,12 @@ function InitializePics() {
   if (NewLessonStudent == false ) {
      GetStudentTaskScores(studentid, lessonid);
   }
-  //alert(actPicnr);
-  //actPicnr = 0;
+
+  //programma gaat bij opstarten naar 1e nog niet gemaakte task,
+  //vervolgens naar 1e nog niet goed opgeloste taak
+
+  if (!Gamefinished()) {actPicnr = determineNextTask(actPicnr);}
+
   imgPicture = document.getElementById("image" + actPicslide);
   imgPicture.src = AnimalPics[actPicnr][1];
   imgName = document.getElementById("picName");
@@ -43,7 +48,8 @@ function InitializePics() {
 
   MakeTumbnails(AnimalPics.length);
   ShowMadeTasks();
-  setInterval(function(){fadePicName();}, 10);
+
+  PicInterval = setInterval(function(){fadePicName();}, 10);
 }
 
 //**********************************************************************************************
@@ -51,7 +57,8 @@ function ShowMadeTasks() {
   for (var i = 0; i <AnimalPics.length; i++) {
     if (TaskScores[i]>=0) {
       EditTumbnail(i);
-      var RT = document.getElementById("RT" + i +1);
+
+      var RT = document.getElementById("RT" + (i +1));
 
       if (TaskScores[i]==0) {
         RT.style.color = "#FF0000";
@@ -71,43 +78,54 @@ function ShowMadeTasks() {
 function MakeTumbnails(PicNumber) {
   for (var i = 0; i<PicNumber; i++) {
     var TNdiv = document.createElement("div");
-    TNdiv.id = "divTN" + i+1;
+    TNdiv.id = "divTN" + (i+1);
     TNdiv.setAttribute('class','TNcontainers');
+
+    var strinnerHTML = "<img id=\"TN" + (i+1) + "\" class=\"TNimgs\" src=\"" + AnimalPics[i][1];
+    strinnerHTML += "\" onClick=\"ChangeTask(" + i +")\"><h2 id=\"RT" + (i+1) + "\"class=\"RTh2\"></h2>";
+    //alert(strinnerHTML);
+    TNdiv.innerHTML = strinnerHTML;
+
     var TNcontainer = document.getElementById("TumbnailsContainer");
     TNcontainer.appendChild(TNdiv);
-
-    var TN = document.createElement("img");
-    TN.id = "TN" + i+1;
-    TN.setAttribute('class','TNimgs');
-    TN.src = AnimalPics[i][1];
-    //rating
-    var RT = document.createElement("h2");
-    RT.id = "RT" + i+1;
-    RT.innerHTML = "";
-    RT.setAttribute('class','RTh2');
-    //alert("test");
-    var TNdiv = document.getElementById("divTN" + i+1);
-    TNdiv.appendChild(TN);
-    TNdiv.appendChild(RT);
   }
 }
 
 //**********************************************************************************************
+function ChangeTask(Picnr) {
+  if (TaskScores[Picnr] >=0) {
+    var divPicture = document.getElementById("divPicture" + actPicslide);
+    divPicture.style.display = "none"; //=onzichtbaar
+    if (actPicslide == 1) {actPicslide = 2; }
+    else {actPicslide = 1;}
+    divPicture = document.getElementById("divPicture" + actPicslide);
+
+    divPicture.style.display = "block"; //=zichtbaar
+
+    actPicnr = Picnr;
+    imgPicture = document.getElementById("image" + actPicslide);
+    imgPicture.src = AnimalPics[actPicnr][1];
+
+    imgName = document.getElementById("picName");
+    imgName.innerHTML = AnimalPics[actPicnr][0];
+    document.getElementById("divTask").style.visibility = "visible";
+    document.getElementById("divExtraInfo").style.display = "none";
+    document.getElementById("btnidNextPic").style.visibility = "hidden";
+    btnGameStarted = true;
+  }
+}
+
+
+//**********************************************************************************************
 function NextPicture() {
   var divPicture = document.getElementById("divPicture" + actPicslide);
-  divPicture.style.display = "none";
+  divPicture.style.display = "none"; //=onzichtbaar
   if (actPicslide == 1) {actPicslide = 2; }
   else {actPicslide = 1;}
   divPicture = document.getElementById("divPicture" + actPicslide);
 
-  divPicture.style.display = "block";
-
-  if (actPicnr < AnimalPics.length - 1) {
-    actPicnr++;
-  }
-  else {
-    actPicnr = 0;
-  }
+  divPicture.style.display = "block"; //=zichtbaar
+  actPicnr = determineNextTask(actPicnr);
 
   imgPicture = document.getElementById("image" + actPicslide);
   imgPicture.src = AnimalPics[actPicnr][1];
@@ -120,7 +138,30 @@ function NextPicture() {
   btnGameStarted = true;
 }
 
+//***********************************************************************************************
+function determineNextTask(locPicnr) {
+  var nrNotMadeTasks;
+  var SeekValue;
 
+  nrNotMadeTasks = 0;
+  for (var i= 0; i<TaskScores.length; i++) {
+    if (TaskScores[i]== -1) {
+      nrNotMadeTasks+= 1;
+    }
+  }
+  if (nrNotMadeTasks > 0) {
+    SeekValue = -1;
+  }
+  else {
+    SeekValue = 0;
+  }
+
+  while (TaskScores[locPicnr] != SeekValue) {
+    locPicnr++;
+    if (locPicnr > TaskScores.length) {locPicnr = 0;}
+  }
+  return locPicnr;
+}
 
 //***********************************************************************************************
 function fadePicName() {
@@ -134,7 +175,12 @@ function fadePicName() {
    if (imgName.style.opacity == 0.0) {
      imgName.style.opacity = 1.0;
      imgName.innerHTML = "";
+     var txtInput = document.getElementById("inputAnswer");
+     txtInput.style.visibility = "visible";
+     txtInput.value = ""; //veld leegmaken
+     txtInput.focus();
      document.getElementById("inputAnswer").style.visibility = "visible";
+     //document.getElementById("inputAnswer").style.visibility = "visible";
      document.getElementById("btnConfirmAnswer").style.visibility = "visible";
      btnGameStarted = false;
      MiliSecTeller = 0;
@@ -144,28 +190,28 @@ function fadePicName() {
 
 //***********************************************************************************************
 function ControlAnswer() {
-  Answer = document.getElementById("inputAnswer");
-  if (Answer.value == AnimalPics[actPicnr][0]) {
-    intScore++;
-    TaskScores[actPicnr] = 1;
-    imgName = document.getElementById("txtScore");
-    imgName.innerHTML = intScore;
+  var Answer = document.getElementById("inputAnswer");
 
-    var RT = document.getElementById("RT" + actPicnr +1);
+  Answer.value = Answer.value.toLowerCase();
+  if (Answer.value == AnimalPics[actPicnr][0]) {
+    TaskScores[actPicnr] = 1;
+    var RT = document.getElementById("RT" + (actPicnr +1));
     RT.style.color = "#FFFF00";
     RT.innerHTML = "V";
     var audio = new Audio('scorenoise.wav');
     audio.play();
-    //alert("Hoera, je hebt het woord goed gespeld!");
   }
   else {
     TaskScores[actPicnr] = 0;
     var audio = new Audio('oops.wav');
     audio.play();
-    var RT = document.getElementById("RT" + actPicnr +1);
+    var RT = document.getElementById("RT" + (actPicnr +1));
     RT.style.color = "#FF0000";
     RT.innerHTML = "X";
   }
+  intScore = determineScore();
+  txtScore = document.getElementById("txtScore");
+  txtScore.innerHTML = intScore;
 
   CreateTaskMade(actPicnr,lessonid ,studentid, TaskScores[actPicnr]);
   UpdateLessonsMade(lessonid, studentid);
@@ -176,16 +222,48 @@ function ControlAnswer() {
   document.getElementById("inputAnswer").style.visibility = "hidden";
   document.getElementById("btnConfirmAnswer").style.visibility = "hidden";
   document.getElementById("divExtraInfo").style.display = "block";
-  if (actPicnr < AnimalPics.length - 1) {
-    document.getElementById("btnidNextPic").style.visibility = "visible";
+
+  if (!Gamefinished()) {
+     document.getElementById("btnidNextPic").style.visibility = "visible";
   }
   else {
     alert("Je bent klaar met het spel. Je score was: " + intScore);
   }
+
+}
+
+//***********************************************************************************************
+function determineScore() {
+  var sumScore;
+
+  sumScore = 0;
+  for (var i= 0; i<TaskScores.length; i++) {
+    if (TaskScores[i] == 1) {
+      sumScore+= TaskScores[i];
+    }
+  }
+  return sumScore;
+}
+
+//***********************************************************************************************
+function Gamefinished() {
+  var sumScore;
+  var Gamefinished;
+
+  Gamefinished = false;
+  sumScore = 0;
+  for (var i= 0; i<TaskScores.length; i++) {
+    sumScore+= TaskScores[i];
+  }
+  if (TaskScores.length == sumScore) {
+    Gamefinished = true;
+  }
+
+  return Gamefinished;
 }
 
 //***********************************************************************************************
 function EditTumbnail(PicNumber) {
-   var TN = document.getElementById("TN" + PicNumber + 1);
+   var TN = document.getElementById("TN" + (PicNumber + 1));
    TN.style.opacity = "1.0";
 }
