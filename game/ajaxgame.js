@@ -88,7 +88,7 @@ function GetStudentTaskScores(studentid, lessonid) {
     TaskScores[i] = parseInt(xhttp.responseText);
     if (TaskScores[i] >= 0) {actPicnr = i + 1};
   }
-  
+
   if (actPicnr == AnimalPics.length) {
     actPicnr = 0;
   }
