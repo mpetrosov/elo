@@ -7,9 +7,14 @@
         global $conn;
         
         $sql = "SELECT * FROM `students`  WHERE `st_id` = '".$_SESSION['u_id']."'";
-
+       
         $result = mysqli_query($conn, $sql); //$conn->query($sql);
-        $students = mysqli_fetch_all($result, MYSQLI_ASSOC);
+        
+        $students = [];
+        
+        while ($row = mysqli_fetch_assoc($result)) {
+            $students[] = $row;
+        }
 
         return $students;
              

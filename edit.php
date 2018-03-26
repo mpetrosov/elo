@@ -17,7 +17,7 @@ if(isset($_GET['id'])&& $_GET['id']){
         $birthday = strip_tags(trim($_POST['birthday']));
         $class_id = strip_tags(trim($_POST['class_id']));
 
-        $sql = 'UPDATE `students` SET `firstname`="'.$firstname.'", `lastname`="'.$lastname.'", `birthday`="'.$birthday.'" WHERE `st_id`='.$id;
+        $sql = 'UPDATE `students` SET `firstname`="'.$firstname.'", `lastname`="'.$lastname.'", `class_id` = "'.$class_id.'",`birthday`="'.$birthday.'" WHERE `st_id`='.$id;
         mysqli_query($conn, $sql) or die(mysqli_error($conn));
     }
 
