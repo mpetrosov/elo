@@ -39,7 +39,7 @@
                         // Hashing the password
                         $hashedPwd = password_hash($pwd, PASSWORD_BCRYPT);
                         $sql = "INSERT INTO students (firstname, lastname, email, class_id, pwd, birthday) VALUES ('$first', '$last','$email', '$group', '$hashedPwd', '$birthday');";
-                       
+
                         mysqli_query($conn, $sql);
                         header("Location: ../index.php?register=succes");
                         exit();

@@ -5,8 +5,19 @@ function UpdateLessonsMade(lessonid, studentid){
   xhttp.send();
 }
 
+//***************************************************************************************************
+function GetGameid() {
+  var xhttp = new XMLHttpRequest();
+  var myURL = "gamedbmanipulation/getgameid.php";
+  var Gameid;
+  xhttp.open("GET", myURL, false);
+  xhttp.send();
+  Gameid = parseInt(xhttp.responseText);
+  return Gameid;
+}
+
 //****************************************************************************************************************
-function getGameTasks() {
+function getGameTasks(lessonid) {
   //tested!
   //haal de tasks uit de database
   var id, Animalname, path, taskinfo;
@@ -16,7 +27,7 @@ function getGameTasks() {
   for (var i = 0; i <AnimalPics.length; i++) {
     var taskid = i;
     var Task;//Animalname = AnimalPics[i][1];
-    var myURL = "gamedbmanipulation/getgametasks.php?taskid=" + taskid;
+    var myURL = "gamedbmanipulation/getgametasks.php?taskid=" + taskid + "&lessonid=" + lessonid;
     xhttp.open("GET", myURL, false);
     xhttp.send();
     Task = xhttp.responseText;
@@ -29,13 +40,18 @@ function getGameTasks() {
 }
 
 //****************************************************************************************************************
-function getStudentName(id) {
-  //tested!
+function getStudent() {
+  var Userdata;
+
   var xhttp = new XMLHttpRequest();
-  var myURL = "gamedbmanipulation/getstudent.php?id=" +id;
+  var myURL = "gamedbmanipulation/getstudent.php";
   xhttp.open("GET", myURL, false);
   xhttp.send();
-  StudentName = xhttp.responseText;
+  Userdata = xhttp.responseText;  
+  Userdata = Userdata.split(";");
+  //globale variabelen
+  studentid = parseInt(Userdata[0]);
+  StudentName = Userdata[1];
   document.getElementById("divStudent").innerHTML = "Hallo " + StudentName + "!";
   //alert(StudentName);
 }
