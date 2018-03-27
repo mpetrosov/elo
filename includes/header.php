@@ -31,7 +31,7 @@ session_start();
                                 <a href="userpage.php"><img id="logo" src="img/klaver5.png"></a>
 
                                 </div><form class="signout" action="includes/logout.inc.php" method="POST">
-                                <button type="submit" name="submit" id="logoutbutton">logout</button>
+                                <button type="submit" name="submit" id="logoutbutton">Uitloggen</button>
                                 </form>';
                             }else{
                                echo '<div class="main-wrapper col-xs-2">
@@ -40,9 +40,9 @@ session_start();
                                       <form class="signup" action="includes/login.inc.php" method="POST">
                                       <div class="row">
                                       <div class="col-md-4">
-                                        <input class="inputfront" type="text" name="email" placeholder="Username/email"></div>
+                                        <input class="inputfront" type="text" name="email" placeholder="email"></div>
                                       <div class="col-md-4">
-                                        <input class="inputfront" type="password" name="pwd" placeholder="password"></div>
+                                        <input class="inputfront" type="password" name="pwd" placeholder="wachtwoord"></div>
                                       <div class="col-md-2">
                                         <button type="submit" class="btn btn-secondary loginbutton" name="submit">login</button></div>
                                       </form>

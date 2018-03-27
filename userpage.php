@@ -30,7 +30,7 @@ include 'includes/header.php';
   <div class="dropdown-menu dropdown-menu-right menuright">
     <button class="dropdown-item menudrop" type="button" onclick="location.href ='edit.php?id=<?php echo $student['st_id']?>';">Profiel wijzigen</button>
     <button class="dropdown-item menudrop" type="button" onclick="location.href = 'avatar.php'">Avatar wijzigen</button>
-    <button class="dropdown-item menudrop" type="button" onclick="location.href = 'stylechange.php'">Style wijzigen</button>
+    <button class="dropdown-item menudrop" type="button" onclick="location.href = 'stylechange.php'">Kleuren wijzigen</button>
 
   </div>
 </div>
