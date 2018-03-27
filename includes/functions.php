@@ -2,10 +2,10 @@
 
 <?php
     include('dbh.php');
- 
+
     function get_Students(){
         global $conn;
-        
+
         $sql = "SELECT * FROM `students`  WHERE `st_id` = '".$_SESSION['u_id']."'";
        
         $result = mysqli_query($conn, $sql); //$conn->query($sql);
@@ -17,6 +17,6 @@
         }
 
         return $students;
-             
+
     }
 ?>

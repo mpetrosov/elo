@@ -47,7 +47,7 @@
       if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
           $Numbertasks = $row["Numbertasks"];
-          $SomScore = $row["SomScore"];          
+          $SomScore = $row["SomScore"];
           $finished = false;
           if ($SomScore == $Numbertasks) {
             $finished = true;
@@ -66,9 +66,5 @@
       }
     }
   }
-
-
-
-
 
 ?>
