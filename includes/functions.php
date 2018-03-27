@@ -19,4 +19,26 @@
         return $students;
              
     }
+
+    function get_StudentsGroup(){
+        global $conn;
+        if(!isset($_GET['group'])){
+            die();
+        }
+        $group = $_GET['group'];
+
+        //student.php?id=1 
+        $sql = "SELECT lastname, firstname FROM `students`  WHERE `class_id` = $group ORDER BY lastname ASC";
+       
+       
+        $result = mysqli_query($conn, $sql); //$conn->query($sql);
+        
+        while ($row = mysqli_fetch_assoc($result)) {
+            $students[] = $row;
+            
+        }
+        return $students;
+
+             
+    }
 ?>
