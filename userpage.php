@@ -72,11 +72,7 @@ include 'includes/header.php';
 
       <div class="col-sm-5 theme1" id="gametheme1" onclick= "startgame(1)">Wilde dieren
       </div>
-<<<<<<< HEAD
-      <div class="col-sm-5 theme2" id="gametheme2" onclick="window.location.href ='game/game.php';"> Huisdieren
-=======
       <div class="col-sm-5 theme2" id="gametheme2" onclick= "startgame(2)"> Huisdieren
->>>>>>> e975cfade4cdb4daa0f22382f0f00ce88ab65b9c
       </div>
       <div class="col-sm-5 theme3" id="gametheme3" onclick= "startgame(3)">Bloemen
       </div>
