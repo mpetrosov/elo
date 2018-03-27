@@ -19,6 +19,7 @@
   <script src= "ajaxgame.js"></script>
 </head>
 <body Onload = "InitializePics()">
+  <button id="homebutton" onclick="location.href ='../userpage.php';">Home</button>
 
     <div class="container gamewrapper">
       <div class="row">
@@ -82,9 +83,7 @@
             </div>
           </div>
         </div>
-        <div class="col-xs-6">
-          <button id="homebutton" onclick="location.href ='../userpage.php';">Home</button>
-          </div>
+
         </div>
       </div>
 

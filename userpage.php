@@ -25,19 +25,18 @@ include 'includes/header.php';
 
       <div class="col-sm-4 usertop"><div class="profile">
         <div class="row">
-          <div class="col-xs-8"><div class="head">Profiel:</div></div>
-          <div class="col-xs-4"><div class="btn-group">
-  <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    menu
+          <div class="col-xs-9"><div class="head">Profiel:</div></div>
+          <div class="col-xs-3"><div class="btn-group">
+  <button type="button" class="btn btn-secondary dropdown-toggle dropbutton glyphicon glyphicon-menu-hamburger" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
   </button>
-  <div class="dropdown-menu dropdown-menu-right">
+  <div class="dropdown-menu dropdown-menu-right menuright">
     <button class="dropdown-item menudrop" type="button" onclick="location.href ='edit.php?id=<?php echo $student['st_id']?>';">Profiel wijzigen</button>
     <button class="dropdown-item menudrop" type="button" onclick="location.href = 'avatar.php'">Avatar wijzigen</button>
     <button class="dropdown-item menudrop" type="button" onclick="location.href = 'stylechange.php'">Style wijzigen</button>
 
   </div>
 </div>
-      </div>
+</div>
 
 </div>
 
@@ -143,7 +142,7 @@ include 'includes/header.php';
           'background-color': '#' + '<?=$student['color']?>',
       })
 
-      $('.menu, .points').css({
+      $('.menu, .points, .dropbutton, .menudrop').css({
           'background-color': '#' + '<?=$student['colorsec']?>',
       })
 
