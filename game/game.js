@@ -9,32 +9,32 @@ for (var i = 0; i < 14; i++) {
   AnimalPics[i] = new Array(3); //picurl, picname, picinfo
 }
 var TaskScores = new Array(14);
-var lessonid = 1;
-var studentid = 1; //tijdelijk, id moet uiteindelijk uit sessievariabelen komen.
+var lessonid;
+var studentid;
 var StudentName;
 
-
 //**********************************************************************************************
-function InitializePics() {
+function InitializePics(lessonnr) {
+
+  //console.log(lessonId)
   MiliSecTeller = 0;
+  lessonid =  lessonnr; //= GetGameid();
 
-  getGameTasks();
+  getGameTasks(lessonid);
+  getStudent();
 
-  getStudentName(studentid);
 
   for (var i = 0; i <AnimalPics.length; i++) {
     TaskScores[i] = -1;
   }
 
   var NewLessonStudent = MakeLessonMade(studentid, lessonid);
-
   if (NewLessonStudent == false ) {
      GetStudentTaskScores(studentid, lessonid);
   }
 
   //programma gaat bij opstarten naar 1e nog niet gemaakte task,
   //vervolgens naar 1e nog niet goed opgeloste taak
-
   if (!Gamefinished()) {actPicnr = determineNextTask(actPicnr);}
 
   imgPicture = document.getElementById("image" + actPicslide);

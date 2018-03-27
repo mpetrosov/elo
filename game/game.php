@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE = html>
 <html>
 <head>
@@ -7,7 +8,7 @@
   <script src= "game.js"></script>
   <script src= "ajaxgame.js"></script>
 </head>
-<body Onload = "InitializePics()">
+<body Onload = "InitializePics(<?php echo $_SESSION['lessonid']; ?>)">
    <div id = "divheader">
      <center>
        <h1>Spelgoed</h1>

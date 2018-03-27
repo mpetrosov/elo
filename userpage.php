@@ -10,9 +10,7 @@ include 'includes/header.php';
   <?php
     $students = get_Students();
   ?>
-
   <?php foreach ($students as $student):?>
-
     <div class="row">
       <div class="col-sm-8 usertop">
         <div class="row">
@@ -72,13 +70,17 @@ include 'includes/header.php';
           </div>
         </div>
 
-      <div class="col-sm-5 theme1" id="gametheme1" onclick="window.location.href ='game/game2.php';">Wilde dieren
+      <div class="col-sm-5 theme1" id="gametheme1" onclick= "startgame(1)">Wilde dieren
       </div>
+<<<<<<< HEAD
       <div class="col-sm-5 theme2" id="gametheme2" onclick="window.location.href ='game/game.php';"> Huisdieren
+=======
+      <div class="col-sm-5 theme2" id="gametheme2" onclick= "startgame(2)"> Huisdieren
+>>>>>>> e975cfade4cdb4daa0f22382f0f00ce88ab65b9c
       </div>
-      <div class="col-sm-5 theme3" id="gametheme3">Bloemen
+      <div class="col-sm-5 theme3" id="gametheme3" onclick= "startgame(3)">Bloemen
       </div>
-      <div class="col-sm-5 theme4" id="gametheme4">Vogels
+      <div class="col-sm-5 theme4" id="gametheme4" onclick= "startgame(4)">Vogels
       </div>
 
     </div>
@@ -92,17 +94,24 @@ include 'includes/header.php';
     $('#gametheme1').html('Wilde dieren');
     $('#gametheme1').removeClass();
     $('#gametheme1').addClass('col-sm-5 theme1');
-    $('#gametheme1').attr("onclick","window.location.href='game/game2.php'");
+    //$('#gametheme1').attr("onclick","window.location.href='game/game2.php'");
+    $('#gametheme1').attr("onclick","startgame(1)");
     $('#gametheme2').html('Huisdieren');
     $('#gametheme2').removeClass();
     $('#gametheme2').addClass('col-sm-5 theme2');
+<<<<<<< HEAD
     $('#gametheme2').attr("onclick","window.location.href='game/game.php'");
+=======
+    $('#gametheme1').attr("onclick","startgame(2)");
+>>>>>>> e975cfade4cdb4daa0f22382f0f00ce88ab65b9c
     $('#gametheme3').html('Bloemen');
     $('#gametheme3').removeClass();
     $('#gametheme3').addClass('col-sm-5 theme3');
+    $('#gametheme1').attr("onclick","startgame(3)");
     $('#gametheme4').html('Vogels');
     $('#gametheme4').removeClass();
     $('#gametheme4').addClass('col-sm-5 theme4');
+    $('#gametheme1').attr("onclick","startgame(4)");
   });
 
   $('#game2').click(function() {
@@ -137,6 +146,7 @@ include 'includes/header.php';
     $('#gametheme4').addClass('col-sm-5 theme');
   });
 
+<<<<<<< HEAD
   $().ready(function() {
       $('.welcome, .usertop, .mainmenu').css({
           'background-color': '#' + '<?=$student['color']?>',
@@ -154,7 +164,19 @@ include 'includes/header.php';
   });
 
 
+=======
+</script>
+>>>>>>> e975cfade4cdb4daa0f22382f0f00ce88ab65b9c
 
+<script>
+  function startgame(gamenr) {
+    var xhttp = new XMLHttpRequest();
+    var myURL = "includes/setGameSession.php?lessonid=" + gamenr;
+    xhttp.open("POST", myURL, false);
+    xhttp.send();
+    window.location.href ='game/game.php';
+    //window.location.href ='game/game.php?lessonid=2';
+  }
 </script>
 
 </html>
