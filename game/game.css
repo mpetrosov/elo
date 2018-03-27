@@ -11,7 +11,7 @@ body {
 #divGameContainer {
   box-sizing: border-box;
   position: relative;
-  background: #00FF66;
+  background: #66d066;
   color: #000000;
   width: 75%;
   height: 80%;
@@ -96,7 +96,7 @@ body {
   position: relative;
   z-index : 1;
   background: #00AA66;
-  width: 18%;
+  width: 19%;
   height: 100%;
   float: right;
   border-radius: 10px;

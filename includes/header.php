@@ -22,18 +22,20 @@ session_start();
     <header>
             <nav>
               <div class="row headerrow">
-                <div class="main-wrapper col-xs-2">
-                <a href="index.php"><img id="logo" src="img/klaver5.png"></a>
-
-                </div>
-                    <div class="col-xs-10 nav-login">
+                    <div class="col-xs-12 nav-login">
                         <?php
                             if (isset($_SESSION['u_id'])){
-                                echo '<form class="signout" action="includes/logout.inc.php" method="POST">
+                                echo '
+                                <div class="main-wrapper col-xs-2">
+                                <a href="userpage.php"><img id="logo" src="img/klaver5.png"></a>
+
+                                </div><form class="signout" action="includes/logout.inc.php" method="POST">
                                 <button type="submit" name="submit" id="logoutbutton">logout</button>
                                 </form>';
                             }else{
-                               echo '
+                               echo '<div class="main-wrapper col-xs-2">
+                                    <a href="index.php"><img id="logo" src="img/klaver5.png"></a>
+                                    </div>
                                       <form class="signup" action="includes/login.inc.php" method="POST">
                                       <div class="row">
                                       <div class="col-md-4">

@@ -9,82 +9,78 @@ include 'includes/header.php';
 
   <body>
     <div class="container-fluid ">
-    <div class="row">
-      <div class="col-xs-1 back"></div>
-      <div class="col-xs-10 stylehead">Geef kleur aan je pagina<hr> </div>
-      <div class="col-xs-1"><a href="userpage.php">Terug</a></div>
-    </div>
-
 
       <div class="row">
         <div class="col-md-1"></div>
-        <div class="col-md-4">
+        <div class="col-md-4 colors">
         <div class="row">
-        <div class="col-md-12">Menu kleur</div>
+        <div class="col-xs-12">Menu kleur</div>
         </div>
         <div class="row">
-        <div class="col-md-2" style="background-color: #800000; width: 20%; height: 5em;" name="color" onclick=getColor('800000');>
+        <div class="col-xs-1 style" style="background-color: #800000;" name="color" onclick=getColor('800000');>
         </div>
-        <div class="col-md-2" style="background-color: #6666d0; width: 20%; height: 5em;" name="color" onclick=getColor('6666d0');>
+        <div class="col-xs-1 style" style="background-color: #bd9a79;" name="color" onclick=getColor('bd9a79');>
         </div>
-        <div class="col-md-2" style="background-color: #d06666; width: 20%; height: 5em;" name="color" onclick=getColor('d06666');>
+        <div class="col-xs-1 style" style="background-color: #559f84;" name="color" onclick=getColor('559f84');>
         </div>
-        <div class="col-md-2" style="background-color: #160066; width: 20%; height: 5em;" name="color" onclick=getColor('160066');>
+        <div class="col-xs-1 style" style="background-color: #160066;" name="color" onclick=getColor('160066');>
         </div>
       </div>
-      <div class="row">
-      <div class="col-md-2" style="background-color: #9b66d0; width: 20%; height: 5em;" name="color" onclick=getColor('9b66d0');>
+        <div class="row">
+
+
+      <div class="col-xs-1 style" style="background-color: #600080;" name="color" onclick=getColor('600080');>
       </div>
-      <div class="col-md-2" style="background-color: #66d066; width: 20%; height: 5em;" name="color" onclick=getColor('66d066');>
+      <div class="col-xs-1 style" style="background-color: #66d066;" name="color" onclick=getColor('66d066');>
       </div>
-      <div class="col-md-2" style="background-color: #d066d0; width: 20%; height: 5em;" name="color" onclick=getColor('d066d0');>
+      <div class="col-xs-1 style" style="background-color: #b8377a;" name="color" onclick=getColor('d066d0');>
       </div>
-      <div class="col-md-2" style="background-color: #88c6d5; width: 20%; height: 5em;" name="color" onclick=getColor('88c6d5');>
+      <div class="col-xs-1 style" style="background-color: #ffc400;" name="color" onclick=getColor('ffc400');>
       </div>
 
     </div>
 
       <div class="row">
-        <div class="col-md-12">Knoppen kleur</div>
+        <div class="col-xs-12">Knoppen kleur</div>
       </div>
       <div class="row">
-        <div class="col-md-2" style="background-color: #800000; width: 20%; height: 5em;" name="color" onclick=getColorSec('800000');>
+        <div class="col-xs-1 style" style="background-color: #800000;" name="color" onclick=getColorSec('800000');>
         </div>
-        <div class="col-md-2" style="background-color: #6666d0; width: 20%; height: 5em;" name="color" onclick=getColorSec('6666d0');>
+        <div class="col-xs-1 style" style="background-color: #bd9a79;" name="color" onclick=getColorSec('bd9a79');>
         </div>
+        <div class="col-xs-1 style" style="background-color: #559f84;" name="color" onclick=getColorSec('559f84');>
+        </div>
+        <div class="col-xs-1 style" style="background-color: #160066;" name="color" onclick=getColorSec('160066');>
+        </div>
+      </div>
+        <div class="row">
 
-        <div class="col-md-2" style="background-color: #d06666; width: 20%; height: 5em;" name="color" onclick=getColorSec('d06666');>
-        </div>
-        <div class="col-md-2" style="background-color: #160066; width: 20%; height: 5em;" name="color" onclick=getColorSec('160066');>
-        </div>
+      <div class="col-xs-1 style" style="background-color: #600080;" name="color" onclick=getColorSec('600080');>
+      </div>
+      <div class="col-xs-1 style" style="background-color: #66d066;" name="color" onclick=getColorSec('66d066');>
+      </div>
+      <div class="col-xs-1 style" style="background-color: #b8377a;" name="color" onclick=getColorSec('d066d0');>
+      </div>
+      <div class="col-xs-1 style" style="background-color: #ffc400;" name="color" onclick=getColorSec('ffc400');>
+  </div>
+
     </div>
+
     <div class="row">
-      <div class="col-md-2" style="background-color: #9b66d0; width: 20%; height: 5em;" name="color" onclick=getColorSec('9b66d0');>
+      <div class="col-xs-12">Font kleur</div>
+      <div class="col-xs-2 style" style="background-color: #343434;" name="color" onclick=getFont('343434');>
       </div>
-      <div class="col-md-2" style="background-color: #66d066; width: 20%; height: 5em;" name="color" onclick=getColorSec('66d066');>
+      <div class="col-xs-2 style" style="background-color: #ffffff;" name="color" onclick=getFont('ffffff');>
       </div>
-      <div class="col-md-2" style="background-color: #d066d0; width: 20%; height: 5em;" name="color" onclick=getColorSec('d066d0');>
+      <div class="col-xs-2 style" style="background-color: #093145;" name="color" onclick=getFont('093145');>
       </div>
-      <div class="col-md-2" style="background-color: #88c6d5; width: 20%; height: 5em;" name="color" onclick=getColorSec('88c6d5');>
-      </div>
-
-    </div>
-
-    <div class="row">
-      <div class="col-md-12">Font kleur</div>
-      <div class="col-md-2" style="background-color: #343434; width: 20%; height: 5em;" name="color" onclick=getFont('343434');>
-      </div>
-      <div class="col-md-2" style="background-color: #ffffff; width: 20%; height: 5em;" name="color" onclick=getFont('ffffff');>
-      </div>
-      <div class="col-md-2" style="background-color: #093145; width: 20%; height: 5em;" name="color" onclick=getFont('093145');>
-      </div>
-      <div class="col-md-2" style="background-color: #800000; width: 20%; height: 5em;" name="color" onclick=getFont('800000');>
+      <div class="col-xs-2 style" style="background-color: #800000;" name="color" onclick=getFont('800000');>
       </div>
     </div>
 
 
     </div>
-    <div class="col-md-6"><div id='main2'>
+    <div class="col-md-6 example"><div>
       <?php
         $students = get_Students();
       ?>
@@ -103,14 +99,18 @@ include 'includes/header.php';
 
           <div class="col-sm-4 usertop"><div class="profile">
             <div class="row">
-              <div class="col-xs-8"><div class="head">Profiel:</div></div>
-              <div class="col-xs-4"><div class="btn-group">
-      <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        menu
+              <div class="col-xs-9"><div class="head">Profiel:</div></div>
+              <div class="col-xs-3"><div class="btn-group">
+      <button type="button" class="btn btn-secondary dropdown-toggle dropbutton glyphicon glyphicon-menu-hamburger" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       </button>
+      <div class="dropdown-menu dropdown-menu-right menuright">
+        <button class="dropdown-item menudrop" type="button">Profiel wijzigen</button>
+        <button class="dropdown-item menudrop" type="button">Avatar wijzigen</button>
+        <button class="dropdown-item menudrop" type="button">Style wijzigen</button>
 
+      </div>
     </div>
-    </div>
+          </div>
 
     </div>
 
@@ -134,6 +134,9 @@ include 'includes/header.php';
         </div>
         <?php endforeach;?>
         </div>
+        <div>
+        </div>
+
         <div class="row">
             <div class="col-sm-2 mainmenu">Spellen<br><br>
               <div class="row">
@@ -152,10 +155,7 @@ include 'includes/header.php';
           <div class="col-sm-5 theme4" id="gametheme4">Vogels
           </div>
 
-      </div></div>
-    </div>
-
-  </div>
+        </div>
 
   <br><br>
 
@@ -165,61 +165,50 @@ include 'includes/header.php';
     var id = <?php echo $_SESSION['u_id']?>;
     var color = link;
 
-      var xhttp = new XMLHttpRequest();
-      xhttp.open("POST", "includes/updatecolor.php?color=" + color + "&id=" + id, false);
-      xhttp.send();
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("POST", "includes/updatecolor.php?color=" + color + "&id=" + id, false);
+    xhttp.send();
 
-      location.reload();
+    location.reload();
     }
 
-    function getColorSec(link){
-      var id = <?php echo $_SESSION['u_id']?>;
-      var color = link;
+  function getColorSec(link){
+    var id = <?php echo $_SESSION['u_id']?>;
+    var color = link;
 
-        var xhttp = new XMLHttpRequest();
-        xhttp.open("POST", "includes/updatecolor.php?colorsec=" + color + "&id=" + id, false);
-        xhttp.send();
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("POST", "includes/updatecolor.php?colorsec=" + color + "&id=" + id, false);
+    xhttp.send();
 
-        location.reload();
-      }
+    location.reload();
+    }
 
-      function getFont(link){
-        var id = <?php echo $_SESSION['u_id']?>;
-        var color = link;
+  function getFont(link){
+    var id = <?php echo $_SESSION['u_id']?>;
+    var color = link;
 
-          var xhttp = new XMLHttpRequest();
-          xhttp.open("POST", "includes/updatecolor.php?font=" + color + "&id=" + id, false);
-          xhttp.send();
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("POST", "includes/updatecolor.php?font=" + color + "&id=" + id, false);
+    xhttp.send();
 
-          location.reload();
-        }
+    location.reload();
+    }
 
-        function getBody(link){
-          var id = <?php echo $_SESSION['u_id']?>;
-          var color = link;
+    $().ready(function() {
+        $('.welcome, .usertop, .mainmenu').css({
+            'background-color': '#' + '<?=$student['color']?>',
+        })
 
-            var xhttp = new XMLHttpRequest();
-            xhttp.open("POST", "includes/updatecolor.php?body=" + color + "&id=" + id, false);
-            xhttp.send();
+        $('.menu, .points, .dropbutton, .menudrop').css({
+            'background-color': '#' + '<?=$student['colorsec']?>',
+        })
 
-            location.reload();
-          }
+        $('.menu, .points, .head').css({
+            'color': '#' + '<?=$student['fontcolor']?>',
+        })
 
-      $().ready(function() {
-          $('.welcome, .usertop, .mainmenu').css({
-              'background-color': '#' + '<?=$student['color']?>',
-          })
-
-          $('.menu, .points').css({
-              'background-color': '#' + '<?=$student['colorsec']?>',
-          })
-
-          $('.menu, .points, .head').css({
-              'color': '#' + '<?=$student['fontcolor']?>',
-          })
-
-          ;
-      });
+        ;
+    });
 
 </script>
 </body>

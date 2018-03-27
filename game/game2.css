@@ -4,6 +4,12 @@ body {
   color: white;
 }
 
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 button {
   font-family: arial;
   background-color:	#ffc400;
@@ -22,15 +28,18 @@ button {
   border-radius: 2px;
 }
 .gamewrapper {
-  background-color: #66d066;;
+  background-color: #66d066;
   border-radius: 16px;
   padding: 40px;
   margin-top: 20px;
+  height: 640px;
+  width: 860px;
 }
 #homebutton {
-  float:right;
-  margin-top: 0px;
-  margin-bottom: 6px;
+
+  margin-top: 2px;
+  margin-left: 24px;
+  border-radius: 6px;
 }
 
 #inputAnswer {
@@ -100,7 +109,7 @@ button {
 
 .RTh2 {
   color: #FFFF00;
-  padding-left: 12px;
+  padding-left: 40px;
 }
 
 .TNcontainers {
@@ -117,7 +126,7 @@ button {
   z-index : 3;
   height   : 50px;
   margin   : 4px;
-  opacity  : 0.7;
+  opacity  : 0.5;
   border-radius: 8px;
   padding-left: 6px;
 }
@@ -141,6 +150,7 @@ button {
   width: 100%;
   border-radius: 16px;
 }
+
 
 @media (max-width:  767.98px) {
 
@@ -201,6 +211,17 @@ button {
         color: #800000;
         font-size: 20px;
         padding-left: 5px;
+      }
+
+      .gamewrapper {
+
+        margin: 4px;
+        width: 300px;
+      }
+
+      #homebutton {
+        margin-left: 4px;
+        border-radius: 6px;
       }
 
 
