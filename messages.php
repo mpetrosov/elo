@@ -22,10 +22,10 @@ include 'includes/header.php';
 
 
 
-
-
 <script>
-    function getColorSec(){
+
+
+  function getColorSec(){
 
       var xhttp = new XMLHttpRequest();
       xhttp.open("GET", "includes/getmessage.php", false);
@@ -36,10 +36,14 @@ include 'includes/header.php';
       }
 
 
-function sendMessage() {
+function sendMessage(id) {
       document.getElementById("demo2").innerHTML =
-         '<textarea maxlength="500" cols="80" rows="4"></textarea>' +
-         '<button>send</button>';
+        'Versturen aan: ' +
+        '<form action="includes/sendmessage.php" method="POST">' +
+        '<input name="id" type="hidden" value=' + id + ">" +
+        '<textarea name="message" maxlength="500" cols="40" rows="4"></textarea>' +
+        '<button type="submit">send</button>';
+        '</form>'
        }
 
 
