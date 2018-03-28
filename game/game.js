@@ -1,30 +1,29 @@
 var picpad = "thema/dierenafrika/";
-var AnimalPics = new Array(14);
+var MaxnrTasks = 20;
+var AnimalPics = new Array(MaxnrTasks);
 var actPicnr = 0;
 var MiliSecTeller = 0;
 var intScore = 0;
 var btnGameStarted = true;
 var actPicslide = 1;
-for (var i = 0; i < 14; i++) {
+for (var i = 0; i < MaxnrTasks; i++) {
   AnimalPics[i] = new Array(3); //picurl, picname, picinfo
 }
-var TaskScores = new Array(14);
+var TaskScores = new Array(MaxnrTasks);
+var NumberTasks;
 var lessonid;
 var studentid;
 var StudentName;
 
 //**********************************************************************************************
 function InitializePics(lessonnr) {
-
-  //console.log(lessonId)
   MiliSecTeller = 0;
   lessonid =  lessonnr; //= GetGameid();
-
+  NumberTasks = getNumberTasks();
   getGameTasks(lessonid);
   getStudent();
 
-
-  for (var i = 0; i <AnimalPics.length; i++) {
+  for (var i = 0; i <NumberTasks; i++) {
     TaskScores[i] = -1;
   }
 
@@ -46,7 +45,7 @@ function InitializePics(lessonnr) {
   document.getElementById("inputAnswer").style.visibility = "hidden";
   document.getElementById("btnConfirmAnswer").style.visibility = "hidden";
 
-  MakeTumbnails(AnimalPics.length);
+  MakeTumbnails(NumberTasks);
   ShowMadeTasks();
 
   PicInterval = setInterval(function(){fadePicName();}, 10);
@@ -54,7 +53,7 @@ function InitializePics(lessonnr) {
 
 //**********************************************************************************************
 function ShowMadeTasks() {
-  for (var i = 0; i <AnimalPics.length; i++) {
+  for (var i = 0; i <NumberTasks; i++) {
     if (TaskScores[i]>=0) {
       EditTumbnail(i);
 
@@ -144,7 +143,7 @@ function determineNextTask(locPicnr) {
   var SeekValue;
 
   nrNotMadeTasks = 0;
-  for (var i= 0; i<TaskScores.length; i++) {
+  for (var i= 0; i<NumberTasks; i++) {
     if (TaskScores[i]== -1) {
       nrNotMadeTasks+= 1;
     }
@@ -158,7 +157,7 @@ function determineNextTask(locPicnr) {
 
   while (TaskScores[locPicnr] != SeekValue) {
     locPicnr++;
-    if (locPicnr > TaskScores.length) {locPicnr = 0;}
+    if (locPicnr > NumberTasks) {locPicnr = 0;}
   }
   return locPicnr;
 }
@@ -237,7 +236,7 @@ function determineScore() {
   var sumScore;
 
   sumScore = 0;
-  for (var i= 0; i<TaskScores.length; i++) {
+  for (var i= 0; i<NumberTasks; i++) {
     if (TaskScores[i] == 1) {
       sumScore+= TaskScores[i];
     }
@@ -252,10 +251,10 @@ function Gamefinished() {
 
   Gamefinished = false;
   sumScore = 0;
-  for (var i= 0; i<TaskScores.length; i++) {
+  for (var i= 0; i<NumberTasks; i++) {
     sumScore+= TaskScores[i];
   }
-  if (TaskScores.length == sumScore) {
+  if (NumberTasks == sumScore) {
     Gamefinished = true;
   }
 
