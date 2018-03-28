@@ -32,6 +32,8 @@ session_start();
                         $_SESSION['u_last'] = $row['lastname'];
                         $_SESSION['u_email'] = $row['email'];
                         $_SESSION['u_uid'] = $row['class_id'];
+                        $_SESSION['color'] = $row['color'];
+                        $_SESSION['colorsec'] = $row['colorsec'];
                         // $_SESSION['u_is_admin'] = $row['is_admin'];
                         header("Location: ../userpage.php?login=success");
 

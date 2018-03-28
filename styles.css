@@ -172,7 +172,7 @@ button {
   font-size: 30px;
   text-align: center;
   border-radius: 16px;
-  color: #416f4f;
+  color: white;
 }
 
 body {
@@ -332,9 +332,6 @@ body {
   padding: 8px;
 }
 
-.avatarcontainer {
-     background-color:  #66d066;
-   }
 
 .avatarhead {
      font-size: 30px;

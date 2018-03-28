@@ -1,20 +1,31 @@
 
 
-<?php session_start(); ?>
+<?php session_start();
+include '../includes/dbh.php';
+include '../includes/functions.php';
+
+?>
 <!DOCTYPE = html>
 <html>
+
+
 <head>
   <link href="https://fonts.googleapis.com/css?family=Chicle" rel="stylesheet">
   <link rel="stylesheet" href="game.css">
   <link rel="stylesheet" href="fadeeffect.css">
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
   <script src= "game.js"></script>
   <script src= "ajaxgame.js"></script>
 </head>
 <body Onload = "InitializePics(<?php echo $_SESSION['lessonid']; ?>)">
    <div id = "divheader">
      <a href="../userpage.php"><img id="logo" src="../img/klaver5.png"></a>
-
    </div>
+   <?php
+     $students = get_Students();
+   ?>
+   <?php foreach ($students as $student):?>
+   <?php endforeach;?>
    <center>
    <div id = "divGameContainer">
      <div id = "TumbnailsContainer">
@@ -42,7 +53,7 @@
          Wat is de naam van dit dier?
        </div>
        <div id = "divAnswerinput">
-         <input id= "inputAnswer" name = "inputnmAnswer" placeholder="Typ hier je antwoord" type="text" ></input>
+         <input id= "inputAnswer" name = "inputnmAnswer"  type="text" ></input>
          <button name="btnConfirmAnswer" id = "btnConfirmAnswer" Onclick = "ControlAnswer()" >Ok</button>
        </div>
        <div id = "divExtraInfo">
@@ -54,5 +65,17 @@
      </div>
    </div>
  </center>
+
 </body>
+<script>
+
+$().ready(function() {
+      $('#divGameContainer, #TumbnailsContainer').css({
+          'background-color': '#' + '<?=$student['color']?>',
+      })
+
+      ;
+  });
+</script>
+
 </html>

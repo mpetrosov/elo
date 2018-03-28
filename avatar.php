@@ -7,11 +7,15 @@ include 'includes/header.php';
 </head>
 
   <body>
+    <?php
+      $students = get_Students();
+    ?>
+    <?php foreach ($students as $student):?>
+    <?php endforeach;?>
     <div class="container-fluid avatarcontainer ">
     <div class="row">
       <div class="col-xs-1 back"></div>
       <div class="col-xs-10 avatarhead"> Kies je avatar<hr> </div>
-      <div class="col-xs-1"><a href="userpage.php">Terug</a></div>
     </div>
 
       <div class="row">
@@ -77,6 +81,16 @@ include 'includes/header.php';
   <br><br>
 
   <script>
+
+
+  $().ready(function() {
+        $('.avatarcontainer').css({
+            'background-color': '#' + '<?=$student['color']?>',
+        })
+
+        ;
+    });
+
 
   function getAvatar(link){
     var id = <?php echo $_SESSION['u_id']?>;

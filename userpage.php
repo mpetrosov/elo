@@ -64,9 +64,8 @@ include 'includes/header.php';
     <div class="row">
         <div class="col-sm-2 mainmenu">Spellen<br><br>
           <div class="row">
-            <button class="col-sm-12 menu" id="game1">Schrijven</button>
-            <button class="col-sm-12 menu" id="game2">Spel 2</button>
-            <button class="col-sm-12 menu" id="game3">Spel 3</button>
+            <button class="col-sm-12 menu" id="game1">Invullen</button>
+            <button class="col-sm-12 menu" id="game2">Meerkeuze</button>
           </div>
         </div>
 
@@ -83,6 +82,7 @@ include 'includes/header.php';
 
   </div>
   <br><br>
+  
   </body>
   <script>
 

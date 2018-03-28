@@ -1,8 +1,9 @@
 <?php
 // include_once('includes/session.inc.php');
-include('includes/dbh.php');
-include('includes/conf.php');
+include 'includes/dbh.php';
+include 'includes/conf.php';
 include 'includes/header.php';
+include 'includes/functions.php';
 
 // include_once('includes/auth.inc.php');
 
@@ -36,6 +37,11 @@ if(isset($_GET['id'])&& $_GET['id']){
 
 ?>
 <!DOCTYPE html>
+<?php
+  $students = get_Students();
+?>
+<?php foreach ($students as $student):?>
+<?php endforeach;?>
 
 <body id="regbody">
 <div class="container" >
@@ -94,5 +100,14 @@ if(isset($_GET['id'])&& $_GET['id']){
     <div><img class="imagereg" src="img/owl.png"></div>
 
 </div>
+<script>
+$().ready(function() {
+      $('#regcontainer').css({
+          'background-color': '#' + '<?=$student['color']?>',
+      })
+
+      ;
+  });
+</script>
 </body>
 </html>
