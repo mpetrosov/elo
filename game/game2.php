@@ -18,7 +18,7 @@
   <script src= "game.js"></script>
   <script src= "ajaxgame.js"></script>
 </head>
-<body Onload = "InitializePics()">
+<body Onload = "InitializePics(<?php echo $_SESSION['lessonid']; ?>)">
   <button id="homebutton" onclick="location.href ='../userpage.php';">Home</button>
 
     <div class="container gamewrapper">

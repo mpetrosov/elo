@@ -12,9 +12,8 @@
 </head>
 <body Onload = "InitializePics(<?php echo $_SESSION['lessonid']; ?>)">
    <div id = "divheader">
-     <center>
-       <h1>Spelgoed</h1>
-     </center>
+     <a href="../userpage.php"><img id="logo" src="../img/klaver5.png"></a>
+
    </div>
    <center>
    <div id = "divGameContainer">
