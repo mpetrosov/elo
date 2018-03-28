@@ -95,11 +95,8 @@ include 'includes/header.php';
     $('#gametheme2').html('Huisdieren');
     $('#gametheme2').removeClass();
     $('#gametheme2').addClass('col-sm-5 theme2');
-<<<<<<< HEAD
     $('#gametheme2').attr("onclick","window.location.href='game/game.php'");
-=======
     $('#gametheme1').attr("onclick","startgame(2)");
->>>>>>> e975cfade4cdb4daa0f22382f0f00ce88ab65b9c
     $('#gametheme3').html('Bloemen');
     $('#gametheme3').removeClass();
     $('#gametheme3').addClass('col-sm-5 theme3');
@@ -142,7 +139,6 @@ include 'includes/header.php';
     $('#gametheme4').addClass('col-sm-5 theme');
   });
 
-<<<<<<< HEAD
   $().ready(function() {
       $('.welcome, .usertop, .mainmenu').css({
           'background-color': '#' + '<?=$student['color']?>',
@@ -160,9 +156,8 @@ include 'includes/header.php';
   });
 
 
-=======
 </script>
->>>>>>> e975cfade4cdb4daa0f22382f0f00ce88ab65b9c
+
 
 <script>
   function startgame(gamenr) {
