@@ -1,11 +1,33 @@
 body {
   font-family: "chicle", Times, serif;
-  background: #006666;
-  color: #FFFF00;
+  background: #e9e9e9;
+  color: 093145;
 }
 
 #divheader {
   font-family: "chicle", Times, serif;
+}
+
+button {
+  font-family: arial;
+  background-color:	#ffc400;
+  border: none;
+  color: #093145;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 4px;
+  margin-left: 2px;
+  display: inline-block;
+  font-size: 18px;
+  cursor: pointer;
+  margin-bottom: 0px;
+  text-align: left;
+  border-radius: 2px;
+  width: auto;
 }
 
 #divGameContainer {
@@ -58,11 +80,11 @@ body {
 
 #divScore {
   box-sizing: border-box;
-  background: #FF0000;
-  color: #FFFF00;
+  background: #ffc400;
+  color: #093145;
   width: 120px;
   height: 100px;
-  border-radius: 10px;
+  border-radius: 40px;
   float:     right;
   vertical-align: top;
   text-align: center;
