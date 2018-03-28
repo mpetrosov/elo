@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-    if (isset($_POST['submit']) || true) {
+    if (isset($_POST['submit'])) {
         include_once 'dbh.php';
 
         $email = mysqli_real_escape_string($conn, $_POST['email']);
