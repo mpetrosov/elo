@@ -162,10 +162,14 @@ button {
 }
 
 #image1 {
+  max-height: 350px;
+  max-width : 550px;
   border-radius: 10px;
 }
 
 #image2 {
+  max-height  : 350px;
+  max-width   : 550px;
   border-radius: 10px;
 }
 

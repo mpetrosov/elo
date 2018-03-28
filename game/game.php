@@ -24,7 +24,12 @@ include '../includes/functions.php';
    <?php
      $students = get_Students();
    ?>
+   <?php
+     $lessons = get_lesson();
+   ?>
    <?php foreach ($students as $student):?>
+   <?php endforeach;?>
+   <?php foreach ($lessons as $lesson):?>
    <?php endforeach;?>
    <center>
    <div id = "divGameContainer">
@@ -44,13 +49,13 @@ include '../includes/functions.php';
        <div id = "divPicture1" class = "fade">
          <img src="../thema/dierenafrika/gorilla.jpg" id = "image1" alt="gorilla"><br><br>
        </div>
-       <div id = "divPicture2" class = "fade">
+       <div id = "divPicture2" class = "fade" >
          <img src="../thema/dierenafrika/gorilla.jpg" id = "image2" alt="gorilla"><br><br>
        </div>
        <font size="5"><span id = "picName">Olifant</span></font><br><br>
 
        <div id="divTask">
-         Wat is de naam van dit dier?
+         <?=$lesson['Opdracht']?> <!--Wat is de naam van dit dier?-->
        </div>
        <div id = "divAnswerinput">
          <input id= "inputAnswer" name = "inputnmAnswer"  type="text" ></input>
