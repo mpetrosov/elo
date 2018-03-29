@@ -1,6 +1,8 @@
 body{
- background-image: url("../img/ep_naturalwhite.png");
+ background-color: #BD9A79;
 }
+
+
 header{
  margin-top: 20px;
  font-family: Cuprum, Arial, Helvetica, sans-serif;
@@ -21,7 +23,11 @@ header{
  position: relative;
  border-right: 1px solid #c7c8ca;
 }
-.st-group{   
+.st-group{
+    margin-left: 20px;
+    margin-top: 10px;
+    width: 250px;
+    background-color: #66D066; 
     padding: 15px 30px 15px 40px;
     font-size: 14px;
     color: #454547;
@@ -29,6 +35,8 @@ header{
     text-transform:uppercase;
     text-decoration-color: aquamarine;
     transition: all 0.3s ease;
+    border: 2px solid #D9DADB;
+    border-radius: 10px;
 }
 
 .st-group a{   
@@ -101,4 +109,23 @@ header{
 }
 .dws-menu li:hover > ul{
  display: block;
+}
+
+.right {
+    margin-top: 10px;
+    width: 500px;
+    padding-left: 5px;
+    margin-left: 300px;
+    border: 2px solid #D9DADB;
+    border-radius: 10px;
+    background:#66D066;
+    font-size: 14px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #454547;
+    text-transform:uppercase;
+    transition: all 0.3s ease;
+}
+
+h1{
+   color: aqua;
 }
