@@ -397,6 +397,40 @@ body {
 
 }
 
+/* messages***************************************************************** */
+
+.messages {
+  background-color:  #66d066;
+  height: auto;
+  margin-right: 8px;
+}
+
+.textmessages {
+  background-color:  #66d066;
+  height: 20em;
+}
+
+.sendform, #fullmessage {
+  margin-top: 6px;
+}
+
+.send {
+  background-color: gray;
+}
+
+.messages {
+  font-size: 18px;
+}
+
+.message {
+  display: block;
+  white-space: nowrap;
+  height: 80px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-bottom: 1px solid black;
+}
+
 /*@media ******************************************************************* */
 
  @media (max-width: 767.98px) {
