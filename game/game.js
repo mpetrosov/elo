@@ -107,7 +107,7 @@ function ChangeTask(Picnr) {
 
     imgName = document.getElementById("picName");
     imgName.innerHTML = AnimalPics[actPicnr][0];
-    document.getElementById("divTask").style.visibility = "visible";
+    document.getElementById("divTask").style.display = "block"; //visibility = "visible";
     document.getElementById("divExtraInfo").style.display = "none";
     document.getElementById("btnidNextPic").style.visibility = "hidden";
     btnGameStarted = true;
@@ -131,7 +131,7 @@ function NextPicture() {
 
   imgName = document.getElementById("picName");
   imgName.innerHTML = AnimalPics[actPicnr][0];
-  document.getElementById("divTask").style.visibility = "visible";
+  document.getElementById("divTask").style.display = "block"; //visibility = "visible";
   document.getElementById("divExtraInfo").style.display = "none";
   document.getElementById("btnidNextPic").style.visibility = "hidden";
   btnGameStarted = true;
@@ -175,12 +175,13 @@ function fadePicName() {
      imgName.style.opacity = 1.0;
      imgName.innerHTML = "";
      var txtInput = document.getElementById("inputAnswer");
+     txtInput.style.display = "block";
      txtInput.style.visibility = "visible";
      txtInput.value = ""; //veld leegmaken
      txtInput.focus();
-     document.getElementById("inputAnswer").style.visibility = "visible";
+     document.getElementById("inputAnswer").style.display = "block"; //visibility = "visible";
      //document.getElementById("inputAnswer").style.visibility = "visible";
-     document.getElementById("btnConfirmAnswer").style.visibility = "visible";
+     document.getElementById("btnConfirmAnswer").style.display = "block"; //visibility = "visible";
      btnGameStarted = false;
      MiliSecTeller = 0;
    }
@@ -217,9 +218,10 @@ function ControlAnswer() {
   EditTumbnail(actPicnr);
 
   document.getElementById("spanInfo").innerHTML = AnimalPics[actPicnr][2];
-  document.getElementById("divTask").style.visibility = "hidden";
-  document.getElementById("inputAnswer").style.visibility = "hidden";
-  document.getElementById("btnConfirmAnswer").style.visibility = "hidden";
+
+  document.getElementById("divTask").style.display = "none";
+  document.getElementById("inputAnswer").style.display = "none";
+  document.getElementById("btnConfirmAnswer").style.display = "none";
   document.getElementById("divExtraInfo").style.display = "block";
 
   if (!Gamefinished()) {

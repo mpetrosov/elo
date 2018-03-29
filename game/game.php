@@ -63,7 +63,7 @@ include 'gamedbmanipulation/GetLesson.php'
          <button name="btnConfirmAnswer" id = "btnConfirmAnswer" Onclick = "ControlAnswer()" >Ok</button>
        </div>
        <div id = "divExtraInfo">
-         <font size="3"><span id = "spanInfo">Olifant</span></font>
+         <span id = "spanInfo">Olifant</span><br>
          <div id = "divNext">
            <button  name="btnNextPic" id = "btnidNextPic" Onclick ="NextPicture()" >Volgende</button>
          </div>
@@ -74,28 +74,11 @@ include 'gamedbmanipulation/GetLesson.php'
 
 </body>
 <script>
-  var enterteller = 0;
-
   var input = document.getElementById("inputAnswer");
   input.addEventListener("keyup", function(event) {
     event.preventDefault();
     if (event.keyCode === 13) {
-       enterteller++;
-       if ((enterteller % 2) != 0) {
-          document.getElementById("btnConfirmAnswer").click();
-       }
-    }
-  });
-
-  var gamediv = document.getElementById("divGameContainer");
-  gamediv.addEventListener("keyup", function(event) {
-    event.preventDefault();
-    var btnNext = document.getElementById("btnidNextPic");
-
-    if (event.keyCode === 13) {
-      if ((enterteller % 2) == 0) {
-        btnNext.click();
-      }
+       document.getElementById("btnConfirmAnswer").click();
     }
   });
 
