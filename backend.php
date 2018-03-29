@@ -6,7 +6,7 @@ include 'includes/functions.php';
 ?>
 
 <!doctype html>
-<html lang="ru">
+<html>
 <head>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="css/font-awesome.css" type="text/css">
@@ -19,6 +19,7 @@ include 'includes/functions.php';
 	<title>Leerkracht</title>
 </head>
 <body>
+
 <header>
 	<nav class="dws-menu">
 		<ul>
@@ -32,7 +33,7 @@ include 'includes/functions.php';
 		</ul>
 	</nav>
 </header>
-</body>
+
 
 <?php $students = get_StudentsGroup();?>
  <?php foreach ($students as $student):?>
@@ -43,11 +44,33 @@ include 'includes/functions.php';
     // // alert(group);
     //     xhttp.open("GET", "includes/functions.php?group=" + group, false);
     //     xhttp.send();
-    //     document.getElementById("demo").innerHTML = xhttp.responseText;
+    //     document.getElementById("st-group").innerHTML = xhttp.responseText;
     // }
 
 
 </script>
-<div class="st-group"><a href="backend.php?"><?=$student['lastname'] ." ". $student['firstname'];?></a></div>
+<div class="st-group"><a href="backend.php?group=<?php echo $_GET['group'] ?>&id=<?php echo $student['st_id'] ?>"><?=$student['lastname'] ." ". $student['firstname'];?></a></div>
 <?php endforeach;?>
+<?php $students = getStudentsById();?>
+<?php foreach ($students as $student):?>
+    
+    <div class="right">
+                <div class="demo"><div class="head"><h1> <?=$student['lastname'] ." ". $student['firstname'];?></h1 ></div>  </div> 
+            
+                
+                <?php
+                $dateOfBirth =  $student['birthday'];
+                $today = date("Y-m-d");
+                $diff = date_diff(date_create($dateOfBirth), date_create($today));
+                $student['birthday']= $diff->format('%y');
+                ?>
+            
+                <h2>Leeftijd: <?=$student['birthday']?></h2>
+                <br>
+                <h2>groep: <?=$student['class_id']?></h>
+                <br><hr>
+                <div class='points'> <h1>punten: <?=$student['score']?></h1></div>
+    </div>
+<?php endforeach;?>
+    </body>
 </html>
