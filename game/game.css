@@ -148,6 +148,7 @@ button {
   left: 0;
   top: 0;
   z-index : 3;
+  max-width: 90px; 
   height   : 60px;
   margin   : 4px;
   opacity  : 0.4;

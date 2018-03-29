@@ -3,6 +3,7 @@
 <?php session_start();
 include '../includes/dbh.php';
 include '../includes/functions.php';
+include 'gamedbmanipulation/GetLesson.php'
 
 ?>
 <!DOCTYPE = html>
@@ -72,6 +73,33 @@ include '../includes/functions.php';
  </center>
 
 </body>
+<script>
+  var enterteller = 0;
+
+  var input = document.getElementById("inputAnswer");
+  input.addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+       enterteller++;
+       if ((enterteller % 2) != 0) {
+          document.getElementById("btnConfirmAnswer").click();
+       }
+    }
+  });
+
+  var gamediv = document.getElementById("divGameContainer");
+  gamediv.addEventListener("keyup", function(event) {
+    event.preventDefault();
+    var btnNext = document.getElementById("btnidNextPic");
+
+    if (event.keyCode === 13) {
+      if ((enterteller % 2) == 0) {
+        btnNext.click();
+      }
+    }
+  });
+
+</script>
 <script>
 
 $().ready(function() {
