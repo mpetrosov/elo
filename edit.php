@@ -20,6 +20,7 @@ if(isset($_GET['id'])&& $_GET['id']){
 
         $sql = 'UPDATE `students` SET `firstname`="'.$firstname.'", `lastname`="'.$lastname.'", `class_id` = "'.$class_id.'",`birthday`="'.$birthday.'" WHERE `st_id`='.$id;
         mysqli_query($conn, $sql) or die(mysqli_error($conn));
+        header('Location: userpage.php'); 
     }
 
     $sql = "SELECT `firstname`, `lastname`, `birthday`, `class_id` FROM `students`  WHERE `st_id` = $id";
@@ -89,7 +90,7 @@ if(isset($_GET['id'])&& $_GET['id']){
   <label class="col-md-4 control-label" for="edit"></label>
   <div class="col-md-4">
     <button id="submit" name="save" class="btn btn-success">Wijzigen</button>
-    <button id="submit" name="cancel" class="btn btn-success"formaction="../elo/userpage.php">Terug</button>
+    <button id="submit" name="cancel" class="btn btn-success" formaction="../elo/userpage.php">Terug</button>
   </div>
 </div>
 

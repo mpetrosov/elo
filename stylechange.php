@@ -23,7 +23,7 @@ include 'includes/header.php';
         </div>
         <div class="col-xs-1 style" style="background-color: #559f84;" name="color" onclick=getColor('559f84');>
         </div>
-        <div class="col-xs-1 style" style="background-color: #160066;" name="color" onclick=getColor('160066');>
+        <div class="col-xs-1 style" style="background-color: #4682B4;" name="color" onclick=getColor('4682B4');>
         </div>
       </div>
         <div class="row">
@@ -35,7 +35,7 @@ include 'includes/header.php';
       </div>
       <div class="col-xs-1 style" style="background-color: #b8377a;" name="color" onclick=getColor('d066d0');>
       </div>
-      <div class="col-xs-1 style" style="background-color: #ffc400;" name="color" onclick=getColor('ffc400');>
+      <div class="col-xs-1 style" style="background-color: #FF8C00;" name="color" onclick=getColor('FF8C00');>
       </div>
 
     </div>
@@ -50,7 +50,7 @@ include 'includes/header.php';
         </div>
         <div class="col-xs-1 style" style="background-color: #559f84;" name="color" onclick=getColorSec('559f84');>
         </div>
-        <div class="col-xs-1 style" style="background-color: #160066;" name="color" onclick=getColorSec('160066');>
+        <div class="col-xs-1 style" style="background-color: #4682B4;" name="color" onclick=getColorSec('4682B4');>
         </div>
       </div>
         <div class="row">
@@ -61,7 +61,7 @@ include 'includes/header.php';
       </div>
       <div class="col-xs-1 style" style="background-color: #b8377a;" name="color" onclick=getColorSec('d066d0');>
       </div>
-      <div class="col-xs-1 style" style="background-color: #ffc400;" name="color" onclick=getColorSec('ffc400');>
+      <div class="col-xs-1 style" style="background-color: #EE7600;" name="color" onclick=getColorSec('EE7600');>
   </div>
 
     </div>

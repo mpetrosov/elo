@@ -71,18 +71,18 @@ include 'includes/header.php';
 
       <div class="col-sm-5 theme1" id="gametheme1" onclick= "startgame(1)">Wilde dieren
       </div>
-      <div class="col-sm-5 theme2" id="gametheme2" onclick= "startgame(2)"> Huisdieren
+      <div class="col-sm-5 theme2" id="gametheme2" onclick= "startgame(2)">Huisdieren
       </div>
-      <div class="col-sm-5 theme3" id="gametheme3" onclick= "startgame(3)">Bloemen
+      <div class="col-sm-5 theme3" id="gametheme3" onclick= "startgame(3)">Sporten
       </div>
-      <div class="col-sm-5 theme4" id="gametheme4" onclick= "startgame(4)">Vogels
+      <div class="col-sm-5 theme4" id="gametheme4" onclick= "startgame(4)">Vervoermiddelen
       </div>
 
     </div>
 
   </div>
   <br><br>
-  
+
   </body>
   <script>
 
@@ -97,11 +97,11 @@ include 'includes/header.php';
     $('#gametheme2').addClass('col-sm-5 theme2');
     $('#gametheme2').attr("onclick","window.location.href='game/game.php'");
     $('#gametheme1').attr("onclick","startgame(2)");
-    $('#gametheme3').html('Bloemen');
+    $('#gametheme3').html('Sporten');
     $('#gametheme3').removeClass();
     $('#gametheme3').addClass('col-sm-5 theme3');
     $('#gametheme1').attr("onclick","startgame(3)");
-    $('#gametheme4').html('Vogels');
+    $('#gametheme4').html('Vervoermiddelen');
     $('#gametheme4').removeClass();
     $('#gametheme4').addClass('col-sm-5 theme4');
     $('#gametheme1').attr("onclick","startgame(4)");
@@ -123,21 +123,6 @@ include 'includes/header.php';
     $('#gametheme4').addClass('col-sm-5 theme');
   });
 
-  $('#game3').click(function() {
-    $('#gametheme1').html('Thema 1');
-    $('#gametheme1').removeClass();
-    $('#gametheme1').addClass('col-sm-5 theme');
-    $('#gametheme1').attr("onclick","");
-    $('#gametheme2').html('Thema 2');
-    $('#gametheme2').removeClass();
-    $('#gametheme2').addClass('col-sm-5 theme');
-    $('#gametheme3').html('Thema 3');
-    $('#gametheme3').removeClass();
-    $('#gametheme3').addClass('col-sm-5 theme');
-    $('#gametheme4').html('Thema 4');
-    $('#gametheme4').removeClass();
-    $('#gametheme4').addClass('col-sm-5 theme');
-  });
 
   $().ready(function() {
       $('.welcome, .usertop, .mainmenu').css({
