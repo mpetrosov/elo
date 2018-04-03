@@ -31,8 +31,12 @@ include 'includes/header.php';
     <button class="dropdown-item menudrop" type="button" onclick="location.href ='edit.php?id=<?php echo $student['st_id']?>';">Profiel wijzigen</button>
     <button class="dropdown-item menudrop" type="button" onclick="location.href = 'avatar.php'">Avatar wijzigen</button>
     <button class="dropdown-item menudrop" type="button" onclick="location.href = 'stylechange.php'">Kleuren wijzigen</button>
-
+    <button class="dropdown-item menudrop" type="button" onclick="location.href = 'messages.php'">
+      <span class="glyphicon glyphicon-envelope"></span>Berichten
+    </button>
   </div>
+  </button>
+
 </div>
 </div>
 
