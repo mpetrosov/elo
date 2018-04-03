@@ -18,14 +18,14 @@ include 'includes/functions.php';
       <div class="row">
         <div class="col-sm-4 messages">
           <div>
-            <div class="send" >Verstuur een bericht <div class="glyphicon glyphicon-envelope"></div></div><hr>
+            <div class="send" >Nieuw bericht <div class="glyphicon glyphicon-envelope"></div></div><hr>
               <?php
               $id = $_SESSION['u_id'];
               $sql = "SELECT messages.message, messages.sender, messages.id FROM messages WHERE messages.st_id = $id ORDER BY id DESC";
 
               $result = $conn->query($sql);
               foreach ($result as $row) {
-                echo "<div class='message' onclick=getMessage(" .$row['id'] . ");>" . "<div class='student'>" . $row['sender'] . "</div>";
+                echo "<div class='message' onclick=getMessage(" .$row['id'] . ");>" . "<div class='student'>van: " . $row['sender'] . "</div>";
                 echo "<div class='overview'>" . $row['message'] . "</div></div>";
               }
             ?>
@@ -34,9 +34,10 @@ include 'includes/functions.php';
 
         <div class="col-sm-8 textmessages"><div id="fullmessage"></div>
           <div class="sendform">
-           <div class="form-group">
+           <div class="form-group">Verstuur aan:
             <form action="includes/sendmessage.php" method="POST">
-              <select class="form-control" name="id">
+              <select class="form-control" name="id" required>
+                 <option disabled selected value> -- kies een ontvanger -- </option>
                 <?php
                   $sql = "SELECT * FROM students";
                   $result = mysqli_query($conn, $sql);
@@ -48,8 +49,10 @@ include 'includes/functions.php';
                     }
 
                   } ?>
-              </select><br>
+              </select><br>Bericht:
               <textarea class="form-control" name="message" maxlength="500" cols="40" rows="4"></textarea>
+              <textarea name="senderid" style="display:none;">
+                <?php echo $_SESSION['u_id']; ?> </textarea>
               <textarea name="sender" style="display:none;">
                 <?php echo $_SESSION['u_first'] . " " . $_SESSION['u_last']; ?> </textarea>
               <button class="glyphicon glyphicon-envelope mainsendbutton" type="submit">  Verstuur</button>
@@ -75,11 +78,15 @@ $(".message").click(function(){
 })
 
 $().ready(function() {
+
+    var color =  '<?=$student['color']?>';
+
     $('.messagehead, .messages, .textmessages').css({
-        'background-color': '#' + '<?=$student['color']?>',
+        'background-color': '#' + color,
     })
 
     ;
+
 });
 
 
