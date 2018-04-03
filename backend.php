@@ -16,6 +16,13 @@ include 'includes/functions.php';
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
     integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
     crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function)){
+            $("button").click
+        }
+    </script>
+
 	<title>Leerkracht</title>
 </head>
 <body>
@@ -33,7 +40,10 @@ include 'includes/functions.php';
 		</ul>
 	</nav>
 </header>
+<?php
 
+  
+?>
 
 <?php $students = get_StudentsGroup();?>
  <?php foreach ($students as $student):?>
@@ -55,7 +65,7 @@ include 'includes/functions.php';
 <?php foreach ($students as $student):?>
     
     <div class="right">
-                <div class="demo"><div class="head"><h1> <?=$student['lastname'] ." ". $student['firstname'];?></h1 ></div>  </div> 
+                <div class="demo"><div class="head"><h1> <?= $student['firstname']." ". $student['lastname'];?></h1 ></div></div> 
             
                 
                 <?php
@@ -67,10 +77,19 @@ include 'includes/functions.php';
             
                 <h2>Leeftijd: <?=$student['birthday']?></h2>
                 <br>
+                <h2>Bonus: <?=$student['bonus']?></h2>
+                <br>
                 <h2>groep: <?=$student['class_id']?></h>
                 <br><hr>
                 <div class='points'> <h1>punten: <?=$student['score']?></h1></div>
+                <button>Belonen</button>
     </div>
 <?php endforeach;?>
+
+
+<?php rewardBtn();?>
+        <div></div>
+        
+        <script></script>
     </body>
 </html>

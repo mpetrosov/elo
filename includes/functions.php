@@ -27,7 +27,7 @@
         $group = $_GET['group'];
 
         //student.php?id=1
-        $sql = "SELECT lastname, firstname FROM `students`  WHERE `class_id` = $group ORDER BY lastname ASC";
+        $sql = "SELECT st_id, lastname, firstname FROM `students`  WHERE `class_id` = $group ORDER BY lastname ASC";
 
 
         $result = mysqli_query($conn, $sql); //$conn->query($sql);
@@ -62,4 +62,26 @@
 
 
     }
-?>
+
+    function rewardBtn(){
+        global $conn;
+        $id = $_GET['id'];
+        
+        $sql = "SELECT bonus FROM `students`  WHERE `st_id` = $id";
+   
+       
+        $result = mysqli_query($conn, $sql); 
+        
+        while ($row = mysqli_fetch_assoc($result)) {
+            $students[] = $row;
+            
+        }
+
+        // for(i = 0; i < 10 i++){
+
+        // }
+        return $students;
+       
+
+
+    }
