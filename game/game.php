@@ -1,5 +1,3 @@
-
-
 <?php session_start();
 include '../includes/dbh.php';
 include '../includes/functions.php';
@@ -69,10 +67,13 @@ include 'gamedbmanipulation/GetLesson.php'
          </div>
        </div>
      </div>
+     <div id = "divAnimatie">
+        <img src="kudo.png" width = "50px" id = "picCoin" alt="munt">
+     </div>
    </div>
  </center>
-
 </body>
+
 <script>
   var input = document.getElementById("inputAnswer");
   input.addEventListener("keyup", function(event) {

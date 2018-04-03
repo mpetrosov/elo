@@ -7,7 +7,7 @@
   $verb = $_SERVER['REQUEST_METHOD'];
 
 
-  if ($verb == "UPDATE") {
+  if ($verb == "POST") {
     if (isset($_GET['studentid'])) {
       $studentid = $_GET['studentid'];
       $sql = "SELECT Sum(Score) as SomScore FROM MadeLessons WHERE ";

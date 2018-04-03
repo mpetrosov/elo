@@ -14,9 +14,11 @@ var NumberTasks;
 var lessonid;
 var studentid;
 var StudentName;
+var CoinXPos, CoinYPos, BL ,BT, EL, ET, dx, dy, a, vx, stepnr, maxsteps; //voor de animatie
 
 //**********************************************************************************************
 function InitializePics(lessonnr) {
+  CoinPos = 0;
   MiliSecTeller = 0;
   lessonid =  lessonnr; //= GetGameid();
   NumberTasks = getNumberTasks();
@@ -200,6 +202,7 @@ function ControlAnswer() {
     RT.innerHTML = "V";
     var audio = new Audio('scorenoise.wav');
     audio.play();
+    MakeScoreAnimation();
   }
   else {
     TaskScores[actPicnr] = 0;
@@ -209,6 +212,7 @@ function ControlAnswer() {
     RT.style.color = "#FF0000";
     RT.innerHTML = "X";
   }
+
   intScore = determineScore();
   txtScore = document.getElementById("txtScore");
   txtScore.innerHTML = intScore;
@@ -230,7 +234,47 @@ function ControlAnswer() {
   else {
     alert("Je bent klaar met het spel. Je score was: " + intScore);
   }
+}
 
+//***********************************************************************************************
+function MakeScoreAnimation() {
+  var BeginPos = document.getElementById("inputAnswer");
+  var EndPos = document.getElementById("divScore");
+
+  maxsteps = 25;
+
+  BL = BeginPos.offsetLeft;
+  BT = BeginPos.offsetTop;
+  EL = EndPos.offsetLeft;
+  ET = EndPos.offsetTop;
+
+  dx = 0; //(EL - BL) / maxsteps;
+  a =  (2*(EL - BL)) / (maxsteps * maxsteps);
+  dy = (ET - BT) / maxsteps;
+
+  CoinXPos = BL; CoinYPos = BT;
+  stepnr = 0;
+
+  AnimationInterval = setInterval(function(){BeginScoreAnimation();}, 50);
+}
+
+//***********************************************************************************************
+function BeginScoreAnimation() {
+  if (stepnr < maxsteps) {
+    document.getElementById("divAnimatie").style.display = "block";
+    dx = a * stepnr;
+    
+    CoinXPos += dx; CoinYPos += dy;
+
+    var Coin = document.getElementById("divAnimatie");
+    Coin.style.top = Math.floor(CoinYPos) + 'px';
+    Coin.style.left = Math.floor(CoinXPos) + 'px';
+    stepnr++;
+  }
+  else {
+    document.getElementById("divAnimatie").style.display = "none";
+    clearinterval(AnimationInterval);
+  }
 }
 
 //***********************************************************************************************

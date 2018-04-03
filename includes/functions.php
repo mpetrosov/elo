@@ -38,29 +38,28 @@
         }
         return $students;
 
-
     }
 
     function getStudentsById(){
         global $conn;
         if(!isset($_GET['id'])){
-           
+
            die();
         }
         $id = $_GET['id'];
 
-        //student.php?id=1 
+        //student.php?id=1
         $sql = "SELECT * FROM `students`  WHERE `st_id` = $id";
     //    var_dump($sql);
-       
+
         $result = mysqli_query($conn, $sql); //$conn->query($sql);
-        
+
         while ($row = mysqli_fetch_assoc($result)) {
             $students[] = $row;
-            
+
         }
         return $students;
 
-             
+
     }
 ?>
