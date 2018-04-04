@@ -1,8 +1,12 @@
 <?php
-session_start();
-include 'includes/dbh.php';
-include 'includes/functions.php';
+    session_start();
+    include 'includes/dbh.php';
+    include 'includes/functions.php';
 
+    if(isset($_POST['rewardBtn']))
+    {
+        rewardBtn();
+    }
 ?>
 
 <!doctype html>
@@ -16,6 +20,13 @@ include 'includes/functions.php';
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
     integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
     crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function)){
+            $("button").click
+        }
+    </script>
+
 	<title>Leerkracht</title>
 </head>
 <body>
@@ -33,19 +44,31 @@ include 'includes/functions.php';
 		</ul>
 	</nav>
 </header>
+<?php
 
+// $requestLikes = "SELECT Likes FROM test1";
+// $LikesQ = mysqli_query($conn, $requestLikes);
+// $Likes = mysqli_fetch_array($LikesQ);
+// $x = $Likes[0] + 1;
+// $insertToLikes = "INSERT INTO test1 (Likes) VALUES ('$x')";
+// mysqli_query($conn, $insertToLikes);
+// $y = mysqli_query($conn, $requestLikes);
+// $output = mysqli_fetch_array($y);
+// echo "<h1>$output[0]</h1>";
+  
+?>
 
 <?php $students = get_StudentsGroup();?>
  <?php foreach ($students as $student):?>
 <script> 
 
-    // function getStudentsGroup(link){
-    //     var group = link;
-    // // alert(group);
-    //     xhttp.open("GET", "includes/functions.php?group=" + group, false);
-    //     xhttp.send();
-    //     document.getElementById("st-group").innerHTML = xhttp.responseText;
-    // }
+    // function getStudentsGroup(link)
+    // //     var group = link;
+    // // // alert(group);
+    // //     xhttp.open("GET", "includes/functions.php?group=" + group, false);
+    // //     xhttp.send();
+    // //     document.getElementById("st-group").innerHTML = xhttp.responseText;
+    // // }
 
 
 </script>
@@ -55,7 +78,7 @@ include 'includes/functions.php';
 <?php foreach ($students as $student):?>
     
     <div class="right">
-                <div class="demo"><div class="head"><h1> <?=$student['lastname'] ." ". $student['firstname'];?></h1 ></div>  </div> 
+                <div class="demo"><div class="head"><h1> <?= $student['firstname']." ". $student['lastname'];?></h1 ></div></div> 
             
                 
                 <?php
@@ -67,10 +90,18 @@ include 'includes/functions.php';
             
                 <h2>Leeftijd: <?=$student['birthday']?></h2>
                 <br>
+                <h2>Bonus: <?=$student['bonus']?></h2>
+                <br>
                 <h2>groep: <?=$student['class_id']?></h>
                 <br><hr>
                 <div class='points'> <h1>punten: <?=$student['score']?></h1></div>
+                <?php if ($student['bonus'] < 10): ?>
+                <form method="POST" action="backend.php?group=<?=$student['class_id'] ?>&id=<?=$student['st_id']?>">
+                    <button type="submit" name="rewardBtn">Belonen</button>
+                </form>
+                <?php endif; ?>
     </div>
-<?php endforeach;?>
+<?php endforeach;?>  
+        <script></script>
     </body>
 </html>
