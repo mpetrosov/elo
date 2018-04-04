@@ -5,7 +5,7 @@ function UpdateLessonsMade(lessonid, studentid){
   xhttp.send();
   
   //usertabelbijwerken (score)
-  var myURL = "gamedbmanipulation/UpdateUserScore.php?studentid=" + studentid;
+  myURL = "gamedbmanipulation/UpdateUserScore.php?studentid=" + studentid;
   xhttp.open("POST", myURL, false);
   xhttp.send();
 }
