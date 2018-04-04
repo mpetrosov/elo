@@ -23,11 +23,12 @@ include 'includes/functions.php';
 
               <?php
               $id = $_SESSION['u_id'];
-              $sql = "SELECT messages.message, messages.sender, messages.id FROM messages WHERE messages.st_id = $id ORDER BY id DESC";
+              $sql = "SELECT messages.message, messages.sender, messages.id, students.avatar FROM messages INNER JOIN students ON
+              messages.send_id = students.st_id WHERE messages.st_id = $id ORDER BY id DESC";
 
               $result = $conn->query($sql);
               foreach ($result as $row) {
-                echo "<div class='message'onclick=getMessage(" .$row['id'] . ");>" . "<div class='student'>van: " . $row['sender'] . "</div>";
+                echo "<div class='message'onclick=getMessage(" .$row['id'] . ");>" . "<img class='messageavatar' src=" . $row['avatar'] . "><div class='student'>" . $row['sender'] . "</div>";
                 echo "<div class='overview'>" . $row['message'] . "</div></div>";
 
               }
@@ -55,10 +56,8 @@ include 'includes/functions.php';
                   } ?>
               </select><br>Bericht:
               <textarea class="form-control" name="message" maxlength="500" cols="40" rows="4"></textarea>
-              <textarea name="senderid" style="display:none;">
-                <?php echo $_SESSION['u_id']; ?> </textarea>
-                <textarea name="sender" style="display:none;">
-                <?php echo $_SESSION['u_first'] . " " . $_SESSION['u_last']; ?> </textarea>
+              <textarea name="senderid" style="display:none;"><?php echo $_SESSION['u_id']; ?></textarea>
+              <textarea name="sender" style="display:none;"><?php echo $_SESSION['u_first'] . " " . $_SESSION['u_last']; ?> </textarea>
               <button class="glyphicon glyphicon-envelope mainsendbutton" type="submit">  Verstuur</button>
             </form>
           </div>
@@ -67,7 +66,6 @@ include 'includes/functions.php';
     </div>
   </div>
 </body>
-
 
 <script>
 
@@ -93,7 +91,6 @@ $().ready(function() {
 
 });
 
-
   function getMessage(id){
       var xhttp = new XMLHttpRequest();
       xhttp.open("GET", "includes/getmessage.php?id=" + id, false);
@@ -110,7 +107,7 @@ $().ready(function() {
       setTimeout(function() {
           location.reload();
       }, 500);
-      }
+    }
 
 </script>
 
