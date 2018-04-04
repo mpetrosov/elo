@@ -12,7 +12,7 @@ include 'dbh.php';
 $sql = "INSERT INTO messages (st_id, message, sender, send_id) VALUES ('$id', '$message', '$sender', '$idsend');";
 
 mysqli_query($conn, $sql);
-header("Location: ../messages.php?");
+header("Location: ../messages.php?succes");
 
 exit();
 }

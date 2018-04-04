@@ -83,8 +83,8 @@ include 'includes/header.php';
       </div>
 
     </div>
+    </div>
 
-  </div>
   <br><br>
 
   </body>
@@ -94,21 +94,22 @@ include 'includes/header.php';
     $('#gametheme1').html('Wilde dieren');
     $('#gametheme1').removeClass();
     $('#gametheme1').addClass('col-sm-5 theme1');
-    //$('#gametheme1').attr("onclick","window.location.href='game/game2.php'");
     $('#gametheme1').attr("onclick","startgame(1)");
+
     $('#gametheme2').html('Huisdieren');
     $('#gametheme2').removeClass();
     $('#gametheme2').addClass('col-sm-5 theme2');
-    $('#gametheme2').attr("onclick","window.location.href='game/game.php'");
-    $('#gametheme1').attr("onclick","startgame(2)");
+    $('#gametheme2').attr("onclick","startgame(2)");
+
     $('#gametheme3').html('Sporten');
     $('#gametheme3').removeClass();
     $('#gametheme3').addClass('col-sm-5 theme3');
-    $('#gametheme1').attr("onclick","startgame(3)");
+    $('#gametheme3').attr("onclick","startgame(3)");
+
     $('#gametheme4').html('Vervoermiddelen');
     $('#gametheme4').removeClass();
     $('#gametheme4').addClass('col-sm-5 theme4');
-    $('#gametheme1').attr("onclick","startgame(4)");
+    $('#gametheme4').attr("onclick","startgame(4)");
   });
 
   $('#game2').click(function() {
@@ -116,15 +117,21 @@ include 'includes/header.php';
     $('#gametheme1').removeClass();
     $('#gametheme1').addClass('col-sm-5 theme');
     $('#gametheme1').attr("onclick","");
+
     $('#gametheme2').html('Thema 2');
     $('#gametheme2').removeClass();
     $('#gametheme2').addClass('col-sm-5 theme');
+    $('#gametheme2').attr("onclick","");
+
     $('#gametheme3').html('Thema 3');
     $('#gametheme3').removeClass();
     $('#gametheme3').addClass('col-sm-5 theme');
+    $('#gametheme3').attr("onclick","");
+
     $('#gametheme4').html('Thema 4');
     $('#gametheme4').removeClass();
     $('#gametheme4').addClass('col-sm-5 theme');
+    $('#gametheme4').attr("onclick","");
   });
 
 
@@ -145,10 +152,6 @@ include 'includes/header.php';
   });
 
 
-</script>
-
-
-<script>
   function startgame(gamenr) {
     var xhttp = new XMLHttpRequest();
     var myURL = "includes/setGameSession.php?lessonid=" + gamenr;

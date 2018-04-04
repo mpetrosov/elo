@@ -28,7 +28,7 @@ button {
   font-family: arial;
   background-color:	#ffc400;
   border: none;
-  color: #416f4f;
+  color: #800000;
   padding: 4px;
   text-align: center;
   text-decoration: none;
@@ -172,7 +172,7 @@ button {
   font-size: 30px;
   text-align: center;
   border-radius: 16px;
-  color: white;
+  color: #800000;
 }
 
 body {
@@ -187,7 +187,7 @@ body {
   font-size: 22px;
   width: 100%;
   background-color: #ffc400;
-  color: #416f4f;
+  color: #800000;
   margin-left: 0px;
 }
 
@@ -492,6 +492,21 @@ body {
   font-size: 24px;
 }
 
+.messageavatar {
+  width: 14%;
+  float: left;
+  padding-right: 6px;
+  padding-top: 2px;
+}
+
+.messageavatar2 {
+  width: 12%;
+  float: left;
+  padding-right: 8px;
+  margin-top: 2px;
+
+}
+
 /*@media ******************************************************************* */
 
  @media (max-width: 767.98px) {
@@ -561,5 +576,8 @@ body {
          padding-top: 6px;
          border: none;
        }
+
+       .messageavatar {
+         width: 10%;
 
 }
