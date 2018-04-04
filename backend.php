@@ -1,8 +1,12 @@
 <?php
-session_start();
-include 'includes/dbh.php';
-include 'includes/functions.php';
+    session_start();
+    include 'includes/dbh.php';
+    include 'includes/functions.php';
 
+    if(isset($_POST['rewardBtn']))
+    {
+        rewardBtn();
+    }
 ?>
 
 <!doctype html>
@@ -42,6 +46,15 @@ include 'includes/functions.php';
 </header>
 <?php
 
+// $requestLikes = "SELECT Likes FROM test1";
+// $LikesQ = mysqli_query($conn, $requestLikes);
+// $Likes = mysqli_fetch_array($LikesQ);
+// $x = $Likes[0] + 1;
+// $insertToLikes = "INSERT INTO test1 (Likes) VALUES ('$x')";
+// mysqli_query($conn, $insertToLikes);
+// $y = mysqli_query($conn, $requestLikes);
+// $output = mysqli_fetch_array($y);
+// echo "<h1>$output[0]</h1>";
   
 ?>
 
@@ -49,13 +62,13 @@ include 'includes/functions.php';
  <?php foreach ($students as $student):?>
 <script> 
 
-    // function getStudentsGroup(link){
-    //     var group = link;
-    // // alert(group);
-    //     xhttp.open("GET", "includes/functions.php?group=" + group, false);
-    //     xhttp.send();
-    //     document.getElementById("st-group").innerHTML = xhttp.responseText;
-    // }
+    // function getStudentsGroup(link)
+    // //     var group = link;
+    // // // alert(group);
+    // //     xhttp.open("GET", "includes/functions.php?group=" + group, false);
+    // //     xhttp.send();
+    // //     document.getElementById("st-group").innerHTML = xhttp.responseText;
+    // // }
 
 
 </script>
@@ -82,14 +95,13 @@ include 'includes/functions.php';
                 <h2>groep: <?=$student['class_id']?></h>
                 <br><hr>
                 <div class='points'> <h1>punten: <?=$student['score']?></h1></div>
-                <button>Belonen</button>
+                <?php if ($student['bonus'] < 10): ?>
+                <form method="POST" action="backend.php?group=<?=$student['class_id'] ?>&id=<?=$student['st_id']?>">
+                    <button type="submit" name="rewardBtn">Belonen</button>
+                </form>
+                <?php endif; ?>
     </div>
-<?php endforeach;?>
-
-
-<?php rewardBtn();?>
-        <div></div>
-        
+<?php endforeach;?>  
         <script></script>
     </body>
 </html>
