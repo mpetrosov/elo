@@ -7,7 +7,6 @@ include 'gamedbmanipulation/GetLesson.php'
 <!DOCTYPE = html>
 <html>
 
-
 <head>
   <link href="https://fonts.googleapis.com/css?family=Chicle" rel="stylesheet">
   <link rel="stylesheet" href="game.css">
@@ -46,12 +45,12 @@ include 'gamedbmanipulation/GetLesson.php'
          </div>
        </div>
        <div id = "divPicture1" class = "fade">
-         <img src="../thema/dierenafrika/gorilla.jpg" id = "image1" alt="gorilla"><br><br>
+         <img src="giphy.gif" id = "image1" alt="hourglass"><br><br>
        </div>
        <div id = "divPicture2" class = "fade" >
          <img src="../thema/dierenafrika/gorilla.jpg" id = "image2" alt="gorilla"><br><br>
        </div>
-       <font size="5"><span id = "picName">Olifant</span></font><br><br>
+       <font size="5"><span id = "picName"></span></font><br><br>
 
        <div id="divTask">
          <?=$lesson['Opdracht']?> <!--Wat is de naam van dit dier?-->

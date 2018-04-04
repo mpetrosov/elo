@@ -6,7 +6,7 @@
 
   $verb = $_SERVER['REQUEST_METHOD'];
 
-  if ($verb == "UPDATE") {
+  if ($verb == "POST") {
     if (isset($_GET['studentid']) && isset($_GET['lessonid'])) {
       $studentid = $_GET['studentid'];
       $lessonid = $_GET['lessonid'];

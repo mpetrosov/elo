@@ -64,9 +64,17 @@ button {
 .register {
   padding-top: 2px;
   font-size: 14px;
-
 }
 
+.LessonFinished {
+  display : none;
+  position: relative;
+  color: #FFFF00;
+  font-family: "Chicle";
+  font-style : "bold";
+  font-size : 60px;
+  z-index : 4;
+}
 .middlefront {
   height: 30em;
    background-image: url("img/book.jpg");
