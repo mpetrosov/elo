@@ -2,6 +2,7 @@
 include 'includes/dbh.php';
 include 'includes/functions.php';
 include 'includes/header.php';
+  
 ?>
   <body  Onload = "DetermineFinishedLessons()">
     <div class="container">
@@ -12,9 +13,10 @@ include 'includes/header.php';
     <div class="row">
       <div class="col-sm-8 usertop">
         <div class="row">
-        <div class="col-xs-8 welcome">Hallo <?=$student['firstname']?>
+          <div class="col-xs-8 welcome">Hallo <?=$student['firstname']?></div>
+          
 
-        </div>
+        
         <div class="col-xs-4"><img class="avatar" src=<?=$student['avatar']?>></div>
         </div>
       </div>
@@ -87,9 +89,28 @@ include 'includes/header.php';
         <center><div id = "divLessonFinished4" class = "LessonFinished">V
         </div></center>
       </div>
+      
     </div>
-    </div>
+    <div class="row">
+        <div class="col-sm-12 bonus">
+          <?php
+          $id = $_SESSION['u_id'];
 
+
+          $sql = "SELECT bonus FROM students  WHERE st_id = $id";
+          $result = mysqli_query($conn, $sql);
+          $row = mysqli_fetch_assoc($result);
+
+          $bonus = $row['bonus'];
+
+          for($i = 0; $i<$bonus; $i++){
+          echo"<img class='star' src='img/star.png'>";
+          }
+        ?>
+        </div>
+    
+    </div>
+  </div>
   <br><br>
 
   </body>

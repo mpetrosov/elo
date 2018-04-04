@@ -499,6 +499,18 @@ body {
   border-radius: 8px;
   font-size: 24px;
 }
+img.star{
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+}
+
+.bonus{
+  background-color: #66D066;
+  border-radius: 16px;
+  border: 5px solid #e9e9e9;
+}
+
 
 .messageavatar {
   width: 14%;
@@ -587,5 +599,5 @@ body {
 
        .messageavatar {
          width: 10%;
-
+       }
 }
