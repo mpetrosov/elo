@@ -263,7 +263,7 @@ function BeginScoreAnimation() {
   if (stepnr < maxsteps) {
     document.getElementById("divAnimatie").style.display = "block";
     dx = a * stepnr;
-    
+
     CoinXPos += dx; CoinYPos += dy;
 
     var Coin = document.getElementById("divAnimatie");

@@ -9,17 +9,21 @@ include('dbh.php');
     $sql = "SELECT * FROM messages WHERE $id = messages.id";
     $result = mysqli_query($conn, $sql);
       foreach ($result as $row) {
-        echo "Afzender: <div class='mainviewsender'>" . $row['sender'] . "</div><hr>";
-        echo "<div class='mainviewmessage'>" . $row['message'] . "</div>";
+        echo "Afzender: <div class='mainviewsender'>" . $row['sender'] . "</div>";
+        echo "<button class='glyphicon glyphicon-trash deletemessage' onclick=deleteMessage(" . $row['id'] . ")> </button><hr>";
+        echo "<div class='mainviewmessage'> " . $row['message'] . "</div>";
+
+
       }
 
 ?>
+
 
 <form action='includes/sendmessage.php' method='POST'>
 <select style="display:none;" class="form-control" name="id">
   <?php
 
-  $sql = "SELECT * FROM messages WHERE $id = messages.id";
+  $sql = "SELECT * FROM messages WHERE $id = messages.id LIMIT 20";
   $result = mysqli_query($conn, $sql);
     foreach ($result as $row) {
 

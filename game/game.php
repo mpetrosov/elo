@@ -83,9 +83,6 @@ include 'gamedbmanipulation/GetLesson.php'
     }
   });
 
-</script>
-<script>
-
 $().ready(function() {
       $('#divGameContainer, #TumbnailsContainer').css({
           'background-color': '#' + '<?=$student['color']?>',

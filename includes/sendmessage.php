@@ -1,4 +1,6 @@
 <?php
+$verb = $_SERVER['REQUEST_METHOD'];
+if  ($verb == "POST") {
 
 $idsend = $_POST['senderid'];
 $id = $_POST['id'];
@@ -13,6 +15,21 @@ mysqli_query($conn, $sql);
 header("Location: ../messages.php?");
 
 exit();
+}
 
+else {
+  $id = $_GET['id'];
+
+  include 'dbh.php';
+
+  $sql = "DELETE FROM messages
+  WHERE id = $id";
+
+  mysqli_query($conn, $sql);
+  echo "Bericht verwijderd";
+
+  exit();
+
+}
 
 ?>

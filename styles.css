@@ -396,8 +396,14 @@ body {
 
 /* messages***************************************************************** */
 
+.deletemessage {
+  font-size: 12px;
+  float: right;
+  color: black;
+  background-color: #F5F5F5;
+}
+
 .messages {
-  background-color:  #66d066;
   height: auto;
   border-right: 8px solid #e9e9e9;
   margin-bottom: 8px;
@@ -410,7 +416,6 @@ body {
 }
 
 .textmessages {
-  background-color:  #66d066;
   min-height: 20em;
   height: auto;
   border-radius: 8px;
@@ -550,6 +555,11 @@ body {
 
        .colors {
          padding-left: 16px;
+       }
+
+       .messages {
+         padding-top: 6px;
+         border: none;
        }
 
 }
