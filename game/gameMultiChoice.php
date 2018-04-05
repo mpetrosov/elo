@@ -6,6 +6,7 @@ include 'gamedbmanipulation/GetLesson.php'
 ?>
 <!DOCTYPE = html>
 <html>
+
 <head>
   <link href="https://fonts.googleapis.com/css?family=Chicle" rel="stylesheet">
   <link rel="stylesheet" href="game.css">
@@ -49,20 +50,21 @@ include 'gamedbmanipulation/GetLesson.php'
        <div id = "divPicture2" class = "fade" >
          <img src="../thema/dierenafrika/gorilla.jpg" id = "image2" alt="gorilla"><br><br>
        </div>
-       <font size="5"><span id = "picName"></span></font><br><br>
+       <br>
 
        <div id="divTask">
          <?=$lesson['Opdracht']?> <!--Wat is de naam van dit dier?-->
        </div>
        <div id = "divAnswerinput">
          <center>
-           <button name="btnnmMC1" id = "idMC1" Onclick = "ControlAnswer(1)">Antwoord1</button>
-           <button name="btnnmMC2" id = "idMC2" Onclick = "ControlAnswer(2)">Antwoord2</button>
-           <button name="btnnmMC3" id = "idMC3" Onclick = "ControlAnswer(3)">Antwoord3</button>
-           <button name="btnnmMC4" id = "idMC4" Onclick = "ControlAnswer(4)">Antwoord4</button>
+           <button name="btnnmMC1" id = "idMC1" Onclick = "ControlAnswer(1)" >Antwoord1</button>
+           <button name="btnnmMC2" id = "idMC2" Onclick = "ControlAnswer(2)" >Antwoord2</button>
+           <button name="btnnmMC3" id = "idMC3" Onclick = "ControlAnswer(3)" >Antwoord3</button>
+           <button name="btnnmMC4" id = "idMC4" Onclick = "ControlAnswer(4)" >Antwoord4</button>
          </center>
+
          <input id= "inputAnswer" name = "inputnmAnswer"  type="text" ></input>
-         <button name="btnConfirmAnswer" id = "btnConfirmAnswer" Onclick = "ControlAnswer()" >Ok</button>
+         <button name="btnConfirmAnswer" id = "btnConfirmAnswer" Onclick = "ControlAnswer(-1)" >Ok</button>
        </div>
        <div id = "divExtraInfo">
          <span id = "spanInfo">Olifant</span><br>

@@ -3,7 +3,7 @@ function UpdateLessonsMade(lessonid, studentid){
   var myURL = "gamedbmanipulation/UpdateLessonsMade.php?lessonid=" + lessonid + "&studentid=" + studentid;
   xhttp.open("POST", myURL, false);
   xhttp.send();
-  
+
   //usertabelbijwerken (score)
   myURL = "gamedbmanipulation/UpdateUserScore.php?studentid=" + studentid;
   xhttp.open("POST", myURL, false);
@@ -90,7 +90,6 @@ function CreateTaskMade(taskid,lessonid, studentid, score) {
 
 //****************************************************************************************************************
 function MakeLessonMade(studentid, lessonid) {
-  //tested!!
   var xhttp = new XMLHttpRequest();
   var myURL = "gamedbmanipulation/ChangeLessonsMade.php?studentid=" + studentid + "&lessonid=" + lessonid ;
   xhttp.open("GET", myURL, false);

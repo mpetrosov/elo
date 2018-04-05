@@ -20,7 +20,6 @@ include 'includes/header.php';
         <div class="col-xs-4"><img class="avatar" src=<?=$student['avatar']?>></div>
         </div>
       </div>
-
       <div class="col-sm-4 usertop"><div class="profile">
         <div class="row">
           <div class="col-xs-9"><div class="head">Profiel:</div></div>
@@ -113,6 +112,7 @@ include 'includes/header.php';
   </div>
   <br><br>
 
+
   </body>
   <script>
 
@@ -147,8 +147,12 @@ include 'includes/header.php';
     $('#gametheme1').html('Thema 1');
     $('#gametheme1').removeClass();
     $('#gametheme1').addClass('col-sm-5 theme');
+<<<<<<< HEAD
     $('#gametheme1').attr("onclick","");
 
+=======
+    $('#gametheme1').attr("onclick","startgame(5)");
+>>>>>>> meerkeuze toegevoegd
     $('#gametheme2').html('Thema 2');
     $('#gametheme2').removeClass();
     $('#gametheme2').addClass('col-sm-5 theme');
@@ -164,7 +168,6 @@ include 'includes/header.php';
     $('#gametheme4').addClass('col-sm-5 theme');
     $('#gametheme4').attr("onclick","");
   });
-
 
   $().ready(function() {
       $('.welcome, .usertop, .mainmenu').css({
@@ -183,6 +186,12 @@ include 'includes/header.php';
   });
 
 
+<<<<<<< HEAD
+=======
+</script>
+
+<script>
+>>>>>>> meerkeuze toegevoegd
   function startgame(gamenr) {
     var xhttp = new XMLHttpRequest();
     var myURL = "includes/setGameSession.php?lessonid=" + gamenr;
@@ -190,7 +199,9 @@ include 'includes/header.php';
     xhttp.send();
     window.location.href ='game/game.php';
   }
+
   //***********************************************************************************************
+
   function DetermineFinishedLessons() {
     var myURL;
     var xhttp;
