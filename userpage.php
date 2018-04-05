@@ -18,7 +18,6 @@ include 'includes/header.php';
         <div class="col-xs-4"><img class="avatar" src=<?=$student['avatar']?>></div>
         </div>
       </div>
-
       <div class="col-sm-4 usertop"><div class="profile">
         <div class="row">
           <div class="col-xs-9"><div class="head">Profiel:</div></div>
@@ -26,7 +25,7 @@ include 'includes/header.php';
   <button type="button" class="btn btn-secondary dropdown-toggle dropbutton glyphicon glyphicon-menu-hamburger" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
   </button>
   <div class="dropdown-menu dropdown-menu-right menuright">
-    <button class="dropdown-item menudrop" type="button" onclick="location.href ='edit.php?id=<?php echo $student['st_id']?>';">Profiel wijzigen</button
+    <button class="dropdown-item menudrop" type="button" onclick="location.href ='edit.php?id=<?php echo $student['st_id']?>';">Profiel wijzigen</button>
     <button class="dropdown-item menudrop" type="button" onclick="location.href = 'avatar.php'">Avatar wijzigen</button>
     <button class="dropdown-item menudrop" type="button" onclick="location.href = 'stylechange.php'">Kleuren wijzigen</button>
     <button class="dropdown-item menudrop" type="button" onclick="location.href = 'messages.php'">
@@ -92,6 +91,7 @@ include 'includes/header.php';
   </div>
   <br><br>
 
+
   </body>
   <script>
 
@@ -126,7 +126,7 @@ include 'includes/header.php';
     $('#gametheme1').html('Thema 1');
     $('#gametheme1').removeClass();
     $('#gametheme1').addClass('col-sm-5 theme');
-    $('#gametheme1').attr("onclick","");
+    $('#gametheme1').attr("onclick","startgame(5)");
     $('#gametheme2').html('Thema 2');
     $('#gametheme2').removeClass();
     $('#gametheme2').addClass('col-sm-5 theme');
@@ -137,7 +137,6 @@ include 'includes/header.php';
     $('#gametheme4').removeClass();
     $('#gametheme4').addClass('col-sm-5 theme');
   });
-
 
   $().ready(function() {
       $('.welcome, .usertop, .mainmenu').css({
@@ -158,7 +157,6 @@ include 'includes/header.php';
 
 </script>
 
-
 <script>
   function startgame(gamenr) {
     var xhttp = new XMLHttpRequest();
@@ -167,7 +165,9 @@ include 'includes/header.php';
     xhttp.send();
     window.location.href ='game/game.php';
   }
+
   //***********************************************************************************************
+
   function DetermineFinishedLessons() {
     var myURL;
     var xhttp;

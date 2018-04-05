@@ -161,12 +161,14 @@ button {
 }
 
 #image1 {
+  height    : 350px;
   max-height: 350px;
   max-width : 550px;
   border-radius: 10px;
 }
 
 #image2 {
+  height      : 350px;
   max-height  : 350px;
   max-width   : 550px;
   border-radius: 10px;

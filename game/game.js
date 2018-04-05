@@ -11,16 +11,23 @@ for (var i = 0; i < MaxnrTasks; i++) {
 }
 var TaskScores = new Array(MaxnrTasks);
 var NumberTasks;
-var lessonid;
+var gameid, lessonid;
 var studentid;
 var StudentName;
 var CoinXPos, CoinYPos, BL ,BT, EL, ET, dx, dy, a, vx, stepnr, maxsteps; //voor de animatie
+var CorrectnrMC;
 
 //**********************************************************************************************
 function InitializePics(lessonnr) {
   CoinPos = 0;
   MiliSecTeller = 0;
   lessonid =  lessonnr; //= GetGameid();
+  //temp: dynamisch maken
+  gameid  = 1; //invullen
+  if (lessonid > 4) {gameid= 2;} //multiplechoice
+  document.getElementById("inputAnswer").style.visibility = "hidden";
+  document.getElementById("btnConfirmAnswer").style.visibility = "hidden";
+
   NumberTasks = getNumberTasks();
   getGameTasks(lessonid);
   getStudent();
@@ -40,17 +47,56 @@ function InitializePics(lessonnr) {
 
   imgPicture = document.getElementById("image" + actPicslide);
   imgPicture.src = AnimalPics[actPicnr][1];
-  imgName = document.getElementById("picName");
-  imgName.innerHTML = AnimalPics[actPicnr][0];
-  imgName.style.opacity = 1.0;
+
   document.getElementById("btnidNextPic").style.visibility = "hidden";
-  document.getElementById("inputAnswer").style.visibility = "hidden";
   document.getElementById("btnConfirmAnswer").style.visibility = "hidden";
 
   MakeTumbnails(NumberTasks);
   ShowMadeTasks();
 
-  PicInterval = setInterval(function(){fadePicName();}, 10);
+  if (gameid ==1) { //invulles
+    imgName = document.getElementById("picName");
+    imgName.innerHTML = AnimalPics[actPicnr][0];
+    imgName.style.opacity = 1.0;
+    PicInterval = setInterval(function(){fadePicName();}, 10);
+    //verberg meerkeuze
+    document.getElementById("idMC1").style.display = "none";
+    document.getElementById("idMC2").style.display = "none";
+    document.getElementById("idMC3").style.display = "none";
+    document.getElementById("idMC4").style.display = "none";
+  }
+  if (gameid == 2) {
+    AddMCAnswers();
+  }
+}
+
+//**********************************************************************************************
+function AddMCAnswers() {
+  var Answer;
+  var Rndnr;
+  var balls = new Array(NumberTasks);
+  var nrballsleft;
+  //bepaal de positie van het correcte antwoord.
+
+  for (var i = 0; i<NumberTasks ; i++) {
+    balls[i] = i;
+  }
+
+  CorrectnrMC = Math.floor(Math.random() * 4) + 1;
+  Answer = document.getElementById("idMC" + CorrectnrMC);
+  Answer.innerHTML = AnimalPics[actPicnr][0];
+  balls[actPicnr] = balls[NumberTasks -1];
+  nrballsleft = NumberTasks-1;
+
+  for (var i = 1; i<=4 ; i++) {
+    if (i!= CorrectnrMC) {
+      Rndnr = Math.floor(Math.random() * nrballsleft);
+      Answer = document.getElementById("idMC" + i);
+      Answer.innerHTML = AnimalPics[balls[Rndnr]][0];
+      balls[Rndnr] = balls[nrballsleft];
+      nrballsleft--;
+    }
+  }
 }
 
 //**********************************************************************************************
@@ -100,15 +146,20 @@ function ChangeTask(Picnr) {
     if (actPicslide == 1) {actPicslide = 2; }
     else {actPicslide = 1;}
     divPicture = document.getElementById("divPicture" + actPicslide);
-
     divPicture.style.display = "block"; //=zichtbaar
 
     actPicnr = Picnr;
     imgPicture = document.getElementById("image" + actPicslide);
     imgPicture.src = AnimalPics[actPicnr][1];
 
-    imgName = document.getElementById("picName");
-    imgName.innerHTML = AnimalPics[actPicnr][0];
+    if (gameid == 1) {
+      imgName = document.getElementById("picName");
+      imgName.innerHTML = AnimalPics[actPicnr][0];
+    }
+    if (gameid == 2) {
+      document.getElementById("divAnswerinput").style.display = "block";
+      AddMCAnswers();
+    }
     document.getElementById("divTask").style.display = "block"; //visibility = "visible";
     document.getElementById("divExtraInfo").style.display = "none";
     document.getElementById("btnidNextPic").style.visibility = "hidden";
@@ -130,9 +181,15 @@ function NextPicture() {
 
   imgPicture = document.getElementById("image" + actPicslide);
   imgPicture.src = AnimalPics[actPicnr][1];
+  if (gameid == 1) {
+    imgName = document.getElementById("picName");
+    imgName.innerHTML = AnimalPics[actPicnr][0];
+  }
+  if (gameid == 2) {
+    document.getElementById("divAnswerinput").style.display = "block";
+    AddMCAnswers();
+  }
 
-  imgName = document.getElementById("picName");
-  imgName.innerHTML = AnimalPics[actPicnr][0];
   document.getElementById("divTask").style.display = "block"; //visibility = "visible";
   document.getElementById("divExtraInfo").style.display = "none";
   document.getElementById("btnidNextPic").style.visibility = "hidden";
@@ -191,11 +248,24 @@ function fadePicName() {
 }
 
 //***********************************************************************************************
-function ControlAnswer() {
-  var Answer = document.getElementById("inputAnswer");
+function ControlAnswer(nrAnswer) {
+  var AnswerCorrect;
+  //if (nrAnswer == CorrectnrMC)
+  AnswerCorrect = false;
 
-  Answer.value = Answer.value.toLowerCase();
-  if (Answer.value == AnimalPics[actPicnr][0]) {
+  if (gameid == 1) { //invulgame
+    var Answer = document.getElementById("inputAnswer");
+    var Taskname;
+
+    Taskname = AnimalPics[actPicnr][0].toLowerCase();
+    Answer.value = Answer.value.toLowerCase();
+    if (Answer.value == Taskname) {AnswerCorrect = true;}
+  }
+  if (gameid == 2) { //multiplechoice
+    if (nrAnswer == CorrectnrMC) {AnswerCorrect = true;}
+  }
+
+  if (AnswerCorrect) {
     TaskScores[actPicnr] = 1;
     var RT = document.getElementById("RT" + (actPicnr +1));
     RT.style.color = "#FFFF00";
@@ -222,11 +292,16 @@ function ControlAnswer() {
   EditTumbnail(actPicnr);
 
   document.getElementById("spanInfo").innerHTML = AnimalPics[actPicnr][2];
-
   document.getElementById("divTask").style.display = "none";
-  document.getElementById("inputAnswer").style.display = "none";
-  document.getElementById("btnConfirmAnswer").style.display = "none";
   document.getElementById("divExtraInfo").style.display = "block";
+
+  if (gameid == 1) {
+    document.getElementById("inputAnswer").style.display = "none";
+    document.getElementById("btnConfirmAnswer").style.display = "none";
+  }
+  if (gameid == 2) {
+    document.getElementById("divAnswerinput").style.display = "none";
+  }
 
   if (!Gamefinished()) {
      document.getElementById("btnidNextPic").style.visibility = "visible";
