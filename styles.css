@@ -21,7 +21,7 @@ body {
 }
 
 hr {
- border-top: 1px solid #e9e9e9;
+ border-top: 1px solid #f9f9f9;
 }
 
 button {
@@ -41,6 +41,8 @@ button {
   text-align: left;
   border-radius: 2px;
 }
+
+
 .topfront {
   height: 25em;
   background-color: #66d066;
@@ -55,7 +57,7 @@ button {
 }
 
 .headerrow {
-  background-color: #e9e9e9;
+  background-color: #f9f9f9;
   margin-top: 10px;
   margin-bottom: 10px;
   margin-right: 10px;
@@ -119,7 +121,7 @@ button {
   padding-bottom: 2px;
   background-color: #66d066;
   color: white;
-  font-size: 16px;
+  font-size: 15px;
   width: 95px;
 
 
@@ -157,8 +159,7 @@ button {
 
 .usertop {
   height: 20em;
-  background-color: #66d066;
-  border: 5px solid #e9e9e9;
+  border: 5px solid #f9f9f9;
   border-radius: 16px;
 }
 
@@ -176,7 +177,6 @@ button {
 }
 
 .points {
-  background-color: #ffc400;
   font-size: 30px;
   text-align: center;
   border-radius: 16px;
@@ -184,15 +184,16 @@ button {
 }
 
 body {
-  background-color:#e9e9e9;
+  background-color:#f9f9f9;
 }
 
 .head {
-    color: #800000;
+    color: white;
+    font-size: 20px;
 }
 
 .menu {
-  font-size: 22px;
+  font-size: 19px;
   width: 100%;
   background-color: #ffc400;
   color: #800000;
@@ -210,18 +211,17 @@ body {
 
 .dropdown-menu {
   box-shadow: none;
-  background-color: #e9e9e9;
+  background-color: #f9f9f9;
   border: 0px;
 }
 
 
 .mainmenu {
   height: 16em;
-  background-color:  #66d066;
   border-radius: 16px;
   color: white;
   font-size: 24px;
-  border: 5px solid #e9e9e9;
+  border: 5px solid #f9f9f9;
   padding-left: 16px;
   padding-top: 12px;
 }
@@ -233,7 +233,7 @@ body {
     font-size: 24px;
     padding: 12px;
     height: 8em;
-    border: 5px solid #e9e9e9;
+    border: 5px solid #f9f9f9;
     border-radius: 16px;
 }
 
@@ -243,7 +243,7 @@ body {
     font-size: 24px;
     padding: 12px;
     height: 8em;
-    border: 5px solid #e9e9e9;
+    border: 5px solid #f9f9f9;
     border-radius: 16px;
 
 }
@@ -255,7 +255,7 @@ body {
     font-size: 24px;
     padding: 12px;
     height: 8em;
-    border: 5px solid #e9e9e9;
+    border: 5px solid #f9f9f9;
     border-radius: 16px;
 }
 
@@ -266,7 +266,7 @@ body {
     font-size: 24px;
     padding: 12px;
     height: 8em;
-    border: 5px solid #e9e9e9;
+    border: 5px solid #f9f9f9;
     border-radius: 16px;
 }
 
@@ -277,14 +277,10 @@ body {
     font-size: 24px;
     padding: 12px;
     height: 8em;
-    border: 5px solid #e9e9e9;
+    border: 5px solid #f9f9f9;
     border-radius: 16px;
 }
 
-.menu:hover {
-   background-color: #416f4f;
-   color:  #ffc400;
-}
 
 .theme:hover, .theme1:hover, .theme2:hover, .theme3:hover, .theme4:hover {
    cursor: pointer;
@@ -372,7 +368,7 @@ body {
 /* registration ************************************************************************* */
 
 #regbody {
-  background-color: #e9e9e9;
+  background-color: #f9f9f9;
   padding-top: 5px;
 }
 
@@ -413,7 +409,7 @@ body {
 
 .messages {
   height: auto;
-  border-right: 8px solid #e9e9e9;
+  border-right: 8px solid #f9f9f9;
   margin-bottom: 8px;
   padding-bottom: 8px;
   border-top-right-radius: 16px;
@@ -587,5 +583,11 @@ body {
 
        .messageavatar {
          width: 10%;
+       }
+
+       #logoutbutton {
+         padding-left: 4px;
+         font-size: 14px;
+       }
 
 }

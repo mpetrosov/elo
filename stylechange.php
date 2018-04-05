@@ -140,9 +140,8 @@ include 'includes/header.php';
         <div class="row">
             <div class="col-sm-2 mainmenu">Spellen<br><br>
               <div class="row">
-                <button class="col-sm-12 menu" id="game1">Schrijven</button>
-                <button class="col-sm-12 menu" id="game2">Spel 2</button>
-                <button class="col-sm-12 menu" id="game3">Spel 3</button>
+                <button class="col-sm-12 menu" id="game1">Invullen</button>
+                <button class="col-sm-12 menu" id="game2">Meerkeuze</button>
               </div>
             </div>
 
@@ -150,9 +149,9 @@ include 'includes/header.php';
           </div>
           <div class="col-sm-5 theme2" id="gametheme2"> Huisdieren
           </div>
-          <div class="col-sm-5 theme3" id="gametheme3">Bloemen
+          <div class="col-sm-5 theme3" id="gametheme3">Sporten
           </div>
-          <div class="col-sm-5 theme4" id="gametheme4">Vogels
+          <div class="col-sm-5 theme4" id="gametheme4">Vervoermiddelen
           </div>
 
         </div>
@@ -199,11 +198,11 @@ include 'includes/header.php';
             'background-color': '#' + '<?=$student['color']?>',
         })
 
-        $('.menu, .points, .dropbutton, .menudrop').css({
+        $('.menu, .points, .dropbutton, .menudrop, #logoutbutton').css({
             'background-color': '#' + '<?=$student['colorsec']?>',
         })
 
-        $('.menu, .points, .head').css({
+        $('.menu, .points, #logoutbutton, .menudrop').css({
             'color': '#' + '<?=$student['fontcolor']?>',
         })
 

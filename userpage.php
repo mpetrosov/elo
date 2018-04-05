@@ -150,11 +150,11 @@ include 'includes/header.php';
           'background-color': '#' + '<?=$student['color']?>',
       })
 
-      $('.menu, .points, .dropbutton, .menudrop').css({
+      $('.menu, .points, .dropbutton, .menudrop, #logoutbutton').css({
           'background-color': '#' + '<?=$student['colorsec']?>',
       })
 
-      $('.menu, .points, .head').css({
+      $('.menu, .points, #logoutbutton, .menudrop').css({
           'color': '#' + '<?=$student['fontcolor']?>',
       })
 
