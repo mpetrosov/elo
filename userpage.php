@@ -144,21 +144,20 @@ include 'includes/header.php';
   });
 
   $('#game2').click(function() {
-    $('#gametheme1').html('Thema 1');
+    $('#gametheme1').html('Vlaggen');
     $('#gametheme1').removeClass();
-    $('#gametheme1').addClass('col-sm-5 theme');
+    $('#gametheme1').addClass('col-sm-5 theme5');
     $('#gametheme1').attr("onclick","startgame(5)");
 
-
-    $('#gametheme2').html('Thema 2');
+    $('#gametheme2').html('Vogels');
     $('#gametheme2').removeClass();
-    $('#gametheme2').addClass('col-sm-5 theme');
+    $('#gametheme2').addClass('col-sm-5 theme6');
     $('#gametheme2').attr("onclick","startgame(6)");
 
-    $('#gametheme3').html('Thema 3');
+    $('#gametheme3').html('hemellichamen');
     $('#gametheme3').removeClass();
-    $('#gametheme3').addClass('col-sm-5 theme');
-    $('#gametheme3').attr("onclick","");
+    $('#gametheme3').addClass('col-sm-5 theme7');
+    $('#gametheme3').attr("onclick","startgame(7)");
 
     $('#gametheme4').html('Thema 4');
     $('#gametheme4').removeClass();

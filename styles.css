@@ -235,6 +235,7 @@ body {
     height: 8em;
     border: 5px solid #f9f9f9;
     border-radius: 16px;
+    transition: transform 0.3s;
 }
 
 .theme {
@@ -245,7 +246,7 @@ body {
     height: 8em;
     border: 5px solid #f9f9f9;
     border-radius: 16px;
-
+    transition: transform 0.3s;
 }
 
 .theme2 {
@@ -257,6 +258,7 @@ body {
     height: 8em;
     border: 5px solid #f9f9f9;
     border-radius: 16px;
+    transition: transform 0.3s;
 }
 
 .theme3 {
@@ -268,6 +270,7 @@ body {
     height: 8em;
     border: 5px solid #f9f9f9;
     border-radius: 16px;
+    transition: transform 0.3s;
 }
 
 .theme4{
@@ -279,12 +282,62 @@ body {
     height: 8em;
     border: 5px solid #f9f9f9;
     border-radius: 16px;
+    transition: transform 0.3s;
+}
+
+.theme5{
+    background-image: url("img/nederland.jpg");
+    background-size: cover;
+    color: white;
+    font-size: 24px;
+    padding: 12px;
+    height: 8em;
+    border: 5px solid #f9f9f9;
+    border-radius: 16px;
+    transition: transform 0.3s;
+}
+
+.theme5{
+    background-image: url("img/nederland.jpg");
+    background-size: cover;
+    color: white;
+    font-size: 24px;
+    padding: 12px;
+    height: 8em;
+    border: 5px solid #f9f9f9;
+    border-radius: 16px;
+    transition: transform 0.3s;
+}
+
+.theme6{
+    background-image: url("img/ijsvogel.jpg");
+    background-size: cover;
+    color: white;
+    font-size: 24px;
+    padding: 12px;
+    height: 8em;
+    border: 5px solid #f9f9f9;
+    border-radius: 16px;
+    transition: transform 0.3s;
+}
+
+.theme7{
+    background-image: url("img/asteroide.jpg");
+    background-size: cover;
+    color: white;
+    font-size: 24px;
+    padding: 12px;
+    height: 8em;
+    border: 5px solid #f9f9f9;
+    border-radius: 16px;
+    transition: transform 0.3s;
 }
 
 
-.theme:hover, .theme1:hover, .theme2:hover, .theme3:hover, .theme4:hover {
+.theme:hover, .theme1:hover, .theme2:hover, .theme3:hover, .theme4:hover, .theme5:hover,
+.theme6:hover {
    cursor: pointer;
-   transform: scale(1.01);
+   transform: scale(1.02);
 }
 
 .avatar {

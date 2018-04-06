@@ -34,7 +34,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label">lessonid</label>
   <div class="col-md-4">
-  <input value="6" name="lessonid" class="form-control input-md">
+  <input value="7" name="lessonid" class="form-control input-md">
   </div>
 </div>
 
@@ -48,7 +48,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label">path</label>
   <div class="col-md-4">
-  <input name="path" value="thema/vogels/"class="form-control input-md">
+  <input name="path" value="thema/hemellichamen/"class="form-control input-md">
   </div>
 </div>
 
