@@ -147,13 +147,13 @@ include 'includes/header.php';
     $('#gametheme1').html('Thema 1');
     $('#gametheme1').removeClass();
     $('#gametheme1').addClass('col-sm-5 theme');
-    $('#gametheme1').attr("onclick","");
-
     $('#gametheme1').attr("onclick","startgame(5)");
+
+
     $('#gametheme2').html('Thema 2');
     $('#gametheme2').removeClass();
     $('#gametheme2').addClass('col-sm-5 theme');
-    $('#gametheme2').attr("onclick","");
+    $('#gametheme2').attr("onclick","startgame(6)");
 
     $('#gametheme3').html('Thema 3');
     $('#gametheme3').removeClass();
