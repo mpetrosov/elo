@@ -147,12 +147,9 @@ include 'includes/header.php';
     $('#gametheme1').html('Thema 1');
     $('#gametheme1').removeClass();
     $('#gametheme1').addClass('col-sm-5 theme');
-<<<<<<< HEAD
     $('#gametheme1').attr("onclick","");
 
-=======
     $('#gametheme1').attr("onclick","startgame(5)");
->>>>>>> meerkeuze toegevoegd
     $('#gametheme2').html('Thema 2');
     $('#gametheme2').removeClass();
     $('#gametheme2').addClass('col-sm-5 theme');
@@ -186,12 +183,6 @@ include 'includes/header.php';
   });
 
 
-<<<<<<< HEAD
-=======
-</script>
-
-<script>
->>>>>>> meerkeuze toegevoegd
   function startgame(gamenr) {
     var xhttp = new XMLHttpRequest();
     var myURL = "includes/setGameSession.php?lessonid=" + gamenr;
