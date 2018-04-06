@@ -2,7 +2,7 @@
 include 'includes/dbh.php';
 include 'includes/functions.php';
 include 'includes/header.php';
-  
+
 ?>
   <body  Onload = "DetermineFinishedLessons()">
     <div class="container">
@@ -14,9 +14,9 @@ include 'includes/header.php';
       <div class="col-sm-8 usertop">
         <div class="row">
           <div class="col-xs-8 welcome">Hallo <?=$student['firstname']?></div>
-          
 
-        
+
+
         <div class="col-xs-4"><img class="avatar" src=<?=$student['avatar']?>></div>
         </div>
       </div>
@@ -88,7 +88,7 @@ include 'includes/header.php';
         <center><div id = "divLessonFinished4" class = "LessonFinished">V
         </div></center>
       </div>
-      
+
     </div>
     <div class="row">
         <div class="col-sm-12 bonus">
@@ -107,7 +107,7 @@ include 'includes/header.php';
           }
         ?>
         </div>
-    
+
     </div>
   </div>
   <br><br>
@@ -147,16 +147,12 @@ include 'includes/header.php';
     $('#gametheme1').html('Thema 1');
     $('#gametheme1').removeClass();
     $('#gametheme1').addClass('col-sm-5 theme');
-<<<<<<< HEAD
-    $('#gametheme1').attr("onclick","");
-
-=======
     $('#gametheme1').attr("onclick","startgame(5)");
->>>>>>> meerkeuze toegevoegd
+
     $('#gametheme2').html('Thema 2');
     $('#gametheme2').removeClass();
     $('#gametheme2').addClass('col-sm-5 theme');
-    $('#gametheme2').attr("onclick","");
+    $('#gametheme2').attr("onclick","startgame(6)");
 
     $('#gametheme3').html('Thema 3');
     $('#gametheme3').removeClass();
@@ -186,12 +182,9 @@ include 'includes/header.php';
   });
 
 
-<<<<<<< HEAD
-=======
 </script>
 
 <script>
->>>>>>> meerkeuze toegevoegd
   function startgame(gamenr) {
     var xhttp = new XMLHttpRequest();
     var myURL = "includes/setGameSession.php?lessonid=" + gamenr;
