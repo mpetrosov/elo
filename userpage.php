@@ -182,7 +182,13 @@ include 'includes/header.php';
       ;
   });
 
+<<<<<<< HEAD
 
+=======
+</script>
+
+<script>
+>>>>>>> vogeltjes ophalen
   function startgame(gamenr) {
     var xhttp = new XMLHttpRequest();
     var myURL = "includes/setGameSession.php?lessonid=" + gamenr;
