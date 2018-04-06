@@ -181,20 +181,15 @@ include 'includes/header.php';
       ;
   });
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
-</script>
-
-<script>
->>>>>>> vogeltjes ophalen
-=======
 
 </script>
 
 <script>
->>>>>>> ikwilhierweg
+
+</script>
+
+<script>
+
   function startgame(gamenr) {
     var xhttp = new XMLHttpRequest();
     var myURL = "includes/setGameSession.php?lessonid=" + gamenr;

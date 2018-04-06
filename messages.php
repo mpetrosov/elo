@@ -41,7 +41,7 @@ include 'includes/functions.php';
           <div class="sendform">
            <div class="form-group"><div class="sendinfo">Verstuur aan:</div>
             <form action="includes/sendmessage.php" method="POST">
-              <select class="form-control" name="id" required>
+              <select class="form-control" name="id" id="social" required>
                  <option disabled selected value> -- kies een ontvanger -- </option>
                 <?php
                   $sql = "SELECT * FROM students";
@@ -50,7 +50,7 @@ include 'includes/functions.php';
                       if ($_SESSION['u_id'] == $row['st_id']) {
                       }
                       else {
-                      echo  "<option value=" . $row['st_id'] . ">" . $row['firstname'] . " " . $row['lastname'] . "</option>";
+                      echo "<option value=" . $row['st_id'] . ">" . $row['firstname'] . " " . $row['lastname'] . "</option>";
                     }
 
                   } ?>
@@ -133,6 +133,35 @@ function setColorSenderMain() {
           location.reload();
       }, 500);
     }
+
+</script>
+
+<script>
+ $(document).ready(function(){
+  $("#social").select2({
+   templateResult: formatState
+  });
+ });
+
+
+function getAvatar(state){
+     var xhttp = new XMLHttpRequest();
+     xhttp.open("GET", "includes/getAvatar.php?id=" + state, false);
+     xhttp.send();
+     var avatar = xhttp.responseText;
+     return avatar;
+     }
+
+
+function formatState (state) {
+  if (!state.id) { return state.text; }
+  var avatar = getAvatar(state.id);
+  var $state = $(
+   '<span><img style="display: inline-block; width: 30px;" src="' + avatar + '" /> ' + state.text + '</span>'
+  );
+
+  return $state;
+ }
 
 </script>
 
