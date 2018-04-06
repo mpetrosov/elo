@@ -30,7 +30,6 @@ include 'includes/functions.php';
               foreach ($result as $row) {
                 echo "<div class='message'onclick=getMessage(" .$row['id'] . ");>" . "<img class='messageavatar' src=" . $row['avatar'] . "><div class='student'>" . $row['sender'] . "</div>";
                 echo "<div class='overview'>" . $row['message'] . "</div></div>";
-
               }
             ?>
           </div>
@@ -58,11 +57,20 @@ include 'includes/functions.php';
               <textarea class="form-control" name="message" maxlength="500" cols="40" rows="4"></textarea>
               <textarea name="senderid" style="display:none;"><?php echo $_SESSION['u_id']; ?></textarea>
               <textarea name="sender" style="display:none;"><?php echo $_SESSION['u_first'] . " " . $_SESSION['u_last']; ?> </textarea>
-              <button class="glyphicon glyphicon-envelope mainsendbutton" type="submit">  Verstuur</button>
+              <button class="glyphicon glyphicon-envelope mainsendbutton" type="submit">Verstuur</button>
             </form>
           </div>
         </div>
+        <div id = "messageId">
+           <?php
+             if (isset($_SESSION['MessageSend'])) {
+               if ($_SESSION['MessageSend'] == true) {echo("Berichtje verzonden!");}
+             }
+             $_SESSION['MessageSend'] = false;
+           ?>
+        </div>
       </div>
+
     </div>
   </div>
 </body>
@@ -73,6 +81,7 @@ $('.sendform').show();
 $(".send").click(function(){
       $("#fullmessage").hide();
       $(".sendform").show();
+      document.getElementById("messageId").innerHTML = "";
 })
 $(".message").click(function(){
       $(".sendform").hide();
@@ -121,6 +130,7 @@ function setColorSenderMain() {
       xhttp.send();
       document.getElementById("fullmessage").innerHTML = xhttp.responseText;
       setColorSenderMain()
+      document.getElementById("messageId").innerHTML = "";
       }
 
   function deleteMessage(id){

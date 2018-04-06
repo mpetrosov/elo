@@ -158,12 +158,12 @@ include 'includes/header.php';
     $('#gametheme3').html('Thema 3');
     $('#gametheme3').removeClass();
     $('#gametheme3').addClass('col-sm-5 theme');
-    $('#gametheme3').attr("onclick","");
+    $('#gametheme3').attr("onclick","startgame(7)");
 
     $('#gametheme4').html('Thema 4');
     $('#gametheme4').removeClass();
     $('#gametheme4').addClass('col-sm-5 theme');
-    $('#gametheme4').attr("onclick","");
+    $('#gametheme4').attr("onclick","startgame(8)");
   });
 
   $().ready(function() {
@@ -182,20 +182,10 @@ include 'includes/header.php';
       ;
   });
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
 </script>
 
-<script>
->>>>>>> vogeltjes ophalen
-=======
-
-</script>
 
 <script>
->>>>>>> ikwilhierweg
   function startgame(gamenr) {
     var xhttp = new XMLHttpRequest();
     var myURL = "includes/setGameSession.php?lessonid=" + gamenr;
