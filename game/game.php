@@ -87,6 +87,8 @@ include 'gamedbmanipulation/GetLesson.php'
     }
   });
 
+var color =  '<?=$student['color']?>';
+
 $().ready(function() {
       $('#divGameContainer, #TumbnailsContainer').css({
           'background-color': '#' + '<?=$student['color']?>',
@@ -94,6 +96,12 @@ $().ready(function() {
 
       ;
   });
+
+  if ((color === '800000') || (color === '600080')) {
+    $('#picName, #divExtraInfo').css({
+        'color': '#f9f9f9'
+    })
+  }
 </script>
 
 </html>
