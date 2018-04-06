@@ -4,9 +4,9 @@
    $dbPassword = "welkom";
    $dbName = "Spelgoed";
 
-    // Create connection
-    $conn = mysqli_connect($dbServername, $dbUsername, $dbPassword, $dbName);
-    // Check connection
+   // Create connection
+   $conn = mysqli_connect($dbServername, $dbUsername, $dbPassword, $dbName);
+   // Check connection
 
 
     if (!$conn) {
