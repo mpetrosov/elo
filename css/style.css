@@ -2,6 +2,25 @@ body{
  background-color: #BD9A79;
 }
 
+.teach-div{
+    margin-left: 25%;
+    width: 50%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: whitesmoke;
+    text-align: center;
+    border: solid 3px;
+    border-color:#6666d0;
+    background-color: #6666d0;
+    border-radius: 10px;
+}
+
+.signout{
+
+    font-size: 20px;
+    margin-left:90%;
+    color: rgb(189, 121, 124);
+}
+
 
 header{
  margin-top: 20px;
@@ -69,7 +88,7 @@ header{
  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c9c9c9', endColorstr='#757577',GradientType=0 ); /* IE6-9 */
 
  padding: 15px 30px 15px 40px;
- font-size: 14px;
+ font-size: 20px;
  color: #454547;
  text-decoration: none;
  text-transform:uppercase;

@@ -30,6 +30,14 @@
 	<title>Leerkracht</title>
 </head>
 <body>
+
+<div class="teach-div">
+<?php $teachers = getTeachersName();?>
+<?php foreach ($teachers as $teacher):?>
+<h2><?=$teacher['teach_first']?> <?=$teacher['teach_last']?></h2>
+</div>
+<?php endforeach;?>
+
 <form class="signout" action="includes/logout.teach.inc.php" method="POST">
     <button type="submit" name="submit" id="logoutbutton">Uitloggen</button>
 </form>
@@ -47,34 +55,10 @@
 		</ul>
 	</nav>
 </header>
-<?php
 
-// $requestLikes = "SELECT Likes FROM test1";
-// $LikesQ = mysqli_query($conn, $requestLikes);
-// $Likes = mysqli_fetch_array($LikesQ);
-// $x = $Likes[0] + 1;
-// $insertToLikes = "INSERT INTO test1 (Likes) VALUES ('$x')";
-// mysqli_query($conn, $insertToLikes);
-// $y = mysqli_query($conn, $requestLikes);
-// $output = mysqli_fetch_array($y);
-// echo "<h1>$output[0]</h1>";
-  
-?>
 
 <?php $students = get_StudentsGroup();?>
- <?php foreach ($students as $student):?>
-<script> 
-
-    // function getStudentsGroup(link)
-    // //     var group = link;
-    // // // alert(group);
-    // //     xhttp.open("GET", "includes/functions.php?group=" + group, false);
-    // //     xhttp.send();
-    // //     document.getElementById("st-group").innerHTML = xhttp.responseText;
-    // // }
-
-
-</script>
+<?php foreach ($students as $student):?>
 <div class="st-group"><a href="backend.php?group=<?php echo $_GET['group'] ?>&id=<?php echo $student['st_id'] ?>"><?=$student['lastname'] ." ". $student['firstname'];?></a></div>
 <?php endforeach;?>
 <?php $students = getStudentsById();?>
