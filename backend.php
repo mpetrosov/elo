@@ -20,16 +20,19 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
     integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
     crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script>
         $(document).ready(function)){
             $("button").click
         }
-    </script>
+    </script> -->
 
 	<title>Leerkracht</title>
 </head>
 <body>
+<form class="signout" action="includes/logout.teach.inc.php" method="POST">
+    <button type="submit" name="submit" id="logoutbutton">Uitloggen</button>
+</form>
 
 <header>
 	<nav class="dws-menu">
