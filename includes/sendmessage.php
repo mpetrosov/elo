@@ -6,7 +6,8 @@ $idsend = $_POST['senderid'];
 $id = $_POST['id'];
 $message = $_POST['message'];
 $sender = $_POST['sender'];
-
+session_start();
+$_SESSION['MessageSend'] = true;
 include 'dbh.php';
 
 $sql = "INSERT INTO messages (st_id, message, sender, send_id) VALUES ('$id', '$message', '$sender', '$idsend')";

@@ -348,7 +348,7 @@ function BeginScoreAnimation() {
   }
   else {
     document.getElementById("divAnimatie").style.display = "none";
-    clearinterval(AnimationInterval);
+    clearInterval(AnimationInterval);
   }
 }
 
