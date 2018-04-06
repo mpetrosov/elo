@@ -39,7 +39,7 @@ include 'includes/functions.php';
 
         <div class="col-sm-8 textmessages"><div id="fullmessage"></div>
           <div class="sendform">
-           <div class="form-group">Verstuur aan:
+           <div class="form-group"><div class="sendinfo">Verstuur aan:</div>
             <form action="includes/sendmessage.php" method="POST">
               <select class="form-control" name="id" required>
                  <option disabled selected value> -- kies een ontvanger -- </option>
@@ -47,14 +47,14 @@ include 'includes/functions.php';
                   $sql = "SELECT * FROM students";
                   $result = mysqli_query($conn, $sql);
                     foreach ($result as $row) {
-                      // if ($_SESSION['u_id'] == $row['st_id']) {
-                      // }
-                      // else {
+                      if ($_SESSION['u_id'] == $row['st_id']) {
+                      }
+                      else {
                       echo  "<option value=" . $row['st_id'] . ">" . $row['firstname'] . " " . $row['lastname'] . "</option>";
-                    // }
+                    }
 
                   } ?>
-              </select><br>Bericht:
+              </select><br><div class="sendinfo">Bericht:</div>
               <textarea class="form-control" name="message" maxlength="500" cols="40" rows="4"></textarea>
               <textarea name="senderid" style="display:none;"><?php echo $_SESSION['u_id']; ?></textarea>
               <textarea name="sender" style="display:none;"><?php echo $_SESSION['u_first'] . " " . $_SESSION['u_last']; ?> </textarea>
@@ -79,23 +79,48 @@ $(".message").click(function(){
       $("#fullmessage").show();
 })
 
-$().ready(function() {
+var color =  '<?=$student['color']?>';
 
-    var color =  '<?=$student['color']?>';
+$().ready(function() {
 
     $('.messagehead, .messages, .textmessages').css({
         'background-color': '#' + color,
     })
 
+    $('#logoutbutton').css({
+        'background-color': '#' + '<?=$student['colorsec']?>',
+    })
+
+    $('#logoutbutton').css({
+        'color': '#' + '<?=$student['fontcolor']?>',
+    })
+
+    if ((color === '800000') || (color === '600080')) {
+      $('.student, .sendinfo').css({
+          'color': '#c0c0c0',
+      })
+    }
+
     ;
 
 });
+
+function setColorSenderMain() {
+
+  if ((color === '800000') || (color === '600080')) {
+    $('.sendermain').css({
+        'color': '#c0c0c0',
+    })
+  }
+
+}
 
   function getMessage(id){
       var xhttp = new XMLHttpRequest();
       xhttp.open("GET", "includes/getmessage.php?id=" + id, false);
       xhttp.send();
       document.getElementById("fullmessage").innerHTML = xhttp.responseText;
+      setColorSenderMain()
       }
 
   function deleteMessage(id){

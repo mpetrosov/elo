@@ -14,7 +14,7 @@ include('dbh.php');
     $result = mysqli_query($conn, $sql);
       foreach ($result as $row) {
 
-        echo "<img class='messageavatar2' src=" . $row['avatar'] . ">Afzender: <div class='mainviewsender'>" . $row['sender'] ;
+        echo "<img class='messageavatar2' src=" . $row['avatar'] . "><div class='sendermain'>Afzender: </div><div class='mainviewsender'>" . $row['sender'] ;
         echo "<button class='glyphicon glyphicon-trash deletemessage' onclick=deleteMessage(" . $row['id'] . ")></button><hr>";
         echo "<div class='mainviewmessage'> " . $row['message'] . "</div>";
       }

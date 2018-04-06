@@ -27,70 +27,84 @@
 <div class="form-group">
   <label class="col-md-4 control-label">taskid</label>
   <div class="col-md-4">
-  <input name="taskid" class="form-control input-md" required="">
+  <input name="taskid" class="form-control input-md">
   </div>
 </div>
 
 <div class="form-group">
   <label class="col-md-4 control-label">lessonid</label>
   <div class="col-md-4">
-  <input name="lessonid" class="form-control input-md" required="">
+  <input value="6" name="lessonid" class="form-control input-md">
   </div>
 </div>
 
 <div class="form-group">
-  <label class="col-md-4 control-label">name</label>
+  <label class="col-md-4 control-label">Naam</label>
   <div class="col-md-4">
-  <input name="name" class="form-control input-md" required="">
+  <input name="name" class="form-control input-md">
   </div>
 </div>
 
 <div class="form-group">
   <label class="col-md-4 control-label">path</label>
   <div class="col-md-4">
-  <input name="path" class="form-control input-md" required="">
+  <input name="path" value="thema/vogels/"class="form-control input-md">
   </div>
 </div>
 
 <div class="form-group">
-  <label class="col-md-4 control-label">taskinfo</label>
+  <label class="col-md-4 control-label">Extra informatie</label>
   <div class="col-md-4">
-  <input name="taskinfo" class="form-control input-md" required="">
+  <textarea name="taskinfo" class="form-control input-md"></textarea>
   </div>
 </div>
 
+<div class="form-group">
+  <label class="col-md-4 control-label" form="signup"></label>
+  <div class="col-md-4">
+    <button id="submit" name="submit" class="btn btn-basic">Versturen</button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+
+
 <div class="form-group">LESSONS FORM</div>
+
+<form class="form-horizontal" action="includes/theme.php" method="POST">
+<fieldset>
+
 
 <div class="form-group">
   <label class="col-md-4 control-label">id</label>
   <div class="col-md-4">
-    <input name="id" class="form-control input-md" required="">
+    <input name="id" class="form-control input-md">
   </div>
 </div>
 <div class="form-group">
-  <label class="col-md-4 control-label">name</label>
+  <label class="col-md-4 control-label">thema</label>
   <div class="col-md-4">
-    <input name="namelesson" class="form-control input-md" required="">
+    <input name="namelesson" class="form-control input-md">
   </div>
 </div>
 
 <div class="form-group">
-  <label class="col-md-4 control-label">gameid</label>
+  <label class="col-md-4 control-label">game id</label>
   <div class="col-md-4">
-    <input name="gameid" class="form-control input-md" required="">
+    <input name="gameid" class="form-control input-md">
   </div>
 </div>
 
 <div class="form-group">
   <label class="col-md-4 control-label">opdracht</label>
   <div class="col-md-4">
-    <input name="opdracht" class="form-control input-md" required="">
+    <input name="opdracht" class="form-control input-md">
   </div>
 </div>
 
-
 <div class="form-group">
-  <label class="col-md-4 control-label" for="signup"></label>
+  <label class="col-md-4 control-label" form="signup"></label>
   <div class="col-md-4">
     <button id="submit" name="submit" class="btn btn-basic">Versturen</button>
   </div>

@@ -10,18 +10,31 @@ $namelesson = $_POST['namelesson'];
 $gameid = $_POST['gameid'];
 $opdracht = $_POST['opdracht'];
 
+if (isset($taskid)) {
 
 include 'dbh.php';
 
 $sql = "INSERT INTO tasks (taskid, lessonid, name, path, taskinfo) VALUES ('$taskid', '$lessonid', '$name', '$path', '$taskinfo')";
-$sql2 = "INSERT INTO lesson (id, name, gameid, Opdracht) VALUES ('$id', '$namelesson', '$gameid', '$opdracht')";
+
 mysqli_query($conn, $sql);
-mysqli_query($conn, $sql2);
+
 
 
 header("Location: ../themaform.php?succes");
 
 exit();
+}
 
 
+if (isset($id)) {
+include 'dbh.php';
+
+$sql = "INSERT INTO lesson (id, name, gameid, Opdracht) VALUES ('$id', '$namelesson', '$gameid', '$opdracht')";
+mysqli_query($conn, $sql);
+
+header("Location: ../themaform.php?succes");
+
+exit();
+
+}
 ?>

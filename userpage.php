@@ -2,7 +2,7 @@
 include 'includes/dbh.php';
 include 'includes/functions.php';
 include 'includes/header.php';
-  
+
 ?>
   <body  Onload = "DetermineFinishedLessons()">
     <div class="container">
@@ -14,9 +14,9 @@ include 'includes/header.php';
       <div class="col-sm-8 usertop">
         <div class="row">
           <div class="col-xs-8 welcome">Hallo <?=$student['firstname']?></div>
-          
 
-        
+
+
         <div class="col-xs-4"><img class="avatar" src=<?=$student['avatar']?>></div>
         </div>
       </div>
@@ -89,7 +89,7 @@ include 'includes/header.php';
         <center><div id = "divLessonFinished4" class = "LessonFinished">V
         </div></center>
       </div>
-      
+
     </div>
     <div class="row">
         <div class="col-sm-12 bonus">
@@ -108,7 +108,7 @@ include 'includes/header.php';
           }
         ?>
         </div>
-    
+
     </div>
   </div>
   <br><br>
@@ -167,7 +167,7 @@ include 'includes/header.php';
 
 
   $().ready(function() {
-      $('.welcome, .usertop, .mainmenu').css({
+      $('.welcome, .usertop, .mainmenu, .bonus').css({
           'background-color': '#' + '<?=$student['color']?>',
       })
 
