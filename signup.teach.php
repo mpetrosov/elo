@@ -26,49 +26,35 @@
   </div>
 </div>
 <div class="container" id="regcontainer">
-<h2>Registreer</h2><hr>
-    <form class="form-horizontal" action="includes/signup.inc.php" method="POST">
+<h2>Leerkracht registratie</h2><hr>
+    <form class="form-horizontal" action="includes/signup.teach.inc.php" method="POST">
     <fieldset>
 
     <div class="form-group">
       <label class="col-md-4 control-label" for="firstname">Voornaam</label>
       <div class="col-md-4">
-      <input id="firstname" type="text" name="first" placeholder="voornaam" class="form-control input-md" required="">
+      <input id="firstname" type="text" name="t-first" placeholder="voornaam" class="form-control input-md" required="">
       </div>
     </div>
 
     <div class="form-group">
       <label class="col-md-4 control-label" for="lastname" >Achternaam</label>
       <div class="col-md-4">
-      <input id="lastname" type="text" name="last" placeholder="achternaam" class="form-control input-md" required="">
+      <input id="lastname" type="text" name="t-last" placeholder="achternaam" class="form-control input-md" required="">
       </div>
     </div>
 
     <div class="form-group">
-      <label class="col-md-4 control-label" for="class" >Geboortedatum</label>
+      <label class="col-md-4 control-label" for="email">Email</label>
       <div class="col-md-4">
-      <input id="date" type="date" name="birthday" placeholder="geboortedatum" class="form-control input-md" required="">
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label class="col-md-4 control-label" for="class" >Groep</label>
-      <div class="col-md-4">
-      <input id="city" type="text" name="group" placeholder="groep" class="form-control input-md" required="">
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label class="col-md-4 control-label" for="email"  >Email</label>
-      <div class="col-md-4">
-      <input id="email" type="text" name="email" placeholder="email adres" class="form-control input-md" required="">
+      <input id="email" type="text" name="t-email" placeholder="email adres" class="form-control input-md" required="">
       </div>
     </div>
 
     <div class="form-group">
       <label class="col-md-4 control-label" for="password">Wachtwoord</label>
       <div class="col-md-4">
-        <input id="password" type="password" name="pwd" placeholder="kies een wachtwoord" class="form-control input-md" required="">
+        <input id="password" type="password" name="t-pwd" placeholder="kies een wachtwoord" class="form-control input-md" required="">
       </div>
     </div>
 
@@ -83,7 +69,7 @@
     </form>
 
     <div><img class="imagereg" src="img/owl.png"></div>
-    <div><a href="login.teach.php"><img class="imagereg" src="img/shield.png"></a></div>
+   
 
 </div>
 </body>
