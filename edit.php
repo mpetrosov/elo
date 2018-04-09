@@ -34,7 +34,7 @@ if(isset($_GET['id'])&& $_GET['id']){
 ?>
 <!DOCTYPE html>
 <?php
-  $students = get_Students();
+  $students = getStudents();
 ?>
 <?php foreach ($students as $student):?>
 <?php endforeach;?>
