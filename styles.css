@@ -40,12 +40,19 @@ button {
   border-radius: 2px;
 }
 
+.carousel-caption {
+    text-align: left;
+    max-width: 300px;
+    padding:5px;
+    left: 10%;
+    bottom: 33%;
+}
+
 .blocks .btn-basic
 {
     margin: 0 5px;
     border-radius: 0;
 }
-
 
 .topfront {
   height: 25em;
@@ -81,12 +88,22 @@ button {
   font-size : 60px;
   z-index : 4;
 }
-.middlefront {
-  height: 30em;
+
+
+#middlefront {
+   height: 30em;
    background-image: url("img/book.jpg");
    background-size: cover;
-   background-repeat: no-repeat
+   background-repeat: no-repeat;
 }
+
+#middlefront2 {
+   height: 30em;
+   background-image: url("img/landscape2.png");
+   background-size: cover;
+   background-repeat: no-repeat;
+}
+
 .signup, .signout {
   float: right;
 
@@ -94,7 +111,9 @@ button {
 
 .bottomfront {
   background-color:  #ffc400;
-  height: 3em;
+  height: 2em;
+  padding-top: 2px;
+  color: black;
 }
 
 .toptext {
@@ -102,12 +121,20 @@ button {
   font-size: 40px;
 }
 
-.centertext
-{
-  margin-top: 3em;
+.centertext {
+  padding-left: 18px;
+  padding-top: 75px;
   font-size: 40px;
   text-align: left;
   color: white;
+}
+
+.centertext2 {
+  padding-left: 18px;
+  padding-top: 75px;
+  font-size: 40px;
+  text-align: left;
+  color: #800000;
 }
 
 .bottomtext {
@@ -184,7 +211,7 @@ button {
   font-size: 30px;
   text-align: center;
   border-radius: 16px;
-  color: #800000;
+  color: #343434;
 }
 
 body {
@@ -200,7 +227,7 @@ body {
   font-size: 19px;
   width: 100%;
   background-color: #ffc400;
-  color: #800000;
+  color: #343434;
   margin-left: 0px;
 }
 
