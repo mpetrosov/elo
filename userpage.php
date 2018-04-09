@@ -4,7 +4,7 @@ include 'includes/functions.php';
 include 'includes/header.php';
 
 ?>
-  <body  Onload = "DetermineFinishedLessons()">
+  <body  Onload = "DetermineFinishedLessons(1)">
     <div class="container">
   <?php
     $students = get_Students();
@@ -14,8 +14,6 @@ include 'includes/header.php';
       <div class="col-sm-8 usertop">
         <div class="row">
           <div class="col-xs-8 welcome">Hallo <?=$student['firstname']?></div>
-
-
 
         <div class="col-xs-4"><img class="avatar" src=<?=$student['avatar']?>></div>
         </div>
@@ -40,7 +38,6 @@ include 'includes/header.php';
 </div>
 
 </div>
-
         <?php
         $dateOfBirth =  $student['birthday'];
         $today = date("Y-m-d");
@@ -140,7 +137,7 @@ include 'includes/header.php';
     $('#gametheme4').addClass('col-sm-5 theme4');
     $('#gametheme4').attr("onclick","startgame(4)");
     $('#gametheme4').append("<center><div id = \"divLessonFinished4\" class = \"LessonFinished\">V</div></center>");
-    DetermineFinishedLessons();
+    DetermineFinishedLessons(1);
   });
 
   $('#game2').click(function() {
@@ -148,21 +145,26 @@ include 'includes/header.php';
     $('#gametheme1').removeClass();
     $('#gametheme1').addClass('col-sm-5 theme5');
     $('#gametheme1').attr("onclick","startgame(5)");
+    $('#gametheme1').append("<center><div id = \"divLessonFinished5\" class = \"LessonFinished\">V</div></center>");
 
     $('#gametheme2').html('Vogels');
     $('#gametheme2').removeClass();
     $('#gametheme2').addClass('col-sm-5 theme6');
     $('#gametheme2').attr("onclick","startgame(6)");
+    $('#gametheme2').append("<center><div id = \"divLessonFinished6\" class = \"LessonFinished\">V</div></center>");
 
     $('#gametheme3').html('hemellichamen');
     $('#gametheme3').removeClass();
     $('#gametheme3').addClass('col-sm-5 theme7');
     $('#gametheme3').attr("onclick","startgame(7)");
+    $('#gametheme3').append("<center><div id = \"divLessonFinished7\" class = \"LessonFinished\">V</div></center>");
 
     $('#gametheme4').html('Thema 4');
     $('#gametheme4').removeClass();
     $('#gametheme4').addClass('col-sm-5 theme');
     $('#gametheme4').attr("onclick","startgame(8)");
+    $('#gametheme4').append("<center><div id = \"divLessonFinished8\" class = \"LessonFinished\">V</div></center>");
+    DetermineFinishedLessons(5);
   });
 
   $().ready(function() {
@@ -183,7 +185,6 @@ include 'includes/header.php';
 
 </script>
 
-
 <script>
   function startgame(gamenr) {
     var xhttp = new XMLHttpRequest();
@@ -195,13 +196,12 @@ include 'includes/header.php';
 
   //***********************************************************************************************
 
-  function DetermineFinishedLessons() {
+  function DetermineFinishedLessons(StartLesson) {
     var myURL;
     var xhttp;
     var LessonReady;
 
-
-    for (var i = 1; i<=4 ; i++) {
+    for (var i = StartLesson; i<= StartLesson +3; i++) {
       xhttp = new XMLHttpRequest();
       myURL = "includes/getFinishedLesson.php?lessonid=" + i;
       //var Gameid;

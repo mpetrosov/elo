@@ -16,12 +16,15 @@ var studentid;
 var StudentName;
 var CoinXPos, CoinYPos, BL ,BT, EL, ET, dx, dy, a, vx, stepnr, maxsteps; //voor de animatie
 var CorrectnrMC;
+var FirstFinish;
+
 
 //**********************************************************************************************
 function InitializePics(lessonnr) {
   CoinPos = 0;
   MiliSecTeller = 0;
   lessonid =  lessonnr; //= GetGameid();
+  FirstFinish = true;
   //temp: dynamisch maken
   gameid  = 1; //invullen
   if (lessonid > 4) {gameid= 2;} //multiplechoice
@@ -129,8 +132,7 @@ function MakeTumbnails(PicNumber) {
     TNdiv.setAttribute('class','TNcontainers');
 
     var strinnerHTML = "<img id=\"TN" + (i+1) + "\" class=\"TNimgs\" src=\"" + AnimalPics[i][1];
-    strinnerHTML += "\" onClick=\"ChangeTask(" + i +")\"><h2 id=\"RT" + (i+1) + "\"class=\"RTh2\"></h2>";
-    //alert(strinnerHTML);
+    strinnerHTML += "\" onClick=\"ChangeTask(" + i +")\"><h2 id=\"RT" + (i+1) + "\" class=\"RTh2\" onClick=\"ChangeTask(" + i +")\"></h2>";
     TNdiv.innerHTML = strinnerHTML;
 
     var TNcontainer = document.getElementById("TumbnailsContainer");
@@ -211,8 +213,16 @@ function determineNextTask(locPicnr) {
     SeekValue = -1;
   }
   else {
-    SeekValue = 0;
+    if (Gamefinished()) {
+      SeekValue = 1;
+      locPicnr++;
+      if (locPicnr > NumberTasks) {locPicnr = 0;}      
+    }
+    else {
+      SeekValue = 0;
+    }
   }
+
 
   while (TaskScores[locPicnr] != SeekValue) {
     locPicnr++;
@@ -303,11 +313,15 @@ function ControlAnswer(nrAnswer) {
     document.getElementById("divAnswerinput").style.display = "none";
   }
 
-  if (!Gamefinished()) {
-     document.getElementById("btnidNextPic").style.visibility = "visible";
+  //if (!Gamefinished()) {
+  if (actPicnr < NumberTasks) {
+    document.getElementById("btnidNextPic").style.visibility = "visible";
   }
-  else {
-    alert("Je bent klaar met het spel. Je score was: " + intScore);
+  if (Gamefinished()) {
+    if (FirstFinish == true) {
+      alert("Je bent klaar met het spel. Je score was: " + intScore);
+      FirstFinish = false;
+    }
   }
 }
 
