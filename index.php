@@ -9,10 +9,17 @@
   <div class="container-fluid">
 
   <div class="row">
-    <div class="col-xs-12 middlefront">
-      <div class="centertext">Spelenderwijs Leren<br> Speciaal voor kinderen</div>
-    </div>
+      <div id="myCarousel" class="carousel-inner carousel slide middlefront" data-ride="carousel" data-interval="5000">
+
+        <div class="carousel-inner">
+            <div class="item active" id="middlefront">
+              <div class="carousel-caption"><h1>Spelenderwijs Leren<br> Speciaal voor kinderen</h1></div>
+              </div>
+              <div class="item" id="middlefront2"><div class="carousel-caption"> <h1>Meer motivatie<br> Betere leerprestaties</h1></div>
+            </div>
+        </div>
   </div>
+</div>
 
   <div class="row">
     <div class= "col-sm-6 topfrontleft">
@@ -25,7 +32,7 @@
   </div>
 
   <div class="row">
-    <div class="col-xs-12 bottomfront">
+    <div class="col-xs-12 bottomfront"> Spelgoed: gemaakt door Edwin, Marat en Johan
 
     </div>
   </div>
