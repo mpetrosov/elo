@@ -20,12 +20,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
     integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
     crossorigin="anonymous">
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-    <script>
-        $(document).ready(function)){
-            $("button").click
-        }
-    </script> -->
 
 	<title>Leerkracht</title>
 </head>
@@ -57,7 +51,7 @@
 </header>
 
 
-<?php $students = get_StudentsGroup();?>
+<?php $students = getStudentsGroup();?>
 <?php foreach ($students as $student):?>
 <div class="st-group"><a href="backend.php?group=<?php echo $_GET['group'] ?>&id=<?php echo $student['st_id'] ?>"><?=$student['lastname'] ." ". $student['firstname'];?></a></div>
 <?php endforeach;?>

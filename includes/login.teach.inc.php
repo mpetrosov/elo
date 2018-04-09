@@ -31,9 +31,6 @@ session_start();
                         $_SESSION['t_first'] = $row['teach_first'];
                         $_SESSION['t_last'] = $row['teach_last'];
                         $_SESSION['t_email'] = $row['teach_email'];
-                        // $_SESSION['u_uid'] = $row['class_id'];
-                        // $_SESSION['color'] = $row['color'];
-                        // $_SESSION['u_is_admin'] = $row['is_admin'];
                         header("Location: ../backend.php?login=success");
 
                         exit();
