@@ -136,13 +136,8 @@ function gameOne() {
     $('#gametheme4').addClass('col-sm-5 theme4');
     $('#gametheme4').attr("onclick","startgame(4)");
     $('#gametheme4').append("<center><div id = \"divLessonFinished4\" class = \"LessonFinished\">V</div></center>");
-<<<<<<< HEAD
-    DetermineFinishedLessons();
-  }
-=======
     DetermineFinishedLessons(1);
-  });
->>>>>>> meerdere kleine bugjes gefixed
+  }
 
 function gameTwo() {
     $('#gametheme1').html('Vlaggen');
@@ -167,13 +162,9 @@ function gameTwo() {
     $('#gametheme4').removeClass();
     $('#gametheme4').addClass('col-sm-5 theme8');
     $('#gametheme4').attr("onclick","startgame(8)");
-<<<<<<< HEAD
-  }
-=======
-    $('#gametheme4').append("<center><div id = \"divLessonFinished8\" class = \"LessonFinished\">V</div></center>");
     DetermineFinishedLessons(5);
-  });
->>>>>>> meerdere kleine bugjes gefixed
+
+  }
 
   $().ready(function() {
       $('.welcome, .usertop, .mainmenu, .bonus').css({

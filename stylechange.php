@@ -82,7 +82,7 @@ include 'includes/header.php';
     </div>
     <div class="col-md-6 example"><div>
       <?php
-        $students = get_Students();
+        $students = getStudents();
       ?>
 
       <?php foreach ($students as $student):?>

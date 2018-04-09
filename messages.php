@@ -6,7 +6,7 @@ include 'includes/functions.php';
 
 <body>
   <?php
-    $students = get_Students();
+    $students = getStudents();
   ?>
   <?php foreach ($students as $student):?>
   <?php endforeach;?>

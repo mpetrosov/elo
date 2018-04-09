@@ -19,7 +19,7 @@ include 'gamedbmanipulation/GetLesson.php'
      <a href="../userpage.php"><img id="logo" src="../img/klaver5.png"></a>
    </div>
    <?php
-     $students = get_Students();
+     $students = getStudents();
    ?>
    <?php
      $lessons = get_lesson();

@@ -52,7 +52,7 @@
 
 
 
-<?php $students = get_StudentsGroup();?>
+<?php $students = getStudentsGroup();?>
 <div class="row">
   <div class="col-sm-6">
     <?php foreach ($students as $student):?>
