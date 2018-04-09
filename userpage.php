@@ -7,7 +7,7 @@ include 'includes/header.php';
   <body  Onload = "DetermineFinishedLessons()">
     <div class="container">
   <?php
-    $students = get_Students();
+    $students = getStudents();
   ?>
   <?php foreach ($students as $student):?>
     <div class="row">

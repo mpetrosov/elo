@@ -1,4 +1,7 @@
 <?php
+
+include 'dbh.php';
+
 $verb = $_SERVER['REQUEST_METHOD'];
 if  ($verb == "POST") {
 
@@ -8,7 +11,6 @@ $message = $_POST['message'];
 $sender = $_POST['sender'];
 session_start();
 $_SESSION['MessageSend'] = true;
-include 'dbh.php';
 
 $sql = "INSERT INTO messages (st_id, message, sender, send_id) VALUES ('$id', '$message', '$sender', '$idsend')";
 
@@ -21,7 +23,6 @@ exit();
 else {
   $id = $_GET['id'];
 
-  include 'dbh.php';
 
   $sql = "DELETE FROM messages
   WHERE id = $id";
@@ -33,4 +34,4 @@ else {
 
 }
 
-?>
+

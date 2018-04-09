@@ -6,7 +6,6 @@ session_start(); ?>
 $id = $_GET['id'];
 
 include('dbh.php');
-    // $sql = "SELECT * FROM messages WHERE $id = messages.id";
 
   $sql = "SELECT messages.id, messages.sender, messages.message, students.avatar FROM messages INNER JOIN students ON
     messages.send_id = students.st_id WHERE $id = messages.id";

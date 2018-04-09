@@ -1,3 +1,3 @@
 <?php
 
-CONST BASE_URL = "http://localhost/php_blog/";
+CONST BASE_URL = "http://localhost/elo/";

@@ -88,7 +88,7 @@ date_default_timezone_set('Europe/Amsterdam');
                                 $to = $db_email;
                                 $subject = "Password reset";
                                 $body = "Klik op deze link om wachtwoord te wijzigen
-                                http://localhost/php_blog/forgot_password.php?code=$code&email=$email" ;
+                                http://localhost/elo/forgot_password.php?code=$code&email=$email" ;
                                 $headers = "From: $email";
 
                                 //update the database

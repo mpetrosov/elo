@@ -2,7 +2,7 @@
 <?php
     include('dbh.php');
 
-    function get_Students(){
+    function getStudents(){
         global $conn;
 
         $sql = "SELECT * FROM `students`  WHERE `st_id` = '".$_SESSION['u_id']."'";
@@ -19,7 +19,7 @@
 
     }
 
-    function get_StudentsGroup(){
+    function getStudentsGroup(){
         global $conn;
         if(!isset($_GET['group'])){
             die();
