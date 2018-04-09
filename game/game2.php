@@ -90,4 +90,14 @@
     </div>
 
     </body>
+
+    <script>
+
+    if ((color === '800000') || (color === '600080')) {
+      $('#divExtraInfo').css({
+          'color': '#f9f9f9'
+      })
+    }
+
+    </script>
     </html>

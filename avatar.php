@@ -87,9 +87,13 @@ include 'includes/header.php';
         $('.avatarcontainer').css({
             'background-color': '#' + '<?=$student['color']?>',
         })
-        
+
         $('#logoutbutton').css({
             'background-color': '#' + '<?=$student['colorsec']?>',
+        })
+
+        $('#logoutbutton').css({
+            'color': '#' + '<?=$student['fontcolor']?>',
         })
 
         ;

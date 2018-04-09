@@ -106,7 +106,7 @@ include 'includes/header.php';
       <div class="dropdown-menu dropdown-menu-right menuright">
         <button class="dropdown-item menudrop" type="button">Profiel wijzigen</button>
         <button class="dropdown-item menudrop" type="button">Avatar wijzigen</button>
-        <button class="dropdown-item menudrop" type="button">Style wijzigen</button>
+        <button class="dropdown-item menudrop" type="button">Kleuren wijzigen</button>
 
       </div>
     </div>
@@ -202,7 +202,7 @@ include 'includes/header.php';
             'background-color': '#' + '<?=$student['colorsec']?>',
         })
 
-        $('.menu, .points, #logoutbutton, .menudrop').css({
+        $('.menu, .points, #logoutbutton, .menudrop, .dropbutton').css({
             'color': '#' + '<?=$student['fontcolor']?>',
         })
 

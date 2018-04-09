@@ -67,11 +67,10 @@ include 'includes/header.php';
     <div class="row">
         <div class="col-sm-2 mainmenu">Spellen<br><br>
           <div class="row">
-            <button class="col-sm-12 menu" id="game1">Invullen</button>
-            <button class="col-sm-12 menu" id="game2">Meerkeuze</button>
+            <button class="col-sm-12 menu" onclick="gameOne()">Invullen</button>
+            <button class="col-sm-12 menu" onclick="gameTwo()">Meerkeuze</button>
           </div>
         </div>
-
       <div class="col-sm-5 theme1" id="gametheme1" onclick= "startgame(1)">Wilde dieren
         <center><div id = "divLessonFinished1" class = "LessonFinished">V
         </div></center>
@@ -116,7 +115,7 @@ include 'includes/header.php';
   </body>
   <script>
 
-  $('#game1').click(function() {
+function gameOne() {
     $('#gametheme1').html('Wilde dieren');
     $('#gametheme1').removeClass();
     $('#gametheme1').addClass('col-sm-5 theme1');
@@ -141,9 +140,9 @@ include 'includes/header.php';
     $('#gametheme4').attr("onclick","startgame(4)");
     $('#gametheme4').append("<center><div id = \"divLessonFinished4\" class = \"LessonFinished\">V</div></center>");
     DetermineFinishedLessons();
-  });
+  }
 
-  $('#game2').click(function() {
+function gameTwo() {
     $('#gametheme1').html('Vlaggen');
     $('#gametheme1').removeClass();
     $('#gametheme1').addClass('col-sm-5 theme5');
@@ -154,16 +153,16 @@ include 'includes/header.php';
     $('#gametheme2').addClass('col-sm-5 theme6');
     $('#gametheme2').attr("onclick","startgame(6)");
 
-    $('#gametheme3').html('hemellichamen');
+    $('#gametheme3').html('Hemellichamen');
     $('#gametheme3').removeClass();
     $('#gametheme3').addClass('col-sm-5 theme7');
     $('#gametheme3').attr("onclick","startgame(7)");
 
-    $('#gametheme4').html('Thema 4');
+    $('#gametheme4').html('Bloemen');
     $('#gametheme4').removeClass();
-    $('#gametheme4').addClass('col-sm-5 theme');
+    $('#gametheme4').addClass('col-sm-5 theme8');
     $('#gametheme4').attr("onclick","startgame(8)");
-  });
+  }
 
   $().ready(function() {
       $('.welcome, .usertop, .mainmenu, .bonus').css({
@@ -174,7 +173,7 @@ include 'includes/header.php';
           'background-color': '#' + '<?=$student['colorsec']?>',
       })
 
-      $('.menu, .points, #logoutbutton, .menudrop').css({
+      $('.menu, .points, #logoutbutton, .menudrop, .dropbutton').css({
           'color': '#' + '<?=$student['fontcolor']?>',
       })
 

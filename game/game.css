@@ -33,6 +33,10 @@ button {
   width: auto;
 }
 
+button:hover {
+  background-color:	 #c7c7c7;
+}
+
 #divGameContainer {
   box-sizing: border-box;
   position: relative;
@@ -149,7 +153,7 @@ button {
   max-width: 90px;
   min-width: 80px;
   height   : 60px;
-  
+
   margin   : 4px;
   opacity  : 0.4;
 }

@@ -333,9 +333,22 @@ body {
     transition: transform 0.3s;
 }
 
+.theme8{
+    background-image: url("img/pinksterbloem.jpg");
+    background-size: cover;
+    color: white;
+    font-size: 24px;
+    padding: 12px;
+    height: 8em;
+    border: 5px solid #f9f9f9;
+    border-radius: 16px;
+    transition: transform 0.3s;
+}
+
+
 
 .theme:hover, .theme1:hover, .theme2:hover, .theme3:hover, .theme4:hover, .theme5:hover,
-.theme6:hover {
+.theme6:hover, .theme7:hover, .theme8:hover {
    cursor: pointer;
    transform: scale(1.02);
 }
@@ -452,6 +465,14 @@ body {
 }
 
 /* messages***************************************************************** */
+
+.messagearea {
+  font-size: 18px;
+}
+
+.alertmessage {
+  width: 50%;
+}
 
 .deletemessage {
   font-size: 12px;

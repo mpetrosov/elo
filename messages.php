@@ -54,17 +54,18 @@ include 'includes/functions.php';
 
                   } ?>
               </select><br><div class="sendinfo">Bericht:</div>
-              <textarea class="form-control" name="message" maxlength="500" cols="40" rows="4"></textarea>
+              <textarea class="form-control messagearea" name="message" maxlength="500" cols="40" rows="4"></textarea>
               <textarea name="senderid" style="display:none;"><?php echo $_SESSION['u_id']; ?></textarea>
               <textarea name="sender" style="display:none;"><?php echo $_SESSION['u_first'] . " " . $_SESSION['u_last']; ?> </textarea>
-              <button class="glyphicon glyphicon-envelope mainsendbutton" type="submit">Verstuur</button>
+              <button class="glyphicon glyphicon-envelope mainsendbutton" type="submit"> Verstuur</button>
             </form>
           </div>
         </div>
         <div id = "messageId">
            <?php
              if (isset($_SESSION['MessageSend'])) {
-               if ($_SESSION['MessageSend'] == true) {echo("Berichtje verzonden!");}
+               if ($_SESSION['MessageSend'] == true) {echo("<div class='alert alert-info alert-dismissible alertmessage'>
+                 <button type='button' class='close' data-dismiss='alert'>&times;</button>Berichtje verzonden!</div>");}
              }
              $_SESSION['MessageSend'] = false;
            ?>

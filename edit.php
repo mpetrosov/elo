@@ -23,11 +23,6 @@ if(isset($_GET['id'])&& $_GET['id']){
         header('Location: userpage.php');
     }
 
-    $sql = "SELECT `firstname`, `lastname`, `birthday`, `class_id` FROM `students`  WHERE `st_id` = $id";
-    $result = mysqli_query($conn, $sql);
-    $row = mysqli_fetch_assoc($result);
-
-
 }else{
     die(header('Location: '.BASE_URL . "edit.php?id=$id"));
 }
@@ -58,14 +53,14 @@ if(isset($_GET['id'])&& $_GET['id']){
 <div class="form-group">
   <label class="col-md-4 control-label" for="firstname">Voornaam</label>
   <div class="col-md-4">
-  <input id="firstname" type="text" name="firstname" placeholder="voornaam" value="<?php echo $row['firstname']; ?>" class="form-control input-md" required="">
+  <input id="firstname" type="text" name="firstname" placeholder="voornaam" value="<?php echo $student['firstname']; ?>" class="form-control input-md" required="">
   </div>
 </div>
 
 <div class="form-group">
   <label class="col-md-4 control-label" for="lastname" >Achternaam</label>
   <div class="col-md-4">
-  <input id="lastname" type="text" name="lastname" placeholder="achternaam" value="<?php echo $row['lastname']; ?>" class="form-control input-md" required="">
+  <input id="lastname" type="text" name="lastname" placeholder="achternaam" value="<?php echo $student['lastname']; ?>" class="form-control input-md" required="">
   </div>
 </div>
 
@@ -73,7 +68,7 @@ if(isset($_GET['id'])&& $_GET['id']){
 <div class="form-group">
   <label class="col-md-4 control-label" for="class" >Geboortedatum</label>
   <div class="col-md-4">
-  <input id="date" type="date" name="birthday" placeholder="geboortedatum" value="<?php echo $row['birthday']; ?>" class="form-control input-md" required="">
+  <input id="date" type="date" name="birthday" placeholder="geboortedatum" value="<?php echo $student['birthday']; ?>" class="form-control input-md" required="">
   </div>
 </div>
 
@@ -81,7 +76,7 @@ if(isset($_GET['id'])&& $_GET['id']){
 <div class="form-group">
   <label class="col-md-4 control-label" for="class" >Groep</label>
   <div class="col-md-4">
-  <input id="class" type="text" name="class_id" placeholder="groep"  value="<?php echo $row['class_id']; ?>" class="form-control input-md" required="">
+  <input id="class" type="text" name="class_id" placeholder="groep"  value="<?php echo $student['class_id']; ?>" class="form-control input-md" required="">
   </div>
 </div>
 
@@ -98,7 +93,7 @@ if(isset($_GET['id'])&& $_GET['id']){
     </form>
     <div style="clear:both;"></div>
 
-    <div><img class="imagereg" src="img/owl.png"></div>
+    <div><img class="imagereg" src="<?php echo $student['avatar']; ?>"</div>
 
 </div>
 <script>
@@ -111,8 +106,21 @@ $().ready(function() {
           'background-color': '#' + '<?=$student['colorsec']?>',
       })
 
+      $('.editbtn, #logoutbutton').css({
+          'color': '#' + '<?=$student['fontcolor']?>',
+      })
+
       ;
   });
+
+var color =  '<?=$student['color']?>';
+
+  if ((color === '800000') || (color === '600080')) {
+    $('#regcontainer').css({
+        'color': '#f9f9f9'
+    })
+  }
+
 </script>
 </body>
 </html>
