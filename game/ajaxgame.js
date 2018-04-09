@@ -1,13 +1,13 @@
 function UpdateLessonsMade(lessonid, studentid){
   var xhttp = new XMLHttpRequest();
-  var myURL = "gamedbmanipulation/UpdateLessonsMade.php?lessonid=" + lessonid + "&studentid=" + studentid;
+  var myURL = "gamedbmanipulation/UpdateLessonsMade.php?lessonid=" + lessonid + "&studentid=" + studentid + "&numbertasks=" + NumberTasks;
   xhttp.open("POST", myURL, false);
   xhttp.send();
 
   //usertabelbijwerken (score)
   myURL = "gamedbmanipulation/UpdateUserScore.php?studentid=" + studentid;
   xhttp.open("POST", myURL, false);
-  xhttp.send();
+  xhttp.send();  
 }
 
 //***************************************************************************************************
@@ -77,7 +77,6 @@ function getStudent() {
 
 //*************************************************************************************
 function CreateTaskMade(taskid,lessonid, studentid, score) {
-  //tested!!
   var xhttp = new XMLHttpRequest();
   var myURL;
 
