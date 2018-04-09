@@ -26,9 +26,7 @@ hr {
 
 button {
   font-family: arial;
-  background-color:	#ffc400;
   border: none;
-  color: #800000;
   padding: 4px;
   text-align: center;
   text-decoration: none;
@@ -40,6 +38,12 @@ button {
   margin-bottom: 0px;
   text-align: left;
   border-radius: 2px;
+}
+
+.blocks .btn-basic
+{
+    margin: 0 5px;
+    border-radius: 0;
 }
 
 

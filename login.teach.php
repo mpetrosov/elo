@@ -52,14 +52,16 @@ session_start();
     <div class="form-group">
       <label class="col-md-4 control-label" for="login-admin"></label>
       <div class="col-md-4">
-        <button id="submit" name="submit" class="btn btn-basic">login</button>
-        
+        <div class="btn-group blocks">
+        <button id="submit" name="submit" class="btn btn-basic ">login</button>
+        <button type="button" class="btn btn-basic center-block" onclick="location.href = 'signup.teach.php'">Registreren</button>
+        </div>
       </div>
     </div>
 
     </fieldset>
     </form>
-    <button class="btn btn-basic" onclick="location.href = 'signup.teach.php'">Registreren</button>
+
     <div><img class="imagereg" src="img/owl.png"></div>
     <!-- <div><a href="backend.php"><img class="imagereg" src="img/shield.png"></a></div> -->
 
